@@ -1,0 +1,46 @@
+[
+    {
+        "folder_name": "Harry Potter y el Misterio del Príncipe (2009)",
+        "file_name": "Harry Potter and the Half-Blood Prince",
+        "file_size": "9.02 GB",
+        "genre": "Adventure",
+        "type": "Movies",
+        "has_file": true,
+        "location": "Systems [Main]",
+        "created_at": "19-02-2023",
+        "updated_at": "19-02-2023"
+    },
+    {
+        "folder_name": "Harry Potter y el Prisionero de Azkaban (2004)",
+        "file_name": "Harry Potter and the Prisoner of Azkaban",
+        "file_size": "8.32 GB",
+        "genre": "Adventure",
+        "type": "Movies",
+        "has_file": true,
+        "location": "Systems [Main]",
+        "created_at": "12-02-2023",
+        "updated_at": "12-02-2023"
+    },
+    {
+        "folder_name": "Harry Potter y la Cámara Secreta (2002)",
+        "file_name": "Harry Potter and the Chamber of Secrets",
+        "file_size": "9.46 GB",
+        "genre": "Adventure",
+        "type": "Movies",
+        "has_file": true,
+        "location": "Systems [Main]",
+        "created_at": "10-02-2023",
+        "updated_at": "10-02-2023"
+    },
+    {
+        "folder_name": "Harry Potter y la Piedra Filosofal (2001)",
+        "file_name": "Harry Potter and the Philosopher's Stone",
+        "file_size": "8.95 GB",
+        "genre": "Adventure",
+        "type": "Movies",
+        "has_file": true,
+        "location": "Systems [Main]",
+        "created_at": "10-02-2023",
+        "updated_at": "10-02-2023"
+    }
+]
