@@ -13,6 +13,7 @@ import {
   Button,
 } from "@heroui/react";
 import { usePathname } from "next/navigation";
+import SearchBar from "./SearchBar";
 
 export const AcmeLogo = () => {
   return (
@@ -58,6 +59,10 @@ export default function Toolbar() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <SearchBar />
+      </NavbarContent>
+
+      <NavbarContent justify="end">
         {NAV_ITEMS.map((item) => {
           const isActive = pathname === item.href;
           return (
@@ -73,9 +78,6 @@ export default function Toolbar() {
             </NavbarItem>
           );
         })}
-      </NavbarContent>
-
-      <NavbarContent justify="end">
         <NavbarItem>
           <Button as={Link} color="warning" href="#" variant="flat">
             Random
