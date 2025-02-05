@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { NAV_ITEMS, PROJECT_NAME } from "../config/constants";
 import {
   Navbar,
   NavbarBrand,
@@ -8,9 +10,9 @@ import {
   NavbarMenuItem,
   NavbarContent,
   NavbarItem,
-  Link,
   Button,
 } from "@heroui/react";
+import { usePathname } from "next/navigation";
 
 export const AcmeLogo = () => {
   return (
@@ -26,6 +28,7 @@ export const AcmeLogo = () => {
 };
 
 export default function Toolbar() {
+  const pathname = usePathname();
   const menuItems = [
     "Profile",
     "Dashboard",
@@ -40,34 +43,39 @@ export default function Toolbar() {
   ];
 
   return (
-    <Navbar disableAnimation isBordered>
+    <Navbar shouldHideOnScroll disableAnimation isBordered maxWidth="2xl">
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle />
       </NavbarContent>
 
       <NavbarContent justify="start">
-        <NavbarBrand>
-          <AcmeLogo />
-          <p className="font-bold text-inherit">ACME</p>
-        </NavbarBrand>
+        <Link color="foreground" href="/">
+          <NavbarBrand>
+            <AcmeLogo />
+            <p className="font-bold text-inherit">{PROJECT_NAME}</p>
+          </NavbarBrand>
+        </Link>
       </NavbarContent>
+
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="/movies">
-            Movies
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link aria-current="page" color="warning" href="/series">
-            Series
-          </Link>
-        </NavbarItem>
+        {NAV_ITEMS.map((item) => {
+          const isActive = pathname === item.href;
+          return (
+            <NavbarItem key={item.id}>
+              <Link
+                href={item.href}
+                className={
+                  isActive ? "font-bold text-primary" : "hover:font-bold"
+                }
+              >
+                {item.label}
+              </Link>
+            </NavbarItem>
+          );
+        })}
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Recom.</Link>
-        </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="warning" href="#" variant="flat">
             Random

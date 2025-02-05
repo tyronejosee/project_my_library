@@ -1,15 +1,12 @@
 "use client";
 
 import { CircularProgress, Chip } from "@heroui/react";
-import folderMainInfo from "../data/disks/folders-main-info.json";
-import systemsMainInfo from "../data/disks/systems-main-info.json";
+import { ALL_DISKS } from "@/config/constants";
 
 export const Dashboard = () => {
-  const allDisks = [...folderMainInfo, ...systemsMainInfo];
-
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      {allDisks.map((disk, index) => {
+    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      {ALL_DISKS.map((disk, index) => {
         const strokeColor =
           disk.percent_used > 90 ? "stroke-red-600" : "stroke-primary";
 

@@ -1,5 +1,4 @@
 import { Dashboard } from "@/components/Dashboard";
-import MovieList from "@/components/MovieList";
 
 import { Metadata } from "next";
 
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="max-w-screen-lg mx-auto text-center py-6 px-6">
+    <main className="max-w-screen-2xl mx-auto text-center py-6 px-6">
       <Dashboard />
     </main>
   );
