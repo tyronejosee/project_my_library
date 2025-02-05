@@ -11,6 +11,11 @@ import foldersMoviesInfo from "../data/disks/folders-movies-info.json";
 // Movies
 import folderMainMovies from "../data/movies/folders-main-movies.json";
 import systemsMainMovies from "../data/movies/systems-main-movies.json";
+import folderAnimationMovies from "../data/movies/folders-animation-movies.json";
+import folderMoviesMovies from "../data/movies/folders-movies-movies.json";
+import folderSecondaryMovies from "../data/movies/folders-secondary-movies.json";
+import folderTertiaryMovies from "../data/movies/folders-tertiary-movies.json";
+
 
 // Series
 import folderMainSeries from "../data/series/folders-main-series.json";
@@ -35,6 +40,10 @@ export const ALL_DISKS = [
 export const ALL_MOVIES = [
   ...folderMainMovies,
   ...systemsMainMovies,
+  ...folderAnimationMovies,
+  ...folderMoviesMovies,
+  ...folderSecondaryMovies,
+  ...folderTertiaryMovies,
 ];
 
 export const ALL_SERIES = [

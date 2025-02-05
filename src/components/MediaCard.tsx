@@ -11,7 +11,7 @@ interface Props {
 export default function MediaCard({ media, widthImage }: Props) {
   return (
     <Card
-      isFooterBlurred
+      isHoverable
       isPressable
       className="border-none"
       shadow="sm"

@@ -1,8 +1,8 @@
-import { useState, SVGProps, useEffect, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Input } from "@heroui/react";
 
-export const SearchIcon = (props: SVGProps<SVGSVGElement>) => {
+export const SearchIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       aria-hidden="true"
@@ -36,37 +36,28 @@ export default function SearchBar() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(searchParams.get("query") || "");
-  const [debounceTimeout, setDebounceTimeout] = useState<NodeJS.Timeout | null>(null);
+  const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     setQuery(searchParams.get("query") || "");
   }, [searchParams]);
 
-  const handleSearchChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const searchValue = e.target.value;
-      setQuery(searchValue);
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const searchValue = e.target.value;
+    setQuery(searchValue);
 
-      if (debounceTimeout) {
-        clearTimeout(debounceTimeout);
+    if (debounceTimeoutRef.current) {
+      clearTimeout(debounceTimeoutRef.current);
+    }
+
+    debounceTimeoutRef.current = setTimeout(() => {
+      const params = new URLSearchParams();
+      if (searchValue.trim()) {
+        params.set("query", searchValue);
       }
-
-      const updateQueryParams = (query: string) => {
-        const params = new URLSearchParams();
-        if (query.trim()) {
-          params.set("query", query);
-        }
-        router.push(`/search?${params.toString()}`);
-      };
-
-      const timeout = setTimeout(() => {
-        updateQueryParams(searchValue);
-      }, 0.1);
-
-      setDebounceTimeout(timeout);
-    },
-    [debounceTimeout, router]
-  );
+      router.push(`/search?${params.toString()}`);
+    }, 100);
+  };
 
   return (
     <form onSubmit={(e) => e.preventDefault()}>
@@ -74,7 +65,6 @@ export default function SearchBar() {
         value={query}
         onChange={handleSearchChange}
         className="w-96"
-        isClearable
         classNames={{
           input: [
             "bg-transparent",

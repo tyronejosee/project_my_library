@@ -1,5 +1,4 @@
 "use client";
-
 import MediaCard from "./MediaCard";
 import { IMedia } from "@/interfaces/media.interface";
 
