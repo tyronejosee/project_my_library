@@ -44,7 +44,7 @@ export default function Toolbar() {
   ];
 
   return (
-    <Navbar shouldHideOnScroll disableAnimation isBordered maxWidth="2xl">
+    <Navbar disableAnimation isBordered maxWidth="2xl">
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle />
       </NavbarContent>

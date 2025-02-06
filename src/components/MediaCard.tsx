@@ -10,21 +10,24 @@ interface Props {
 
 export default function MediaCard({ media, widthImage }: Props) {
   return (
-    <Card
-      isHoverable
-      isPressable
-      className="border-none"
-      shadow="sm"
-      radius="lg"
-    >
-      <Image
-        alt={media.folder_name}
-        className="object-cover"
-        height={256}
-        src={media.image}
-        width={widthImage}
-        loading="lazy"
-      />
-    </Card>
+    <article className="group">
+      <Card
+        isPressable
+        shadow="sm"
+        radius="lg"
+        className="relative border border-neutral-800 overflow-hidden"
+      >
+        <Image
+          src={media.image}
+          alt={media.folder_name}
+          title={media.folder_name}
+          height={256}
+          width={widthImage}
+          loading="lazy"
+          radius="none"
+          className="transform transition-transform duration-300 group-hover:scale-110"
+        />
+      </Card>
+    </article>
   );
 }
