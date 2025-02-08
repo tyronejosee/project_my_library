@@ -3,7 +3,7 @@ import { ALL_MOVIES } from "@/config/constants";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
 import MediaList from "@/components/MediaList";
 
-const PAGE_SIZE = 64;
+const PAGE_SIZE = 28;
 
 export default function MoviesPage() {
   const {data: movies, loading} = useInfiniteScroll(ALL_MOVIES, PAGE_SIZE);

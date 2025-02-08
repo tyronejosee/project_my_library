@@ -31,16 +31,9 @@ export const AcmeLogo = () => {
 export default function Toolbar() {
   const pathname = usePathname();
   const menuItems = [
-    "Profile",
     "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    "Películas",
+    "Series",
   ];
 
   return (
@@ -49,7 +42,7 @@ export default function Toolbar() {
         <NavbarMenuToggle />
       </NavbarContent>
 
-      <NavbarContent justify="start">
+      <NavbarContent className="invisible sm:visible" justify="start">
         <Link color="foreground" href="/">
           <NavbarBrand>
             <AcmeLogo />
@@ -66,11 +59,11 @@ export default function Toolbar() {
         {NAV_ITEMS.map((item) => {
           const isActive = pathname === item.href;
           return (
-            <NavbarItem key={item.id}>
+            <NavbarItem key={item.id} className="font-medium">
               <Link
                 href={item.href}
                 className={
-                  isActive ? "font-bold text-primary" : "hover:font-bold"
+                  isActive ? "text-primary" : ""
                 }
               >
                 {item.label}
@@ -79,7 +72,7 @@ export default function Toolbar() {
           );
         })}
         <NavbarItem>
-          <Button as={Link} color="warning" href="#" variant="flat">
+          <Button as={Link} color="primary" href="#" variant="solid" className="text-neutral-950 font-medium">
             Random
           </Button>
         </NavbarItem>

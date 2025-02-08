@@ -2,6 +2,7 @@ export interface IMedia {
   folder_name: string;
   file_name: string;
   file_size: string;
+  slug: string;
   image: string;
   genre: string;
   type: string;

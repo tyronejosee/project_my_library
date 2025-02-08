@@ -5,7 +5,7 @@ import { ALL_DISKS } from "@/config/constants";
 
 export const Dashboard = () => {
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {ALL_DISKS.map((disk, index) => {
         const strokeColor =
           disk.percent_used > 90 ? "stroke-red-600" : "stroke-primary";
@@ -13,21 +13,23 @@ export const Dashboard = () => {
         return (
           <article
             key={index}
-            className="bg-neutral-950 rounded-2xl border border-neutral-800 p-4"
+            className="bg-neutral-950 rounded-2xl border border-neutral-800 p-4 group"
           >
-            <h2 className="text-lg font-medium pb-4">{disk.volume_label}</h2>
             <div className="flex justify-between">
               <div className="flex flex-col">
-                <ul className="text-left">
+                <h2 className="text-left text-xl font-medium">
+                  {disk.volume_label}
+                </h2>
+                <ul className="text-left mt-4">
                   <li>Total: {disk.total}</li>
                   <li>Libre: {disk.free}</li>
                   <li>Usado: {disk.used}</li>
                 </ul>
-                <Chip className="mt-auto">Disco {disk.drive_name}</Chip>
+                <Chip className="mt-auto group-hover:bg-primary group-hover:text-neutral-950">Disco {disk.drive_name}</Chip>
               </div>
               <CircularProgress
                 classNames={{
-                  svg: "w-36 h-36 drop-shadow-md",
+                  svg: "w-44 h-44 drop-shadow-md",
                   indicator: strokeColor,
                   track: "stroke-white/10",
                   value: "text-3xl font-semibold text-white",

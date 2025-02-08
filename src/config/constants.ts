@@ -20,7 +20,7 @@ import folderTertiaryMovies from "../data/movies/folders-tertiary-movies.json";
 // Series
 import folderMainSeries from "../data/series/folders-main-series.json";
 
-export const PROJECT_NAME = "MyCollection";
+export const PROJECT_NAME = "Tyrone's Collection";
 
 export const COMPANY_DESCRIPTION = `
 lorem ipsum
