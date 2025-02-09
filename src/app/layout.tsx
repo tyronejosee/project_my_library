@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Roboto_Mono } from "next/font/google";
 import Toolbar from "@/components/Toolbar";
+import { BackToTop } from "@/components/BackToTop";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className="antialiased">
         <Toolbar />
         {children}
+        <BackToTop />
       </body>
     </html>
   );
