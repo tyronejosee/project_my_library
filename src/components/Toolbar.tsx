@@ -1,7 +1,7 @@
 "use client";
-
+import { Suspense } from "react";
 import Link from "next/link";
-import { NAV_ITEMS, PROJECT_NAME } from "../config/constants";
+import { usePathname } from "next/navigation";
 import {
   Navbar,
   NavbarBrand,
@@ -12,7 +12,7 @@ import {
   NavbarItem,
   Button,
 } from "@heroui/react";
-import { usePathname } from "next/navigation";
+import { NAV_ITEMS, PROJECT_NAME } from "../config/constants";
 import SearchBar from "./SearchBar";
 
 export const AcmeLogo = () => {
@@ -52,7 +52,9 @@ export default function Toolbar() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <SearchBar />
+        <Suspense fallback={<div>Loading...</div>}>
+          <SearchBar />
+        </Suspense>
       </NavbarContent>
 
       <NavbarContent justify="end">
@@ -91,7 +93,6 @@ export default function Toolbar() {
                   : "foreground"
               }
               href="#"
-              size="lg"
             >
               {item}
             </Link>

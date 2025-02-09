@@ -7,6 +7,7 @@ import folderTertiaryInfo from "../data/disks/folders-tertiary-info.json";
 import systemsTertiaryInfo from "../data/disks/systems-tertiary-info.json";
 import foldersAnimationInfo from "../data/disks/folders-animation-info.json";
 import foldersMoviesInfo from "../data/disks/folders-movies-info.json";
+import foldersAnimesInfo from "../data/disks/folders-animes-info.json";
 
 // Movies
 import folderMainMovies from "../data/movies/folders-main-movies.json";
@@ -19,6 +20,7 @@ import folderTertiaryMovies from "../data/movies/folders-tertiary-movies.json";
 
 // Series
 import folderMainSeries from "../data/series/folders-main-series.json";
+import folderAnimesSeries from "../data/series/folders-animes-series.json";
 
 export const PROJECT_NAME = "Tyrone's Collection";
 
@@ -35,6 +37,7 @@ export const ALL_DISKS = [
   ...systemsTertiaryInfo,
   ...foldersAnimationInfo,
   ...foldersMoviesInfo,
+  ...foldersAnimesInfo,
 ];
 
 export const ALL_MOVIES = [
@@ -48,6 +51,7 @@ export const ALL_MOVIES = [
 
 export const ALL_SERIES = [
   ...folderMainSeries,
+  ...folderAnimesSeries,
 ];
 
 export const ALL_MEDIA = [
@@ -61,7 +65,3 @@ export const NAV_ITEMS = [
   { id: 1, href: "/movies", label: "Películas" },
   { id: 2, href: "/series", label: "Series" },
 ];
-
-// export const MENU_ITEMS = [
-//   { id: 1, href: "/movies", label: "Películas" },
-// ];

@@ -1,13 +1,23 @@
 import MediaList from "@/components/MediaList";
 import { searchMedia } from "@/lib/utils";
 
-export default async function SearchPage({ searchParams }: { searchParams: { query?: string } }) {
-  const query = searchParams?.query || "";
-  const results = await searchMedia(query);
-  
+interface Props {
+  searchParams: Promise<{ query?: string }>;
+}
+
+export default async function SearchPage({ searchParams }: Props) {
+  const resolvedSearchParams = await searchParams;
+  const query = resolvedSearchParams?.query ?? "";
+
   return (
     <section className="max-w-screen-2xl mx-auto text-center py-6 px-6">
-      <MediaList results={results} />
+      <SearchResults query={query} />
     </section>
   );
+}
+
+function SearchResults({ query }: { query: string }) {
+  const results = searchMedia(query);
+
+  return <MediaList results={results} />;
 }

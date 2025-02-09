@@ -35,12 +35,19 @@ export const SearchIcon = (props: React.SVGProps<SVGSVGElement>) => {
 export default function SearchBar() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [isClient, setIsClient] = useState(false);
   const [query, setQuery] = useState(searchParams.get("query") || "");
   const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    setQuery(searchParams.get("query") || "");
-  }, [searchParams]);
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (isClient) {
+      setQuery(searchParams.get("query") || "");
+    }
+  }, [searchParams, isClient]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = e.target.value;
@@ -58,6 +65,8 @@ export default function SearchBar() {
       router.push(`/search?${params.toString()}`);
     }, 100);
   };
+
+  if (!isClient) return null;
 
   return (
     <form onSubmit={(e) => e.preventDefault()}>

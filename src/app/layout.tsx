@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
 import { Outfit, Roboto_Mono } from "next/font/google";
-import "./globals.css";
 import Toolbar from "@/components/Toolbar";
+import "./globals.css";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -26,10 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${robotoMono.variable} dark`}>
-      <body
-        className="antialiased"
-      >
+    <html
+      lang="en"
+      className={`${outfit.variable} ${robotoMono.variable} dark`}
+    >
+      <body className="antialiased">
         <Toolbar />
         {children}
       </body>
