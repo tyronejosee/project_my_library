@@ -3,25 +3,25 @@ import { Dashboard } from "@/components/Dashboard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Atlanta Ink - Tattoo Studio",
+  title: "Tyrone's Collection",
   description:
-    "Welcome to Atlanta Ink, your premier tattoo studio. We specialize in custom tattoo designs, ensuring every piece is unique and tailored to your vision. Book your session today!",
+    "A place to store and organize a personal collection of movies and series. Keep track of favorites, discover new titles, and manage what you've watched.",
   keywords:
-    "atlanta ink, tattoo studio, custom tattoos, tattoo designs, tattoo artists, atlanta",
+    "collection, movies, series",
   openGraph: {
-    title: "Atlanta Ink - Tattoo Studio",
+    title: "Tyrone's Collection",
     description:
-      "Welcome to Atlanta Ink, your premier tattoo studio. We specialize in custom tattoo designs, ensuring every piece is unique and tailored to your vision. Book your session today!",
-    url: "https://atlanta-ink-studio.vercel.app/",
+      "A place to store and organize a personal collection of movies and series. Keep track of favorites, discover new titles, and manage what you've watched.",
+    url: "https://tyones-collection.vercel.app/",
     images: [
       {
         url: "https://res.cloudinary.com/dwyvfa5dj/image/upload/v1727889010/Atlanta%20Ink%20API/atlanta-ink-seo.webp",
         width: 1280,
         height: 720,
-        alt: "Atlanta Ink Seo",
+        alt: "Tyrone's Collection Seo",
       },
     ],
-    siteName: "Atlanta Ink",
+    siteName: "Tyrone's Collection",
   },
 };
 

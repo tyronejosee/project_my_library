@@ -1,7 +1,16 @@
 "use client";
 import { IMedia } from "@/interfaces/media.interface";
 import { Chip, Image } from "@heroui/react";
-import { BadgePlus, Clock, BadgeCheck, BadgeAlert } from "lucide-react";
+import {
+  BadgeCheck,
+  BadgeAlert,
+  Folder,
+  Box,
+  Clapperboard,
+  FolderPlus,
+  FolderClock,
+  Calendar,
+} from "lucide-react";
 
 interface Props {
   media: IMedia;
@@ -9,15 +18,15 @@ interface Props {
 
 export const MediaDetail = ({ media }: Props) => {
   const imageWidth = media.type === "Movies" ? 165 : 182;
-  
+
   return (
     <section className="min-h-[calc(100vh-20vh)] flex justify-center items-center relative">
       <div
         className="fixed inset-0 bg-cover bg-center before:absolute before:inset-0 
-        before:bg-black/80 before:backdrop-blur-2xl"
+        before:bg-black/90 before:backdrop-blur-2xl"
         style={{ backgroundImage: `url(${media.image})` }}
       ></div>
-      <section className="relative w-[100vw] sm:w-[70vw] lg:w-[40vw] xl:w-[35vw] p-4">
+      <section className="relative w-[100vw] sm:w-[70vw] lg:w-[40vw] xl:w-[30vw] p-4">
         <figure className="flex flex-col items-center gap-4 pb-4">
           <Image
             src={media.image}
@@ -49,35 +58,37 @@ export const MediaDetail = ({ media }: Props) => {
           )}
         </figure>
 
-        <article className="rounded-2xl p-4 text-center border border-neutral-800">
-          <h2 className="text-xl font-medium text-gray-300">Información</h2>
-          <ul className="space-y-1 text-gray-400">
-            <li>
-              <strong>Género:</strong> {media.genre}
-            </li>
-            <li>
-              <strong>Ubicación:</strong> {media.location}
-            </li>
-            <li>
-              <strong>Tamaño</strong> {media.file_size}
-            </li>
-          </ul>
-
-          <div className="mt-auto text-gray-400">
-            <Chip
-              color="primary"
-              startContent={<BadgePlus size={18} />}
-              variant="faded"
-            >
-              {media.created_at}
-            </Chip>
-            <Chip
-              color="primary"
-              startContent={<Clock size={18} />}
-              variant="faded"
-            >
-              {media.updated_at}
-            </Chip>
+        <article className="rounded-2xl p-4 text-center border border-neutral-800 bg-black space-y-4">
+          <h2 className="text-xl font-medium border-b border-neutral-800 pb-2">Información</h2>
+          <div className="flex justify-center gap-4">
+            <ul>
+              <li className="flex gap-2">
+                <Clapperboard size={20} />
+                {media.genre}
+              </li>
+              <li className="flex gap-2">
+                <Box size={20} />
+                {media.location}
+              </li>
+              <li className="flex gap-2">
+                <Folder size={20} />
+                {media.file_size}
+              </li>
+            </ul>
+            <ul>
+              <li className="flex gap-2">
+                <Calendar size={20} />
+                0000
+              </li>
+              <li className="flex gap-2">
+                <FolderPlus size={20} />
+                {media.created_at}
+              </li>
+              <li className="flex gap-2">
+                <FolderClock size={20} />
+                {media.updated_at}
+              </li>
+            </ul>
           </div>
         </article>
       </section>

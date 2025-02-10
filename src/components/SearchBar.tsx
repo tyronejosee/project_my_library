@@ -73,11 +73,11 @@ export default function SearchBar() {
       <Input
         value={query}
         onChange={handleSearchChange}
-        className="w-96"
+        className="w-full sm:w-[50vw]"
         classNames={{
           input: [
             "bg-transparent",
-            "text-black/90 dark:text-white/90",
+            "text-black/90 dark:text-white/90 text-center focus:text-left focus:ml-2",
             "placeholder:text-default-700/50 dark:placeholder:text-white/60",
           ],
           innerWrapper: "bg-transparent",
@@ -97,7 +97,7 @@ export default function SearchBar() {
         placeholder="Buscar..."
         radius="lg"
         startContent={
-          <SearchIcon className="text-black/50 mb-0.5 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
+          <SearchIcon className="text-black/50 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
         }
       />
     </form>

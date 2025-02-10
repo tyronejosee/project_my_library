@@ -3,6 +3,7 @@ import { Outfit, Roboto_Mono } from "next/font/google";
 import Toolbar from "@/components/Toolbar";
 import { BackToTop } from "@/components/BackToTop";
 import "./globals.css";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -31,9 +32,11 @@ export default function RootLayout({
       className={`${outfit.variable} ${robotoMono.variable} dark`}
     >
       <body className="antialiased">
-        <Toolbar />
-        {children}
-        <BackToTop />
+        <ScrollToTop>
+          <Toolbar />
+          {children}
+          <BackToTop />
+        </ScrollToTop>
       </body>
     </html>
   );
