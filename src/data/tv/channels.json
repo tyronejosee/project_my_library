@@ -2,386 +2,556 @@
   {
     "name": "Canal 13 CHILE",
     "number": 152,
-    "category": "Canales Nacionales",
+    "category": "Nacionales",
     "image": "/tv/canal-13.webp"
+  },
+  {
+    "name": "Canal 13 HD",
+    "number": 1152,
+    "category": "Nacionales",
+    "image": "/tv/canal-13-hd.webp"
+  },
+  {
+    "name": "13 C HD",
+    "number": 1156,
+    "category": "Nacionales",
+    "image": ""
   },
   {
     "name": "Canal de Diputados",
     "number": 155,
-    "category": "Canales Nacionales",
+    "category": "Nacionales",
     "image": "/tv/canal-de-diputados.webp"
   },
   {
     "name": "CHILEVISION",
     "number": 151,
-    "category": "Canales Nacionales",
+    "category": "Nacionales",
+    "image": "/tv/chilevision.webp"
+  },
+  {
+    "name": "CHV HD",
+    "number": 1151,
+    "category": "Nacionales",
     "image": "/tv/chilevision.webp"
   },
   {
     "name": "MEGA",
     "number": 150,
-    "category": "Canales Nacionales",
+    "category": "Nacionales",
     "image": "/tv/mega.webp"
+  },
+  {
+    "name": "MEGA HD",
+    "number": 1150,
+    "category": "Nacionales",
+    "image": "/tv/mega-hd.webp"
   },
   {
     "name": "RED TV",
     "number": 148,
-    "category": "Canales Nacionales",
+    "category": "Nacionales",
+    "image": "/tv/la-red.webp"
+  },
+  {
+    "name": "La Red HD",
+    "number": 1148,
+    "category": "Nacionales",
     "image": "/tv/la-red.webp"
   },
   {
     "name": "TVN CHILE",
     "number": 149,
-    "category": "Canales Nacionales",
+    "category": "Nacionales",
     "image": "/tv/tvn.webp"
+  },
+  {
+    "name": "TVN HD",
+    "number": 1149,
+    "category": "Nacionales",
+    "image": "/tv/tvn-hd.webp"
   },
   {
     "name": "24 HORAS",
     "number": 708,
-    "category": "Canales Internacionales",
+    "category": "Nacionales",
     "image": "/tv/24-horas.webp"
   },
   {
+    "name": "24 HORAS HD",
+    "number": 1153,
+    "category": "Nacionales",
+    "image": "/tv/24-horas.webp"
+  },
+
+  {
     "name": "Animal Planet",
     "number": 734,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
+    "image": "/tv/animal-planet.webp"
+  },
+  {
+    "name": "Animal Planet HD",
+    "number": 1734,
+    "category": "Internacionales",
     "image": "/tv/animal-planet.webp"
   },
   {
     "name": "ANTENA 3",
     "number": 762,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/antena-3.webp"
   },
   {
     "name": "BBC",
     "number": 768,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/bbc.webp"
   },
   {
     "name": "BLOOMBERG INFORMATIVO",
     "number": 710,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": ""
   },
   {
     "name": "Cable Noticias de Colombia",
     "number": 727,
-    "category": "Canales Internacionales",
-    "image": ""
+    "category": "Internacionales",
+    "image": "/tv/cable-noticias.webp"
   },
   {
     "name": "Canal 26",
     "number": 720,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
+    "image": "/tv/26.webp"
+  },
+  {
+    "name": "Canal 26 HD",
+    "number": 1720,
+    "category": "Internacionales",
     "image": "/tv/26.webp"
   },
   {
     "name": "Canal Rural",
     "number": 726,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/canal-rural.webp"
   },
   {
     "name": "CARACOL NACIONAL",
     "number": 772,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/caracol-television.webp"
   },
   {
     "name": "CNN Chile",
     "number": 707,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
+    "image": "/tv/cnn-chile.webp"
+  },
+  {
+    "name": "CNN Chile HD",
+    "number": 1154,
+    "category": "Internacionales",
     "image": "/tv/cnn-chile.webp"
   },
   {
     "name": "CNN EN ESPAÑOL",
     "number": 704,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/cnn.webp"
   },
   {
     "name": "CNNI",
     "number": 706,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/cnn.webp"
   },
   {
     "name": "Deutsche Welle",
     "number": 770,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/dw.webp"
   },
   {
     "name": "Discovery Channel",
     "number": 732,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
+    "image": "/tv/discovery.webp"
+  },
+  {
+    "name": "DISCOVERY CHANNEL HD",
+    "number": 1732,
+    "category": "Internacionales",
     "image": "/tv/discovery.webp"
   },
   {
     "name": "Discovery Turbo",
     "number": 736,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/discovery-turbo.webp"
   },
   {
     "name": "DNEWS",
     "number": 700,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
+    "image": "/tv/dnews.webp"
+  },
+  {
+    "name": "DNEWS HD",
+    "number": 1700,
+    "category": "Internacionales",
     "image": "/tv/dnews.webp"
   },
   {
     "name": "El tiempo TV",
     "number": 773,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/el-tiempo.webp"
   },
   {
     "name": "El Trece Intl",
     "number": 784,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/el-trece-internacional.webp"
   },
   {
     "name": "Film & Arts",
     "number": 746,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/film-arts.webp"
   },
   {
     "name": "History 2",
     "number": 744,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
+    "image": "/tv/history-2.webp"
+  },
+  {
+    "name": "HISTORY 2 HD",
+    "number": 1744,
+    "category": "Internacionales",
     "image": "/tv/history-2.webp"
   },
   {
     "name": "History Channel",
     "number": 742,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
+    "image": "/tv/history.webp"
+  },
+  {
+    "name": "HISTORY HD",
+    "number": 1742,
+    "category": "Internacionales",
     "image": "/tv/history.webp"
   },
   {
     "name": "National Geo.",
     "number": 730,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
+    "image": "/tv/national-geographic.webp"
+  },
+  {
+    "name": "NATGEO HD",
+    "number": 1730,
+    "category": "Internacionales",
     "image": "/tv/national-geographic.webp"
   },
   {
     "name": "Nuestra Tele Noticias 24hs",
     "number": 725,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/ntn24.webp"
   },
   {
     "name": "RAI Intl",
     "number": 766,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/rai-italia.webp"
   },
   {
     "name": "RCN Nuestra Tele",
     "number": 775,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/rcn-television.webp"
   },
   {
     "name": "RTP Intl",
     "number": 778,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/rtp-internacional.webp"
   },
   {
     "name": "TELEFE Intl",
     "number": 786,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/telefe.webp"
   },
   {
     "name": "TLC",
     "number": 740,
-    "category": "Canales Internacionales",
-    "image": ""
+    "category": "Internacionales",
+    "image": "/tv/tlc.webp"
+  },
+  {
+    "name": "TLC HD",
+    "number": 1740,
+    "category": "Internacionales",
+    "image": "/tv/tlc.webp"
   },
   {
     "name": "TODO NOTICIAS",
     "number": 716,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/tn.webp"
   },
   {
     "name": "UNIVISION",
     "number": 760,
-    "category": "Canales Internacionales",
+    "category": "Internacionales",
     "image": "/tv/univision.webp"
   },
   {
-    "name": "DSports",
-    "number": 610,
-    "category": "Canales de Deportes",
-    "image": "/tv/dsports.webp"
+    "name": "ANTENA 3 HD",
+    "number": 1762,
+    "category": "Internacionales",
+    "image": "/tv/antena-3.webp"
   },
   {
-    "name": "DSports 2",
-    "number": 612,
-    "category": "Canales de Deportes",
-    "image": "/tv/dsports-2.webp"
+    "name": "TV CIUDAD HD",
+    "number": 1789,
+    "category": "Internacionales",
+    "image": "/tv/tv-ciudad.webp"
   },
   {
-    "name": "DSports +",
-    "number": 613,
-    "category": "Canales de Deportes",
-    "image": "/tv/dsports-plus.webp"
+    "name": "TV Perú Noticias HD",
+    "number": 1724,
+    "category": "Internacionales",
+    "image": "/tv/tv-pe-noticias.webp"
   },
   {
-    "name": "DSports MOTOR",
-    "number": 614,
-    "category": "Canales de Deportes",
-    "image": "/tv/dsports-motor.webp"
-  },
-  {
-    "name": "DSports Fight",
-    "number": 615,
-    "category": "Canales de Deportes",
-    "image": "/tv/dsports-fight.webp"
-  },
-  {
-    "name": "ESPN Premium",
-    "number": 620,
-    "category": "Canales de Deportes",
-    "image": "/tv/espn-premium.webp"
-  },
-  {
-    "name": "ESPN",
-    "number": 621,
-    "category": "Canales de Deportes",
-    "image": "/tv/espn.webp"
-  },
-  {
-    "name": "ESPN 2",
-    "number": 622,
-    "category": "Canales de Deportes",
-    "image": "/tv/espn-2.webp"
-  },
-  {
-    "name": "ESPN 3",
-    "number": 623,
-    "category": "Canales de Deportes",
-    "image": "/tv/espn-3.webp"
-  },
-  {
-    "name": "ESPN 5",
-    "number": 625,
-    "category": "Canales de Deportes",
-    "image": "/tv/espn-5.webp"
-  },
-  {
-    "name": "ESPN 6",
-    "number": 626,
-    "category": "Canales de Deportes",
-    "image": "/tv/espn-6.webp"
-  },
-  {
-    "name": "ESPN 7",
-    "number": 627,
-    "category": "Canales de Deportes",
-    "image": "/tv/espn-7.webp"
-  },
-  {
-    "name": "GOLF CHANNEL",
-    "number": 628,
-    "category": "Canales de Deportes",
-    "image": "/tv/golf-latin-america.webp"
-  },
-  {
-    "name": "TyC Sports",
-    "number": 629,
-    "category": "Canales de Deportes",
-    "image": "/tv/tyc-sports.webp"
-  },
-  {
-    "name": "TNT Sports 3",
-    "number": 632,
-    "category": "Canales de Deportes",
-    "image": "/tv/tnt-sports.webp"
+    "name": "TV + HD",
+    "number": 1147,
+    "category": "Internacionales",
+    "image": "/tv/tv-plus.webp"
   },
   {
     "name": "CINECANAL OESTE",
     "number": 507,
-    "category": "Canales de Películas",
-    "image": ""
+    "category": "Películas y Series",
+    "image": "/tv/cinecanal.webp"
+  },
+  {
+    "name": "CINECANAL HD",
+    "number": 1507,
+    "category": "Películas y Series",
+    "image": "/tv/cinecanal.webp"
   },
   {
     "name": "CINELATINO",
     "number": 514,
-    "category": "Canales de Películas",
-    "image": ""
+    "category": "Películas y Series",
+    "image": "/tv/cine-latino.webp"
   },
   {
     "name": "CINEMAX",
     "number": 509,
-    "category": "Canales de Películas",
-    "image": ""
+    "category": "Películas y Series",
+    "image": "/tv/cinemax.webp"
+  },
+  {
+    "name": "CINEMAX HD",
+    "number": 1509,
+    "category": "Películas y Series",
+    "image": "/tv/cinemax.webp"
   },
   {
     "name": "DE PELICULA",
     "number": 516,
-    "category": "Canales de Películas",
-    "image": ""
+    "category": "Películas y Series",
+    "image": "/tv/de-pelicula.webp"
   },
   {
     "name": "DHE",
     "number": 513,
-    "category": "Canales de Películas",
-    "image": ""
+    "category": "Películas y Series",
+    "image": "/tv/dhe.webp"
   },
   {
     "name": "Golden Edge",
     "number": 517,
-    "category": "Canales de Películas",
+    "category": "Películas y Series",
     "image": "/tv/edge.webp"
   },
   {
     "name": "GOLDEN TV",
     "number": 503,
-    "category": "Canales de Películas",
-    "image": ""
+    "category": "Películas y Series",
+    "image": "/tv/golden.webp"
   },
   {
     "name": "HBO",
     "number": 524,
-    "category": "Canales de Películas",
-    "image": ""
+    "category": "Películas y Series",
+    "image": "/tv/hbo.webp"
+  },
+  {
+    "name": "HBO HD",
+    "number": 1524,
+    "category": "Películas y Series",
+    "image": "/tv/hbo.webp"
   },
   {
     "name": "PARAMOUNT",
     "number": 510,
-    "category": "Canales de Películas",
-    "image": ""
+    "category": "Películas y Series",
+    "image": "/tv/paramount-channel.webp"
+  },
+  {
+    "name": "PARAMOUNT HD",
+    "number": 1510,
+    "category": "Películas y Series",
+    "image": "/tv/paramount-channel.webp"
   },
   {
     "name": "SPACE",
     "number": 518,
-    "category": "Canales de Películas",
+    "category": "Películas y Series",
+    "image": "/tv/space.webp"
+  },
+  {
+    "name": "SPACE HD",
+    "number": 1518,
+    "category": "Películas y Series",
     "image": "/tv/space.webp"
   },
   {
     "name": "Studio Universal",
     "number": 508,
-    "category": "Canales de Películas",
+    "category": "Películas y Series",
+    "image": "/tv/studio-universal.webp"
+  },
+  {
+    "name": "STUDIO UNIVERSAL HD",
+    "number": 1508,
+    "category": "Películas y Series",
     "image": "/tv/studio-universal.webp"
   },
   {
     "name": "TNT - LATIN AMERICA",
     "number": 502,
-    "category": "Canales de Películas",
+    "category": "Películas y Series",
+    "image": "/tv/tnt.webp"
+  },
+  {
+    "name": "Sony Movies",
+    "number": 506,
+    "category": "Películas y Series",
+    "image": "/tv/sony-movies.webp"
+  },
+  {
+    "name": "Sony Movies HD",
+    "number": 1506,
+    "category": "Películas y Series",
+    "image": "/tv/sony-movies.webp"
+  },
+  {
+    "name": "DHE HD",
+    "number": 1513,
+    "category": "Películas y Series",
+    "image": "/tv/dhe.webp"
+  },
+  {
+    "name": "GOLDEN HD",
+    "number": 1503,
+    "category": "Películas y Series",
+    "image": "/tv/golden-plus.webp"
+  },
+  {
+    "name": "TNT HD",
+    "number": 1502,
+    "category": "Películas y Series",
+    "image": "/tv/tnt.webp"
+  },
+  {
+    "name": "UNIVERSAL HD",
+    "number": 1218,
+    "category": "Películas y Series",
+    "image": ""
+  },
+  {
+    "name": "FX HD",
+    "number": 1217,
+    "category": "Películas y Series",
+    "image": "/tv/fx-hd.webp"
+  },
+  {
+    "name": "SONYHD",
+    "number": 1208,
+    "category": "Películas y Series",
+    "image": ""
+  },
+  {
+    "name": "AXN HD",
+    "number": 1209,
+    "category": "Películas y Series",
+    "image": ""
+  },
+  {
+    "name": "AMC HD",
+    "number": 1210,
+    "category": "Películas y Series",
+    "image": "/tv/amc.webp"
+  },
+  {
+    "name": "STAR CHANNEL HD",
+    "number": 1204,
+    "category": "Películas y Series",
+    "image": "/tv/star-channel.webp"
+  },
+  {
+    "name": "WARNER HD",
+    "number": 1206,
+    "category": "Películas y Series",
+    "image": "/tv/warner-channel.webp"
+  },
+  {
+    "name": "TNT Series HD",
+    "number": 1213,
+    "category": "Películas y Series",
+    "image": ""
+  },
+  {
+    "name": "EUROPA EUROPA HD",
+    "number": 1515,
+    "category": "Películas y Series",
+    "image": ""
+  },
+  {
+    "name": "Portal Series HD",
+    "number": 1200,
+    "category": "Películas y Series",
+    "image": "/tv/portal.webp"
+  },
+
+  {
+    "name": "ATRES SERIES HD",
+    "number": 1214,
+    "category": "Películas y Series",
     "image": ""
   },
   {
     "name": "A&E",
     "number": 207,
     "category": "Canales de Variedades",
-    "image": ""
+    "image": "/tv/a-e.webp"
+  },
+  {
+    "name": "A&E HD",
+    "number": 1207,
+    "category": "Canales de Variedades",
+    "image": "/tv/a-e-hd.webp"
   },
   {
     "name": "ALACOCINA",
@@ -408,8 +578,20 @@
     "image": "/tv/comedy-central.webp"
   },
   {
+    "name": "Comedy Central HD",
+    "number": 1215,
+    "category": "Canales de Variedades",
+    "image": "/tv/comedy-central.webp"
+  },
+  {
     "name": "Discovery Home & Health",
     "number": 229,
+    "category": "Canales de Variedades",
+    "image": "/tv/discovery-h-h.webp"
+  },
+  {
+    "name": "HOME & HEALTH HD",
+    "number": 1229,
     "category": "Canales de Variedades",
     "image": "/tv/discovery-h-h.webp"
   },
@@ -420,8 +602,20 @@
     "image": "/tv/e.webp"
   },
   {
+    "name": "E! HD",
+    "number": 1222,
+    "category": "Canales de Variedades",
+    "image": ""
+  },
+  {
     "name": "EL GOURMET",
     "number": 232,
+    "category": "Canales de Variedades",
+    "image": "/tv/el-gourmet.webp"
+  },
+  {
+    "name": "EL GOURMET",
+    "number": 1232,
     "category": "Canales de Variedades",
     "image": "/tv/el-gourmet.webp"
   },
@@ -432,10 +626,22 @@
     "image": "/tv/food-network.webp"
   },
   {
+    "name": "FOOD NETWORK HD",
+    "number": 1233,
+    "category": "Canales de Variedades",
+    "image": "/tv/food-network.webp"
+  },
+  {
     "name": "HOLA TV",
     "number": 221,
     "category": "Canales de Variedades",
     "image": "/tv/hola-tv.webp"
+  },
+  {
+    "name": "¡HOLA! TV HD",
+    "number": 1221,
+    "category": "Canales de Variedades",
+    "image": ""
   },
   {
     "name": "Investigation Discovery",
@@ -444,8 +650,20 @@
     "image": ""
   },
   {
+    "name": "INVESTIGATION DISCOVERY HD",
+    "number": 1223,
+    "category": "Canales de Variedades",
+    "image": "/tv/discovery-id.webp"
+  },
+  {
     "name": "IVC",
     "number": 235,
+    "category": "Canales de Variedades",
+    "image": "/tv/ivc.webp"
+  },
+  {
+    "name": "IVC TV HD",
+    "number": 1235,
     "category": "Canales de Variedades",
     "image": "/tv/ivc.webp"
   },
@@ -472,6 +690,18 @@
     "number": 228,
     "category": "Canales de Variedades",
     "image": "/tv/lifetime.webp"
+  },
+  {
+    "name": "Lifetime HD",
+    "number": 1228,
+    "category": "Canales de Variedades",
+    "image": "/tv/lifetime.webp"
+  },
+  {
+    "name": "MTV HD",
+    "number": 1264,
+    "category": "Canales de Variedades",
+    "image": ""
   },
   {
     "name": "MTV 00s",
@@ -510,16 +740,22 @@
     "image": "/tv/on-directv.webp"
   },
   {
+    "name": "ON DIRECTV HD",
+    "number": 1201,
+    "category": "Canales de Variedades",
+    "image": "/tv/on-directv.webp"
+  },
+  {
     "name": "Pasiones",
     "number": 225,
     "category": "Canales de Variedades",
     "image": "/tv/pasiones.webp"
   },
   {
-    "name": "Sony Movies",
-    "number": 506,
+    "name": "Pasiones HD",
+    "number": 1225,
     "category": "Canales de Variedades",
-    "image": "/tv/sony-movies.webp"
+    "image": "/tv/pasiones.webp"
   },
   {
     "name": "TeenNick",
@@ -531,7 +767,7 @@
     "name": "Telemundo Intl",
     "number": 231,
     "category": "Canales de Variedades",
-    "image": ""
+    "image": "/tv/telemundo-internacional.webp"
   },
   {
     "name": "tlnovelas",
@@ -561,7 +797,13 @@
     "name": "TV Perú",
     "number": 795,
     "category": "Canales de Variedades",
-    "image": ""
+    "image": "/tv/tv-pe.webp"
+  },
+  {
+    "name": "TV Perú HD",
+    "number": 1795,
+    "category": "Canales de Variedades",
+    "image": "/tv/tv-pe.webp"
   },
   {
     "name": "USA",
@@ -570,34 +812,52 @@
     "image": "/tv/usa.webp"
   },
   {
-    "name": "Canal Luz",
-    "number": 354,
-    "category": "Canales Religiosos",
-    "image": "/tv/canal-luz.webp"
+    "name": "USA HD",
+    "number": 1219,
+    "category": "Canales de Variedades",
+    "image": "/tv/usa.webp"
   },
   {
-    "name": "DAYSTAR",
-    "number": 358,
-    "category": "Canales Religiosos",
+    "name": "HGTV",
+    "number": 1234,
+    "category": "Canales de Variedades",
+    "image": "/tv/hgtv.webp"
+  },
+  {
+    "name": "Ve Plus",
+    "number": 1236,
+    "category": "Canales de Variedades",
+    "image": "/tv/ve-plus.webp"
+  },
+  {
+    "name": "MusicTOP",
+    "number": 1265,
+    "category": "Canales de Variedades",
+    "image": "/tv/music-top.webp"
+  },
+  {
+    "name": "Tierra Mia HD",
+    "number": 1266,
+    "category": "Canales de Variedades",
     "image": ""
   },
   {
-    "name": "Enlace",
-    "number": 352,
-    "category": "Canales Religiosos",
-    "image": "/tv/enlace.webp"
+    "name": "DISCOVERY THEATER HD",
+    "number": 1731,
+    "category": "Canales de Variedades",
+    "image": ""
   },
   {
-    "name": "EWTN",
-    "number": 350,
-    "category": "Canales Religiosos",
-    "image": "/tv/ewtn.webp"
+    "name": "Discovery World",
+    "number": 1738,
+    "category": "Canales de Variedades",
+    "image": ""
   },
   {
-    "name": "Orbe 21",
-    "number": 351,
-    "category": "Canales Religiosos",
-    "image": "/tv/canal-orbe-21.webp"
+    "name": "Encuentro Internacional",
+    "number": 1750,
+    "category": "Canales de Variedades",
+    "image": "/tv/encuentro.webp"
   },
   {
     "name": "BABY TV HD",
@@ -612,14 +872,26 @@
     "image": "/tv/cartoon-network.webp"
   },
   {
+    "name": "Cartoon Network HD",
+    "number": 1304,
+    "category": "Canales Infantiles",
+    "image": "/tv/cartoon-network.webp"
+  },
+  {
     "name": "Cartoonito",
     "number": 334,
     "category": "Canales Infantiles",
-    "image": "/tv/cartonito.webp"
+    "image": "/tv/cartoonito.webp"
   },
   {
     "name": "Discovery Kids",
     "number": 330,
+    "category": "Canales Infantiles",
+    "image": "/tv/discovery-kids.webp"
+  },
+  {
+    "name": "DISCOVERY KIDS HD",
+    "number": 1330,
     "category": "Canales Infantiles",
     "image": "/tv/discovery-kids.webp"
   },
@@ -630,8 +902,20 @@
     "image": "/tv/disney-channel.webp"
   },
   {
+    "name": "DISNEY HD",
+    "number": 1312,
+    "category": "Canales Infantiles",
+    "image": "/tv/disney-channel.webp"
+  },
+  {
     "name": "Disney Junior",
     "number": 315,
+    "category": "Canales Infantiles",
+    "image": "/tv/disney-junior.webp"
+  },
+  {
+    "name": "Disney JR HD",
+    "number": 1315,
     "category": "Canales Infantiles",
     "image": "/tv/disney-junior.webp"
   },
@@ -642,8 +926,20 @@
     "image": "/tv/nick-jr.webp"
   },
   {
+    "name": "NICK JR HD",
+    "number": 1309,
+    "category": "Canales Infantiles",
+    "image": "/tv/nick-jr.webp"
+  },
+  {
     "name": "Nickelodeon",
     "number": 308,
+    "category": "Canales Infantiles",
+    "image": "/tv/nickelodeon.webp"
+  },
+  {
+    "name": "NICK HD",
+    "number": 1308,
     "category": "Canales Infantiles",
     "image": "/tv/nickelodeon.webp"
   },
@@ -654,22 +950,214 @@
     "image": "/tv/zoo-moo.webp"
   },
   {
+    "name": "DSports",
+    "number": 610,
+    "category": "Canales de Deportes",
+    "image": "/tv/dsports.webp"
+  },
+  {
+    "name": "DSports HD",
+    "number": 1610,
+    "category": "Canales de Deportes",
+    "image": "/tv/dsports.webp"
+  },
+  {
+    "name": "DSports 2",
+    "number": 612,
+    "category": "Canales de Deportes",
+    "image": "/tv/dsports-2.webp"
+  },
+  {
+    "name": "DSports 2 HD",
+    "number": 1612,
+    "category": "Canales de Deportes",
+    "image": "/tv/dsports-2.webp"
+  },
+  {
+    "name": "DSports +",
+    "number": 613,
+    "category": "Canales de Deportes",
+    "image": "/tv/dsports-plus.webp"
+  },
+  {
+    "name": "DSports + HD",
+    "number": 1613,
+    "category": "Canales de Deportes",
+    "image": "/tv/dsports-plus.webp"
+  },
+  {
+    "name": "DSports MOTOR",
+    "number": 614,
+    "category": "Canales de Deportes",
+    "image": "/tv/dsports-motor.webp"
+  },
+  {
+    "name": "DSports MOTOR HD",
+    "number": 1614,
+    "category": "Canales de Deportes",
+    "image": "/tv/dsports-motor.webp"
+  },
+  {
+    "name": "DSports Fight",
+    "number": 615,
+    "category": "Canales de Deportes",
+    "image": "/tv/dsports-fight.webp"
+  },
+  {
+    "name": "DSports Fight HD",
+    "number": 1615,
+    "category": "Canales de Deportes",
+    "image": "/tv/dsports-fight.webp"
+  },
+  {
+    "name": "ESPN Premium",
+    "number": 620,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn-premium.webp"
+  },
+  {
+    "name": "ESPN Premium HD",
+    "number": 1620,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn-premium.webp"
+  },
+  {
+    "name": "ESPN",
+    "number": 621,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn.webp"
+  },
+  {
+    "name": "ESPN HD",
+    "number": 1621,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn.webp"
+  },
+  {
+    "name": "ESPN 2",
+    "number": 622,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn-2.webp"
+  },
+  {
+    "name": "ESPN2 HD",
+    "number": 1622,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn-2.webp"
+  },
+  {
+    "name": "ESPN 3",
+    "number": 623,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn-3.webp"
+  },
+  {
+    "name": "ESPN3 HD",
+    "number": 1623,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn-3.webp"
+  },
+  {
+    "name": "ESPN 4 HD",
+    "number": 1624,
+    "category": "Canales de Deportes",
+    "image": ""
+  },
+  {
+    "name": "ESPN 5",
+    "number": 625,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn-5.webp"
+  },
+  {
+    "name": "ESPN 5 HD",
+    "number": 1625,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn-5.webp"
+  },
+  {
+    "name": "ESPN 6",
+    "number": 626,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn-6.webp"
+  },
+  {
+    "name": "ESPN 6 HD",
+    "number": 1626,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn-6.webp"
+  },
+  {
+    "name": "ESPN 7",
+    "number": 627,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn-7.webp"
+  },
+  {
+    "name": "ESPN 7 HD",
+    "number": 1627,
+    "category": "Canales de Deportes",
+    "image": "/tv/espn-7.webp"
+  },
+  {
+    "name": "GOLF CHANNEL",
+    "number": 628,
+    "category": "Canales de Deportes",
+    "image": "/tv/golf-latin-america.webp"
+  },
+  {
+    "name": "GOLF CHANNEL HD",
+    "number": 1628,
+    "category": "Canales de Deportes",
+    "image": "/tv/golf-latin-america.webp"
+  },
+  {
+    "name": "TyC Sports",
+    "number": 629,
+    "category": "Canales de Deportes",
+    "image": "/tv/tyc-sports.webp"
+  },
+  {
+    "name": "TYC SPORTS HD",
+    "number": 1629,
+    "category": "Canales de Deportes",
+    "image": "/tv/tyc-sports.webp"
+  },
+  {
+    "name": "TNT Sports 3",
+    "number": 632,
+    "category": "Canales de Deportes",
+    "image": "/tv/tnt-sports.webp"
+  },
+  {
+    "name": "TNT Sports 3 HD",
+    "number": 1632,
+    "category": "Canales de Deportes",
+    "image": "/tv/tnt-sports.webp"
+  },
+  {
+    "name": "Teletrak HD",
+    "number": 1638,
+    "category": "Canales de Deportes",
+    "image": "/tv/teletrak-tv.webp"
+  },
+  {
     "name": "HBO2",
     "number": 525,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/hbo-2.webp"
   },
   {
     "name": "HBO Plus",
     "number": 526,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/hbo-plus.webp"
   },
   {
     "name": "HBO Signature",
     "number": 528,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/hbo-signature.webp"
   },
   {
     "name": "HBO Plus (Oeste)",
@@ -729,25 +1217,25 @@
     "name": "Universal Crime SD E",
     "number": 574,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/universal-crime.webp"
   },
   {
     "name": "Universal Reality SD",
     "number": 575,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/universal-reality.webp"
   },
   {
     "name": "Universal Premiere SD O",
     "number": 576,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/universal-premiere.webp"
   },
   {
     "name": "Universal Crime SD O",
     "number": 577,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/universal-crime.webp"
   },
   {
     "name": "TNT Sports 2",
@@ -783,7 +1271,7 @@
     "name": "TV Globo",
     "number": 776,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/globo.webp"
   },
   {
     "name": "Zee TV",
@@ -843,7 +1331,7 @@
     "name": "Universal Premiere HD E",
     "number": 1571,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/universal-premiere.webp"
   },
   {
     "name": "Universal Cinema HD",
@@ -888,22 +1376,52 @@
     "image": "/tv/tnt-sports.webp"
   },
   {
+    "name": "Canal Luz",
+    "number": 354,
+    "category": "Canales Religiosos",
+    "image": "/tv/canal-luz.webp"
+  },
+  {
+    "name": "DAYSTAR",
+    "number": 358,
+    "category": "Canales Religiosos",
+    "image": "/tv/daystar-espanol.webp"
+  },
+  {
+    "name": "Enlace",
+    "number": 352,
+    "category": "Canales Religiosos",
+    "image": "/tv/enlace.webp"
+  },
+  {
+    "name": "EWTN",
+    "number": 350,
+    "category": "Canales Religiosos",
+    "image": "/tv/ewtn.webp"
+  },
+  {
+    "name": "Orbe 21",
+    "number": 351,
+    "category": "Canales Religiosos",
+    "image": "/tv/canal-orbe-21.webp"
+  },
+  {
     "name": "Hustler",
     "number": 470,
     "category": "Canales para Adultos",
-    "image": ""
+    "image": "/tv/hustler-tv.webp"
   },
   {
     "name": "Playboy TV",
     "number": 464,
     "category": "Canales para Adultos",
-    "image": ""
+    "image": "/tv/play-boy-tv.webp"
   },
   {
     "name": "Venus",
     "number": 468,
     "category": "Canales para Adultos",
-    "image": ""
+    "image": "/tv/venus.webp"
   },
   {
     "name": "XTSY",
@@ -927,24 +1445,24 @@
     "name": "Radio Caracol",
     "number": 982,
     "category": "Canales de Radio",
-    "image": ""
+    "image": "/tv/caracol-radio.webp"
   },
   {
     "name": "Radio Francia Intl",
     "number": 984,
     "category": "Canales de Radio",
-    "image": ""
+    "image": "/tv/rfi.webp"
   },
   {
     "name": "Unión Radio Noticias",
     "number": 296,
     "category": "Canales de Radio",
-    "image": ""
+    "image": "/tv/union-radio-noticias.webp"
   },
   {
     "name": "Unión Radio Noticias",
     "number": 980,
     "category": "Canales de Radio",
-    "image": ""
+    "image": "/tv/union-radio-noticias.webp"
   }
 ]
