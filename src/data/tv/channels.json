@@ -112,7 +112,7 @@
     "name": "BLOOMBERG INFORMATIVO",
     "number": 710,
     "category": "Internacionales",
-    "image": ""
+    "image": "/tv/boomberg-television.webp"
   },
   {
     "name": "Cable Noticias de Colombia",
@@ -466,7 +466,7 @@
     "name": "GOLDEN HD",
     "number": 1503,
     "category": "Películas y Series",
-    "image": "/tv/golden-plus.webp"
+    "image": ""
   },
   {
     "name": "TNT HD",
@@ -490,13 +490,13 @@
     "name": "SONYHD",
     "number": 1208,
     "category": "Películas y Series",
-    "image": ""
+    "image": "/tv/sony-channel.webp"
   },
   {
     "name": "AXN HD",
     "number": 1209,
     "category": "Películas y Series",
-    "image": ""
+    "image": "/tv/axn-hd.webp"
   },
   {
     "name": "AMC HD",
@@ -1061,7 +1061,7 @@
     "name": "ESPN 4 HD",
     "number": 1624,
     "category": "Canales de Deportes",
-    "image": ""
+    "image": "/tv/espn-4.webp"
   },
   {
     "name": "ESPN 5",
@@ -1163,7 +1163,7 @@
     "name": "HBO Plus (Oeste)",
     "number": 532,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/hbo-plus.webp"
   },
   {
     "name": "HBO Family",
@@ -1175,7 +1175,7 @@
     "name": "Max Prime (Oeste)",
     "number": 538,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/max-prime.webp"
   },
   {
     "name": "HBO MUNDI",
@@ -1199,19 +1199,19 @@
     "name": "Universal Premiere SD E",
     "number": 571,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/universal-premiere.webp"
   },
   {
     "name": "Universal Cinema SD",
     "number": 572,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/universal-cinema.webp"
   },
   {
     "name": "Universal Comedy SD",
     "number": 573,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/universal-comedy.webp"
   },
   {
     "name": "Universal Crime SD E",
@@ -1247,25 +1247,25 @@
     "name": "NBA TV INTL 1",
     "number": 644,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/nba-tv.webp"
   },
   {
     "name": "MLB Extra Innings",
     "number": 680,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/mlb-extra-innings.webp"
   },
   {
     "name": "MLB Extra Innings",
     "number": 681,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/mlb-extra-innings.webp"
   },
   {
     "name": "MLB Extra Innings",
     "number": 682,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/mlb-extra-innings.webp"
   },
   {
     "name": "TV Globo",
@@ -1277,43 +1277,43 @@
     "name": "Zee TV",
     "number": 780,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/zee-tv.webp"
   },
   {
     "name": "NHK",
     "number": 782,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/nhk-world-premium.webp"
   },
   {
     "name": "VTV",
     "number": 788,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/vtv.webp"
   },
   {
     "name": "VTV Plus",
     "number": 789,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/vtv-plus.webp"
   },
   {
     "name": "HBO2 HD",
     "number": 1525,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/hbo-2.webp"
   },
   {
     "name": "HBO Signature HD",
     "number": 1528,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/hbo-signature.webp"
   },
   {
     "name": "HBO Plus HD",
     "number": 1532,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/hbo-plus.webp"
   },
   {
     "name": "HBO Family HD",
@@ -1337,7 +1337,7 @@
     "name": "Universal Cinema HD",
     "number": 1572,
     "category": "Canales Premium",
-    "image": ""
+    "image": "/tv/universal-cinema.webp"
   },
   {
     "name": "Universal Comedy HD",
@@ -1427,13 +1427,13 @@
     "name": "XTSY",
     "number": 469,
     "category": "Canales para Adultos",
-    "image": ""
+    "image": "/tv/xtsy.webp"
   },
   {
     "name": "Cinema PPV",
     "number": 400,
     "category": "Canales PPV",
-    "image": ""
+    "image": "/tv/directv-cinema.webp"
   },
   {
     "name": "DIRECTV 4K SHOWCASE",
