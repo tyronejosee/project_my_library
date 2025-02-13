@@ -1,7 +1,7 @@
 {
   "workbench.colorCustomizations": {
-    "statusBarItem.remoteForeground": "#ffffff",
-    "titleBar.inactiveForeground": "#ffffff",
+    "statusBarItem.remoteForeground": "#000000",
+    "titleBar.inactiveForeground": "#000000",
     "titleBar.inactiveBackground": "#DAFF01",
     "selection.background": "#DAFF01",
     "textLink.foreground": "#DAFF01",
