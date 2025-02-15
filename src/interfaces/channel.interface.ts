@@ -1,6 +1,6 @@
 export interface IChannel {
   name: string;
-  number: number;
+  number: number | number[];
   category: string;
   image?: string;
 }
