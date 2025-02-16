@@ -82,20 +82,17 @@ export default function SearchBar() {
           ],
           innerWrapper: "bg-transparent",
           inputWrapper: [
-            "shadow-xl",
-            "bg-default-200/50",
-            "dark:bg-default/60",
-            "backdrop-blur-xl",
-            "backdrop-saturate-200",
-            "hover:bg-default-200/70",
-            "dark:hover:bg-default/70",
-            "group-data-[focus=true]:bg-default-200/50",
-            "dark:group-data-[focus=true]:bg-default/60",
+            "backdrop-blur-xl backdrop-saturate-150 bg-black/50",
+            // "hover:bg-black/90",
+            // "dark:hover:bg-default/70",
+            "active:bg-default/70",
+            // "group-data-[focus=true]:bg-black/90",
             "!cursor-text",
+            "border border-neutral-700"
           ],
         }}
         placeholder="Buscar..."
-        radius="full"
+        radius="lg"
         startContent={
           <SearchIcon className="text-black/50 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
         }

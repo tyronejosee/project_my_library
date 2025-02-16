@@ -32,7 +32,7 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} ${robotoMono.variable} dark`}
     >
-      <body className="antialiased">
+      <body className="antialiased mb-14">
         <ScrollToTop>
           <Toolbar />
           {children}
