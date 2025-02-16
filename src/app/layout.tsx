@@ -4,6 +4,7 @@ import Toolbar from "@/components/Toolbar";
 import { BackToTop } from "@/components/BackToTop";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
+import { TabToolbar } from "@/components/TabToolbar";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Toolbar />
           {children}
           <BackToTop />
+          <TabToolbar />
         </ScrollToTop>
       </body>
     </html>

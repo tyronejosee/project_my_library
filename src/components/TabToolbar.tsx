@@ -1,0 +1,28 @@
+"use client";
+import { Button } from "@heroui/react";
+import { NAV_ITEMS_MOBILE } from "@/config/constants";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+export const TabToolbar = () => {
+  const pathname = usePathname();
+  return (
+    <div className="z-50 fixed bottom-0 flex justify-center w-full bg-neutral-950 rounded-t-3xl border-t border-t-neutral-700 py-1 backdrop-blur-xl backdrop-saturate-150 bg-black/50 md:hidden">
+        {NAV_ITEMS_MOBILE.map((item) => {
+          const isActive = pathname === item.href;
+          return (
+            <Button
+            key={item.id}
+            color="default"
+            variant="light"
+            className={isActive ? "text-primary border-b border-b-primary" : ""}
+            as={Link}
+            href={item.href}
+            >
+              {item.label}
+            </Button>
+          );
+        })}
+    </div>
+  );
+};

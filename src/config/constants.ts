@@ -66,3 +66,10 @@ export const NAV_ITEMS = [
   { id: 2, href: "/series", label: "Series" },
   { id: 3, href: "/tv", label: "TV" },
 ];
+
+export const NAV_ITEMS_MOBILE = [
+  { id: 1, href: "/", label: "Dashboard" },
+  { id: 2, href: "/movies", label: "Películas" },
+  { id: 3, href: "/series", label: "Series" },
+  { id: 4, href: "/tv", label: "Televisión" },
+];

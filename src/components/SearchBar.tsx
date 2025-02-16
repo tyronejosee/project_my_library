@@ -73,7 +73,7 @@ export default function SearchBar() {
       <Input
         value={query}
         onChange={handleSearchChange}
-        className="w-full sm:w-[50vw]"
+        className="w-full"
         classNames={{
           input: [
             "bg-transparent",
@@ -95,7 +95,7 @@ export default function SearchBar() {
           ],
         }}
         placeholder="Buscar..."
-        radius="lg"
+        radius="full"
         startContent={
           <SearchIcon className="text-black/50 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
         }

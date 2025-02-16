@@ -65,12 +65,12 @@ export const BackToTop = () => {
         transition={{
           duration: 0.2,
         }}
-        className={cn("flex max-w-fit z-50 fixed bottom-4 inset-x-0 mx-auto")}
+        className={cn("flex max-w-fit z-30 fixed bottom-14 md:bottom-4 inset-x-0 mx-auto")}
       >
         <Button
           size="sm"
           onClick={scrollToTop}
-          className="bg-primary text-neutral-dark font-medium rounded-xl"
+          className="bg-primary text-neutral-dark font-medium rounded-xl border border-neutral-darkgrey"
         >
           <ChevronUp />
         </Button>

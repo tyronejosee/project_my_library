@@ -11,8 +11,8 @@ import {
   NavbarContent,
   NavbarItem,
 } from "@heroui/react";
-import { NAV_ITEMS } from "../config/constants";
 import SearchBar from "./SearchBar";
+import { NAV_ITEMS } from "../config/constants";
 
 export const AcmeLogo = () => {
   return (
@@ -31,56 +31,71 @@ export default function Toolbar() {
   const pathname = usePathname();
 
   return (
-    <Navbar disableAnimation isBordered maxWidth="2xl">
-      <NavbarContent justify="start">
-        <Link color="foreground" href="/">
-          <NavbarBrand>
-            <AcmeLogo />
-          </NavbarBrand>
-        </Link>
-      </NavbarContent>
-
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <Suspense fallback={<div>Loading...</div>}>
-          <SearchBar />
-        </Suspense>
-      </NavbarContent>
-
-      <NavbarContent
-      justify="end"
-      className="hidden sm:flex gap-4"
+    <>
+      <Navbar
+        disableAnimation
+        isBordered
+        maxWidth="2xl"
+        className="invisible md:visible"
       >
-        {NAV_ITEMS.map((item) => {
-          const isActive = pathname === item.href;
-          return (
-            <NavbarItem key={item.id} className="font-medium">
-              <Link href={item.href} className={isActive ? "text-primary" : ""}>
-                {item.label}
-              </Link>
-            </NavbarItem>
-          );
-        })}
-      </NavbarContent>
-      
-      <NavbarContent className="sm:hidden" justify="end">
-        <NavbarMenuToggle />
-      </NavbarContent>
+        <NavbarContent justify="start">
+          <Link color="foreground" href="/">
+            <NavbarBrand>
+              <AcmeLogo />
+            </NavbarBrand>
+          </Link>
+        </NavbarContent>
 
-      <NavbarMenu>
+        <NavbarContent justify="center">
+          <Suspense fallback={<div>Loading...</div>}>
+            <SearchBar />
+          </Suspense>
+        </NavbarContent>
+
+        <NavbarContent justify="end" className="hidden sm:flex gap-4">
+          {NAV_ITEMS.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <NavbarItem key={item.id} className="font-medium">
+                <Link
+                  href={item.href}
+                  className={isActive ? "text-primary" : ""}
+                >
+                  {item.label}
+                </Link>
+              </NavbarItem>
+            );
+          })}
+        </NavbarContent>
+
+        <NavbarContent className="sm:hidden" justify="end">
+          <NavbarMenuToggle />
+        </NavbarContent>
+
+        <NavbarMenu>
+          <Suspense fallback={<div>Loading...</div>}>
+            <SearchBar />
+          </Suspense>
+          {NAV_ITEMS.map((item, index) => {
+            const isActive = pathname === item.href;
+            return (
+              <NavbarMenuItem key={`${item}-${index}`}>
+                <Link
+                  href={item.href}
+                  className={isActive ? "text-primary" : ""}
+                >
+                  {item.label}
+                </Link>
+              </NavbarMenuItem>
+            );
+          })}
+        </NavbarMenu>
+      </Navbar>
+      <div className="z-50 fixed top-6 !w-full px-6 shadow-2xl md:hidden">
         <Suspense fallback={<div>Loading...</div>}>
           <SearchBar />
         </Suspense>
-        {NAV_ITEMS.map((item, index) => {
-          const isActive = pathname === item.href;
-          return (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link href={item.href} className={isActive ? "text-primary" : ""}>
-                {item.label}
-              </Link>
-            </NavbarMenuItem>
-          );
-        })}
-      </NavbarMenu>
-    </Navbar>
+      </div>
+    </>
   );
 }

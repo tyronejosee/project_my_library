@@ -1,4 +1,5 @@
 import MediaList from "@/components/MediaList";
+import { Heading } from "@/components/Heading";
 import { searchMedia } from "@/lib/utils";
 
 interface Props {
@@ -11,6 +12,7 @@ export default async function SearchPage({ searchParams }: Props) {
 
   return (
     <section className="max-w-screen-2xl mx-auto text-center py-6 px-6">
+      <Heading title={query ? `Resultados para "${query}"` : "Explorar"} />
       <SearchResults query={query} />
     </section>
   );
