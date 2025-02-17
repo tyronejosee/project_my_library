@@ -2,9 +2,9 @@
     {
         "drive_name": "D:",
         "volume_label": "Folders [Main]",
-        "total": "730 GB",
-        "used": "559 GB",
-        "free": "171 GB",
-        "percent_used": 77
+        "total": 730.05,
+        "used": 575.7,
+        "free": 154.35,
+        "percent_used": 79
     }
 ]

@@ -2,9 +2,9 @@
     {
         "drive_name": "C:",
         "volume_label": "Systems [Main]",
-        "total": "180 GB",
-        "used": "164 GB",
-        "free": "16 GB",
+        "total": 180.00,
+        "used": 164.00,
+        "free": 16.00,
         "percent_used": 91
     }
 ]

@@ -1,18 +1,17 @@
 "use client";
-
-import { CircularProgress, Chip } from "@heroui/react";
+import { Chip } from "@heroui/react";
 import { ALL_DISKS } from "@/config/constants";
 import { Heading } from "./Heading";
+import { DiskSummary } from "./DiskSummary";
+import { PieChart } from "./PieChart";
 
 export const Dashboard = () => {
   return (
-    <>
+    <div className="space-y-6">
       <Heading title="Dashboard" />
+      <DiskSummary />
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {ALL_DISKS.map((disk, index) => {
-          const strokeColor =
-            disk.percent_used > 90 ? "stroke-red-600" : "stroke-primary";
-
           return (
             <article
               key={index}
@@ -32,22 +31,12 @@ export const Dashboard = () => {
                     Disco {disk.drive_name}
                   </Chip>
                 </div>
-                <CircularProgress
-                  classNames={{
-                    svg: "w-44 h-44 drop-shadow-md",
-                    indicator: strokeColor,
-                    track: "stroke-white/10",
-                    value: "text-3xl font-semibold text-white",
-                  }}
-                  showValueLabel={true}
-                  strokeWidth={4}
-                  value={disk.percent_used}
-                />
+                <PieChart percent={disk.percent_used} />
               </div>
             </article>
           );
         })}
       </section>
-    </>
+    </div>
   );
 };

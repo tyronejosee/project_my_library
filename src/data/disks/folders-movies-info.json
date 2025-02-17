@@ -2,9 +2,9 @@
     {
         "drive_name": "E:",
         "volume_label": "Folders [Movies]",
-        "total": "3726 GB",
-        "used": "3717 GB",
-        "free": "9 GB",
+        "total": 3726.00,
+        "used": 3717.00,
+        "free": 9.00,
         "percent_used": 100
     }
 ]

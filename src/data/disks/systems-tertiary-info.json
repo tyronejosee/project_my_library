@@ -2,9 +2,9 @@
     {
         "drive_name": "C:",
         "volume_label": "Systems [Tertiary]",
-        "total": "50 GB",
-        "used": "32 GB",
-        "free": "18 GB",
+        "total": 50.00,
+        "used": 32.00,
+        "free": 18.00,
         "percent_used": 64
     }
 ]

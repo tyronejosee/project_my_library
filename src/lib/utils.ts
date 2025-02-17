@@ -1,6 +1,7 @@
-import { ALL_MEDIA } from "@/config/constants";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { ALL_MEDIA } from "@/config/constants";
+import { IMinimalDisk } from "@/interfaces/disk.interface";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -25,4 +26,13 @@ export const searchMedia = (query: string) => {
     item.folder_name.toLowerCase().includes(lowerQuery) ||
     item.file_name.toLowerCase().includes(lowerQuery)
   );
+};
+
+export const getDiskSummary = (disks: IMinimalDisk[]) => {
+  const total = Math.floor(disks.reduce((sum, disk) => sum + disk.total, 0));
+  const used = Math.floor(disks.reduce((sum, disk) => sum + disk.used, 0));
+  const free = Math.floor(disks.reduce((sum, disk) => sum + disk.free, 0));
+  const percentUsed = total > 0 ? Math.round((used / total) * 100) : 0;
+
+  return { total, used, free, percentUsed };
 };
