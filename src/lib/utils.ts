@@ -16,15 +16,15 @@ const shuffleArray = <T>(array: T[]): T[] => {
   return shuffledArray;
 };
 
-
 export const searchMedia = (query: string) => {
   if (!query) return shuffleArray(ALL_MEDIA).slice(0, 16);
 
   const lowerQuery = query.toLowerCase();
 
-  return ALL_MEDIA.filter((item) =>
-    item.folder_name.toLowerCase().includes(lowerQuery) ||
-    item.file_name.toLowerCase().includes(lowerQuery)
+  return ALL_MEDIA.filter(
+    (item) =>
+      item.folder_name.toLowerCase().includes(lowerQuery) ||
+      item.file_name.toLowerCase().includes(lowerQuery)
   );
 };
 
@@ -35,4 +35,11 @@ export const getDiskSummary = (disks: IMinimalDisk[]) => {
   const percentUsed = total > 0 ? Math.round((used / total) * 100) : 0;
 
   return { total, used, free, percentUsed };
+};
+
+export const normalizeString = (input: string) => {
+  return input
+    .replace(/-\d{4,}/g, "")
+    .toLowerCase()
+    .replace(/[-]/g, "+");
 };

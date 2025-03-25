@@ -1,11 +1,41 @@
-"use client";
-import { useParams } from "next/navigation";
-import { IMedia } from "@/interfaces/media.interface";
-import { ALL_SERIES } from "@/config/constants";
 import { MediaDetail } from "@/components/MediaDetail";
+import { ALL_SERIES } from "@/config/constants";
+import { IMedia } from "@/interfaces/media.interface";
+import { Metadata } from "next";
 
-export default function SeriesDetail() {
-  const { slug } = useParams();
+interface Props {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const serie = ALL_SERIES.find((serie) => serie.slug === slug);
+
+  if (!serie) {
+    return {
+      title: "Serie no encontrada",
+    };
+  }
+
+  return {
+    title: serie.folder_name,
+    metadataBase: new URL(
+      process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3000"
+    ),
+    openGraph: {
+      title: serie.folder_name,
+      images: serie.image ? [serie.image] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: serie.folder_name,
+      images: serie.image ? [serie.image] : [],
+    },
+  };
+}
+
+export default async function SeriesDetail({ params }: Props) {
+  const { slug } = await params;
   const serie: IMedia | undefined = ALL_SERIES.find(
     (serie) => serie.slug === slug
   );
@@ -14,7 +44,5 @@ export default function SeriesDetail() {
     return <p className="text-gray-500">Serie no encontrada.</p>;
   }
 
-  return (
-    <MediaDetail media={serie}/>
-  );
+  return <MediaDetail media={serie} />;
 }

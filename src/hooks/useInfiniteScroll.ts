@@ -1,8 +1,18 @@
-import { useState, useEffect } from "react";
+"use client";
+
+import { useState, useEffect, useRef } from "react";
 
 export function useInfiniteScroll<T>(items: T[], pageSize: number) {
-  const [data, setData] = useState<T[]>(items.slice(0, pageSize));
+  const dataRef = useRef<T[]>([]);
+  const [data, setData] = useState<T[]>([]);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const savedIndex = localStorage.getItem("lastLoadedIndex");
+    const initialIndex = savedIndex ? parseInt(savedIndex, 10) : 0;
+    dataRef.current = items.slice(0, initialIndex + pageSize);
+    setData(dataRef.current);
+  }, [items, pageSize]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,9 +28,17 @@ export function useInfiniteScroll<T>(items: T[], pageSize: number) {
     const loadMoreItems = () => {
       setLoading(true);
       setTimeout(() => {
-        const nextItems = items.slice(data.length, data.length + pageSize);
+        const nextItems = items.slice(
+          dataRef.current.length,
+          dataRef.current.length + pageSize
+        );
         if (nextItems.length > 0) {
-          setData((prevData) => [...prevData, ...nextItems]);
+          dataRef.current = [...dataRef.current, ...nextItems];
+          setData([...dataRef.current]);
+          localStorage.setItem(
+            "lastLoadedIndex",
+            dataRef.current.length.toString()
+          );
         }
         setLoading(false);
       }, 100);
@@ -28,7 +46,7 @@ export function useInfiniteScroll<T>(items: T[], pageSize: number) {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [data, loading, items, pageSize]);
+  }, [loading, items, pageSize]);
 
   return { data, loading };
 }

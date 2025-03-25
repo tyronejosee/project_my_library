@@ -80,15 +80,12 @@ export default function SearchBar() {
             "text-black/90 dark:text-white/90 text-center focus:text-left focus:ml-2",
             "placeholder:text-default-700/50 dark:placeholder:text-white/60",
           ],
-          innerWrapper: "bg-transparent",
+          innerWrapper: "bg-transparent md:w-[720px]",
           inputWrapper: [
             "backdrop-blur-xl backdrop-saturate-150 bg-black/50",
-            // "hover:bg-black/90",
-            // "dark:hover:bg-default/70",
             "active:bg-default/70",
-            // "group-data-[focus=true]:bg-black/90",
             "!cursor-text",
-            "border border-neutral-700"
+            "border border-neutral-700",
           ],
         }}
         placeholder="Buscar..."

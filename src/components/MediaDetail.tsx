@@ -1,15 +1,17 @@
 "use client";
 import { IMedia } from "@/interfaces/media.interface";
-import { Chip, Image } from "@heroui/react";
+import { normalizeString } from "@/lib/utils";
+import { Button, Chip, Image } from "@heroui/react";
 import {
-  BadgeCheck,
-  BadgeAlert,
-  Folder,
   Box,
-  Clapperboard,
-  FolderPlus,
-  FolderClock,
+  Play,
+  Folder,
   Calendar,
+  FolderPlus,
+  BadgeAlert,
+  BadgeCheck,
+  FolderClock,
+  Clapperboard,
 } from "lucide-react";
 
 interface Props {
@@ -39,27 +41,47 @@ export const MediaDetail = ({ media }: Props) => {
             <h1 className="text-3xl font-semibold">{media.folder_name}</h1>
             <span className="text-2xl text-neutral-500">{media.file_name}</span>
           </header>
-          {media.has_file ? (
-            <Chip
-              color="success"
-              startContent={<BadgeCheck size={18} />}
-              variant="solid"
+          <div className="flex items-center gap-4">
+            <Button
+              color="primary"
+              size="md"
+              className="font-medium text-neutral-950"
+              startContent={<Play size={18} />}
+              onPress={() =>
+                window.open(
+                  `https://www.youtube.com/results?search_query=${normalizeString(
+                    media.slug
+                  )}+trailer`,
+                  "_blank"
+                )
+              }
             >
-              Disponible
-            </Chip>
-          ) : (
-            <Chip
-              color="danger"
-              startContent={<BadgeAlert size={18} />}
-              variant="solid"
-            >
-              No Disponible
-            </Chip>
-          )}
+              Trailer
+            </Button>
+            {media.has_file ? (
+              <Chip
+                color="success"
+                startContent={<BadgeCheck size={18} />}
+                variant="solid"
+              >
+                Disponible
+              </Chip>
+            ) : (
+              <Chip
+                color="danger"
+                startContent={<BadgeAlert size={18} />}
+                variant="solid"
+              >
+                No Disponible
+              </Chip>
+            )}
+          </div>
         </figure>
 
         <article className="rounded-2xl p-4 text-center border border-neutral-800 bg-black space-y-4">
-          <h2 className="text-xl font-medium border-b border-neutral-800 pb-2">Información</h2>
+          <h2 className="text-xl font-medium border-b border-neutral-800 pb-2">
+            Información
+          </h2>
           <div className="flex justify-center gap-4">
             <ul>
               <li className="flex gap-2">
