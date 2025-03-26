@@ -21,11 +21,15 @@ export const searchMedia = (query: string) => {
 
   const lowerQuery = query.toLowerCase();
 
-  return ALL_MEDIA.filter(
-    (item) =>
-      item.folder_name.toLowerCase().includes(lowerQuery) ||
-      item.file_name.toLowerCase().includes(lowerQuery)
-  );
+  return ALL_MEDIA.filter((item) => {
+    return (
+      (item.folder_name &&
+        item.folder_name.toLowerCase().includes(lowerQuery)) ||
+      (item.file_name && item.file_name.toLowerCase().includes(lowerQuery)) ||
+      (item.genre && item.genre.toLowerCase().includes(lowerQuery)) ||
+      (item.location && item.location.toLowerCase().includes(lowerQuery))
+    );
+  });
 };
 
 export const getDiskSummary = (disks: IMinimalDisk[]) => {
@@ -43,3 +47,6 @@ export const normalizeString = (input: string) => {
     .toLowerCase()
     .replace(/[-]/g, "+");
 };
+
+export const delay = (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms));

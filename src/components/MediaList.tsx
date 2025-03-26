@@ -1,4 +1,5 @@
 "use client";
+
 import MediaCard from "./MediaCard";
 import { IMedia } from "@/interfaces/media.interface";
 
@@ -8,7 +9,7 @@ interface Props {
 
 export default function MediaList({ results }: Props) {
   if (results.length === 0) {
-    return <p className="text-gray-500">No se encontraron resultados.</p>;
+    return <div className="bg-neutral-300 w-full h-40"></div>;
   }
 
   return (
