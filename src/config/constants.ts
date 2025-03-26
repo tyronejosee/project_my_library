@@ -17,7 +17,6 @@ import folderMoviesMovies from "../data/movies/folders-movies-movies.json";
 import folderSecondaryMovies from "../data/movies/folders-secondary-movies.json";
 import folderTertiaryMovies from "../data/movies/folders-tertiary-movies.json";
 
-
 // Series
 import folderMainSeries from "../data/series/folders-main-series.json";
 import folderAnimesSeries from "../data/series/folders-animes-series.json";
@@ -49,15 +48,9 @@ export const ALL_MOVIES = [
   ...folderTertiaryMovies,
 ];
 
-export const ALL_SERIES = [
-  ...folderMainSeries,
-  ...folderAnimesSeries,
-];
+export const ALL_SERIES = [...folderMainSeries, ...folderAnimesSeries];
 
-export const ALL_MEDIA = [
-  ...ALL_MOVIES,
-  ...ALL_SERIES,
-];
+export const ALL_MEDIA = [...ALL_MOVIES, ...ALL_SERIES];
 
 export const NAV_CTA = { label: "Random", href: "/random" };
 
@@ -72,4 +65,15 @@ export const NAV_ITEMS_MOBILE = [
   { id: 2, href: "/movies", label: "Películas" },
   { id: 3, href: "/series", label: "Series" },
   { id: 4, href: "/tv", label: "Televisión" },
+];
+
+export const GENRE_CHOICES = [
+  { key: "action", name: "Action" },
+  { key: "animation", name: "Animation" },
+  { key: "adventure", name: "Adventure" },
+  { key: "comedy", name: "Comedy" },
+  { key: "drama", name: "Drama" },
+  { key: "documental", name: "Documental" },
+  { key: "fantasy", name: "Fantasy" },
+  { key: "horror", name: "Horror" },
 ];
