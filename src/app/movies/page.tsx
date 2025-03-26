@@ -1,19 +1,23 @@
-"use client";
-import { ALL_MOVIES } from "@/config/constants";
-import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
-import MediaList from "@/components/MediaList";
 import { Heading } from "@/components/Heading";
+import LoadMovies from "@/components/LoadMovies";
 
-const PAGE_SIZE = 28;
+// interface Props {
+//   searchParams: IMediaQueryParams;
+// }
 
-export default function MoviesPage() {
-  const { data: movies, loading } = useInfiniteScroll(ALL_MOVIES, PAGE_SIZE);
+export default async function MoviesPage() {
+  // const params = await searchParams;
+  // const { genre } = params || {};
+
+  // const filteredParams = {
+  //   ...(genre && { genre }),
+  // };
 
   return (
     <section className="max-w-screen-2xl mx-auto text-center py-6 px-6">
-      <Heading title="Películas" />
-      <MediaList results={movies} />
-      {loading && <div>Cargando...</div>}
+      <Heading title="Movies" />
+      {/* <MediaToolbar /> */}
+      <LoadMovies />
     </section>
   );
 }
