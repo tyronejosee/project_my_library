@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import MediaList from "./MediaList";
-import Spinner from "./Spinner";
+import { Spinner } from "@/components/common";
+import { MediaList } from "@/components/media";
 import { useSeriesStore } from "@/store/seriesStore";
 import { ALL_SERIES } from "@/config/constants";
 import { delay } from "@/lib/utils";

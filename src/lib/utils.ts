@@ -1,7 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { ALL_MEDIA } from "@/config/constants";
-import { IMinimalDisk } from "@/interfaces/disk.interface";
+import { MinimalDisk } from "@/interfaces";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -32,7 +32,7 @@ export const searchMedia = (query: string) => {
   });
 };
 
-export const getDiskSummary = (disks: IMinimalDisk[]) => {
+export const getDiskSummary = (disks: MinimalDisk[]) => {
   const total = Math.floor(disks.reduce((sum, disk) => sum + disk.total, 0));
   const used = Math.floor(disks.reduce((sum, disk) => sum + disk.used, 0));
   const free = Math.floor(disks.reduce((sum, disk) => sum + disk.free, 0));

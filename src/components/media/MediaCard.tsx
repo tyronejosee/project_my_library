@@ -1,15 +1,17 @@
 "use client";
-import { IMedia } from "@/interfaces/media.interface";
-import { Card, CardFooter, Image } from "@heroui/react";
-import Link from "next/link";
+
 import React from "react";
+import Link from "next/link";
+import { Card, CardFooter, Image } from "@heroui/react";
+import { Media } from "@/interfaces";
 
 interface Props {
-  media: IMedia;
+  media: Media;
 }
 
 export default function MediaCard({ media }: Props) {
   const imageWidth = media.type === "Movies" ? 165 : 182;
+
   return (
     <article className="group">
       <Link href={`/${media.type.toLowerCase()}/${media.slug}`} passHref>
@@ -34,7 +36,9 @@ export default function MediaCard({ media }: Props) {
             />
           </div>
           <CardFooter className="flex flex-col text-md h-16">
-            <h2 className="text-sm font-medium line-clamp-2">{media.folder_name}</h2>
+            <h2 className="text-sm font-medium line-clamp-2">
+              {media.folder_name}
+            </h2>
           </CardFooter>
         </Card>
       </Link>

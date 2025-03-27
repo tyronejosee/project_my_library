@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import {
   motion,
@@ -10,10 +11,10 @@ import { Button } from "@heroui/button";
 import { ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export const BackToTop = () => {
+export default function BackToTop() {
   const { scrollYProgress } = useScroll();
-  const [visible, setVisible] = useState(false);
-  const [showing, setShowing] = useState(false);
+  const [visible, setVisible] = useState<boolean>(false);
+  const [showing, setShowing] = useState<boolean>(false);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
@@ -79,4 +80,4 @@ export const BackToTop = () => {
       </motion.div>
     </AnimatePresence>
   );
-};
+}

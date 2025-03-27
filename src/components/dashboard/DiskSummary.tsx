@@ -1,8 +1,8 @@
+import { PieChart } from "@/components/dashboard";
 import { ALL_DISKS } from "@/config/constants";
 import { getDiskSummary } from "@/lib/utils";
-import { PieChart } from "./PieChart";
 
-export const DiskSummary = () => {
+export default function DiskSummary() {
   const { total, used, free, percentUsed } = getDiskSummary(ALL_DISKS);
 
   return (
@@ -16,7 +16,6 @@ export const DiskSummary = () => {
           zIndex: -1,
         }}
       />
-
       <h2 className="text-2xl font-semibold">Resumen</h2>
       <div className="flex justify-center items-center">
         <PieChart percent={percentUsed} />
@@ -28,4 +27,4 @@ export const DiskSummary = () => {
       </div>
     </section>
   );
-};
+}

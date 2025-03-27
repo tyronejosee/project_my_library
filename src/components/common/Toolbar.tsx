@@ -1,5 +1,5 @@
 "use client";
-import { Suspense } from "react";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -11,21 +11,10 @@ import {
   NavbarContent,
   NavbarItem,
 } from "@heroui/react";
-import SearchBar from "./SearchBar";
-import { NAV_ITEMS } from "../config/constants";
-
-export const AcmeLogo = () => {
-  return (
-    <svg fill="none" height="36" viewBox="0 0 32 32" width="36">
-      <path
-        clipRule="evenodd"
-        d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
-        fill="currentColor"
-        fillRule="evenodd"
-      />
-    </svg>
-  );
-};
+import { SearchBar } from "@/components/common";
+import { Logo } from "@/components/icons";
+import { NAV_ITEMS } from "@/config/constants";
+import { Suspense } from "react";
 
 export default function Toolbar() {
   const pathname = usePathname();
@@ -41,13 +30,13 @@ export default function Toolbar() {
         <NavbarContent justify="start">
           <Link color="foreground" href="/">
             <NavbarBrand>
-              <AcmeLogo />
+              <Logo />
             </NavbarBrand>
           </Link>
         </NavbarContent>
 
         <NavbarContent justify="center">
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div>Cargando...</div>}>
             <SearchBar />
           </Suspense>
         </NavbarContent>
@@ -73,7 +62,7 @@ export default function Toolbar() {
         </NavbarContent>
 
         <NavbarMenu>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div>Cargando...</div>}>
             <SearchBar />
           </Suspense>
           {NAV_ITEMS.map((item, index) => {
@@ -92,7 +81,7 @@ export default function Toolbar() {
         </NavbarMenu>
       </Navbar>
       <div className="fixed top-6 z-50 w-full px-6 shadow-2xl md:hidden">
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Cargando...</div>}>
           <SearchBar />
         </Suspense>
       </div>

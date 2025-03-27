@@ -1,9 +1,20 @@
-import MediaList from "@/components/MediaList";
-import { Heading } from "@/components/Heading";
+import { Heading } from "@/components/common";
+import { MediaList } from "@/components/media";
 import { searchMedia } from "@/lib/utils";
 
 interface Props {
   searchParams: Promise<{ query?: string }>;
+}
+
+export async function generateMetadata({ searchParams }: Props) {
+  const resolvedSearchParams = await searchParams;
+  const query = resolvedSearchParams?.query ?? "";
+
+  return {
+    title: `${
+      query ? `Resultados para "${query}"` : "Explorar"
+    } - Tyrone's Collection`,
+  };
 }
 
 export default async function SearchPage({ searchParams }: Props) {

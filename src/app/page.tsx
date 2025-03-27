@@ -1,13 +1,12 @@
-import { Dashboard } from "@/components/Dashboard";
+import { Dashboard } from "@/components/dashboard";
 
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tyrone's Collection",
+  title: "Dashboard - Tyrone's Collection",
   description:
     "A place to store and organize a personal collection of movies and series. Keep track of favorites, discover new titles, and manage what you've watched.",
-  keywords:
-    "collection, movies, series",
+  keywords: "collection, movies, series",
   openGraph: {
     title: "Tyrone's Collection",
     description:

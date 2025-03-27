@@ -1,11 +1,11 @@
 "use client";
-import { Chip } from "@heroui/react";
-import { ALL_DISKS } from "@/config/constants";
-import { Heading } from "./Heading";
-import { DiskSummary } from "./DiskSummary";
-import { PieChart } from "./PieChart";
 
-export const Dashboard = () => {
+import { Chip } from "@heroui/react";
+import { Heading } from "@/components/common";
+import { DiskSummary, PieChart } from "@/components/dashboard";
+import { ALL_DISKS } from "@/config/constants";
+
+export default function Dashboard() {
   return (
     <div className="space-y-6">
       <Heading title="Dashboard" />
@@ -39,4 +39,4 @@ export const Dashboard = () => {
       </section>
     </div>
   );
-};
+}

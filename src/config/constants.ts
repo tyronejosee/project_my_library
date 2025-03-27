@@ -21,11 +21,16 @@ import folderTertiaryMovies from "../data/movies/folders-tertiary-movies.json";
 import folderMainSeries from "../data/series/folders-main-series.json";
 import folderAnimesSeries from "../data/series/folders-animes-series.json";
 
+// TV
+import channels from "../data/tv/channels.json";
+
 export const PROJECT_NAME = "Tyrone's Collection";
 
 export const COMPANY_DESCRIPTION = `
 lorem ipsum
 `;
+
+export const ALL_TV_CHANNELS = [...channels];
 
 export const ALL_DISKS = [
   ...folderMainInfo,

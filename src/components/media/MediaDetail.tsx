@@ -1,6 +1,5 @@
 "use client";
-import { IMedia } from "@/interfaces/media.interface";
-import { normalizeString } from "@/lib/utils";
+
 import { Button, Chip, Image } from "@heroui/react";
 import {
   Box,
@@ -13,12 +12,14 @@ import {
   FolderClock,
   Clapperboard,
 } from "lucide-react";
+import { Media } from "@/interfaces";
+import { normalizeString } from "@/lib/utils";
 
 interface Props {
-  media: IMedia;
+  media: Media;
 }
 
-export const MediaDetail = ({ media }: Props) => {
+export default function MediaDetail({ media }: Props) {
   const imageWidth = media.type === "Movies" ? 165 : 182;
 
   return (
@@ -116,4 +117,4 @@ export const MediaDetail = ({ media }: Props) => {
       </section>
     </section>
   );
-};
+}

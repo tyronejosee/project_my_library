@@ -1,20 +1,21 @@
 "use client";
-import { Accordion, AccordionItem } from "@heroui/react";
-import { IChannel } from "@/interfaces/channel.interface";
-import TVCard from "@/components/TVCard";
-import { Heading } from "@/components/Heading";
-import channels from "../../data/tv/channels.json";
 
-const groupedChannels = channels.reduce((acc, channel) => {
+import { Accordion, AccordionItem } from "@heroui/react";
+import { Heading } from "@/components/common";
+import { TVCard } from "@/components/media";
+import { ALL_TV_CHANNELS } from "@/config/constants";
+import { Channel } from "@/interfaces";
+
+const groupedChannels = ALL_TV_CHANNELS.reduce((acc, channel) => {
   acc[channel.category] = acc[channel.category] || [];
   acc[channel.category].push(channel);
   return acc;
-}, {} as Record<string, IChannel[]>);
+}, {} as Record<string, Channel[]>);
 
 export default function TVPage() {
   return (
     <section className="max-w-screen-2xl mx-auto text-center py-6 px-6">
-      <Heading title="Televisión"/>
+      <Heading title="Televisión" />
       <Accordion defaultExpandedKeys={["Nacionales"]}>
         {Object.entries(groupedChannels).map(([category, channels]) => (
           <AccordionItem

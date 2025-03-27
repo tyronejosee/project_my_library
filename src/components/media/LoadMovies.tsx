@@ -2,11 +2,11 @@
 
 import { useCallback, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import MediaList from "./MediaList";
-import Spinner from "./Spinner";
+import { Spinner } from "@/components/common";
+import { MediaList } from "@/components/media";
+import { useMoviesStore } from "@/store/moviesStore";
 import { ALL_MOVIES } from "@/config/constants";
 import { delay } from "@/lib/utils";
-import { useMoviesStore } from "@/store/moviesStore";
 
 export default function LoadMovies() {
   const { movies, setMovies, page, setPage } = useMoviesStore();

@@ -1,7 +1,7 @@
-import { MediaDetail } from "@/components/MediaDetail";
-import { ALL_SERIES } from "@/config/constants";
-import { IMedia } from "@/interfaces/media.interface";
 import { Metadata } from "next";
+import { MediaDetail } from "@/components/media";
+import { ALL_SERIES } from "@/config/constants";
+import { Media } from "@/interfaces";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SeriesDetail({ params }: Props) {
   const { slug } = await params;
-  const serie: IMedia | undefined = ALL_SERIES.find(
+  const serie: Media | undefined = ALL_SERIES.find(
     (serie) => serie.slug === slug
   );
 

@@ -1,8 +1,10 @@
+"use client";
+
 import { useState, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Input } from "@heroui/react";
 
-export const SearchIcon = (props: React.SVGProps<SVGSVGElement>) => {
+export function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       aria-hidden="true"
@@ -30,7 +32,7 @@ export const SearchIcon = (props: React.SVGProps<SVGSVGElement>) => {
       />
     </svg>
   );
-};
+}
 
 export default function SearchBar() {
   const router = useRouter();
@@ -49,6 +51,8 @@ export default function SearchBar() {
     }
   }, [searchParams, isClient]);
 
+  if (!isClient) return null;
+
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = e.target.value;
     setQuery(searchValue);
@@ -59,14 +63,12 @@ export default function SearchBar() {
 
     debounceTimeoutRef.current = setTimeout(() => {
       const params = new URLSearchParams();
-      if (searchValue.trim()) {
+      if (searchValue.trim().length > 4) {
         params.set("query", searchValue);
       }
       router.push(`/search?${params.toString()}`);
     }, 100);
   };
-
-  if (!isClient) return null;
 
   return (
     <form onSubmit={(e) => e.preventDefault()}>

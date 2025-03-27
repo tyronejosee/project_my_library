@@ -1,10 +1,10 @@
 import { create } from "zustand";
-import { IMedia } from "@/interfaces/media.interface";
+import { Media } from "@/interfaces";
 
 interface SeriesState {
-  series: IMedia[];
+  series: Media[];
   page: number;
-  setSeries: (series: IMedia[]) => void;
+  setSeries: (series: Media[]) => void;
   setPage: (page: number) => void;
   resetSeries: () => void;
 }

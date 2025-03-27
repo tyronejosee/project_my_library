@@ -1,8 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { GENRE_CHOICES } from "@/config/constants";
 import { Select, SelectItem } from "@heroui/react";
+import { GENRE_CHOICES } from "@/config/constants";
 
 export default function MediaToolbar() {
   const router = useRouter();

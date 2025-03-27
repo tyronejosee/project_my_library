@@ -1,10 +1,10 @@
+import { Media } from "@/interfaces";
 import { create } from "zustand";
-import { IMedia } from "@/interfaces/media.interface";
 
 interface MoviesState {
-  movies: IMedia[];
+  movies: Media[];
   page: number;
-  setMovies: (movies: IMedia[]) => void;
+  setMovies: (movies: Media[]) => void;
   setPage: (page: number) => void;
   resetMovies: () => void;
 }

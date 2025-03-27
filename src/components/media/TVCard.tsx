@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
+
 import { Card, CardFooter, Image } from "@heroui/react";
-import { IChannel } from "@/interfaces/channel.interface";
+import { Channel } from "@/interfaces";
 
 interface Props {
-  channel: IChannel;
+  channel: Channel;
 }
 
 export default function TVCard({ channel }: Props) {

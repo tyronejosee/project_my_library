@@ -4,7 +4,7 @@ interface Props {
   percent: number;
 }
 
-export const PieChart = ({ percent }: Props) => {
+export default function PieChart({ percent }: Props) {
   const strokeColor = percent > 90 ? "stroke-red-600" : "stroke-primary";
   return (
     <CircularProgress
@@ -19,4 +19,4 @@ export const PieChart = ({ percent }: Props) => {
       value={percent}
     />
   );
-};
+}

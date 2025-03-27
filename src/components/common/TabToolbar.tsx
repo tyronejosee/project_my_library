@@ -1,10 +1,11 @@
 "use client";
+
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { Button } from "@heroui/react";
 import { NAV_ITEMS_MOBILE } from "@/config/constants";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 
-export const TabToolbar = () => {
+export default function TabToolbar() {
   const pathname = usePathname();
   return (
     <nav className="flex justify-center items-center z-50 fixed bottom-0 w-full rounded-t-3xl border-t border-t-neutral-700 py-2 backdrop-blur-xl backdrop-saturate-150 bg-black/50 md:hidden">
@@ -25,4 +26,4 @@ export const TabToolbar = () => {
       })}
     </nav>
   );
-};
+}

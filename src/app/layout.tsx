@@ -1,10 +1,14 @@
+import "./globals.css";
+
 import type { Metadata } from "next";
 import { Outfit, Roboto_Mono } from "next/font/google";
-import Toolbar from "@/components/Toolbar";
-import { BackToTop } from "@/components/BackToTop";
-import "./globals.css";
-import ScrollToTop from "@/components/ScrollToTop";
-import { TabToolbar } from "@/components/TabToolbar";
+
+import {
+  TabToolbar,
+  Toolbar,
+  ScrollToTop,
+  BackToTop,
+} from "@/components/common";
 
 const outfit = Outfit({
   variable: "--font-outfit",

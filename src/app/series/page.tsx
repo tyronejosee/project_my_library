@@ -1,7 +1,12 @@
-"use client";
+import { Metadata } from "next";
+import { Heading } from "@/components/common";
+import { LoadSeries } from "@/components/media";
 
-import { Heading } from "@/components/Heading";
-import LoadSeries from "@/components/LoadSeries";
+export const metadata: Metadata = {
+  title: "Series - Tyrone's Collection",
+  description:
+    "Series page of Tyrone's Collection. A place to store and organize a personal collection of movies and series. Keep track of favorites, discover new titles, and manage what you've watched.",
+};
 
 export default function SeriesPage() {
   return (
