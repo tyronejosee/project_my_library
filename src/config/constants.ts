@@ -57,19 +57,18 @@ export const ALL_SERIES = [...folderMainSeries, ...folderAnimesSeries];
 
 export const ALL_MEDIA = [...ALL_MOVIES, ...ALL_SERIES];
 
-export const NAV_CTA = { label: "Random", href: "/random" };
-
 export const NAV_ITEMS = [
   { id: 1, href: "/movies", label: "Películas" },
   { id: 2, href: "/series", label: "Series" },
   { id: 3, href: "/tv", label: "TV" },
 ];
 
-export const NAV_ITEMS_MOBILE = [
-  { id: 1, href: "/", label: "Dashboard" },
-  { id: 2, href: "/movies", label: "Películas" },
-  { id: 3, href: "/series", label: "Series" },
-  { id: 4, href: "/tv", label: "Televisión" },
+export const HERO_IMAGES = [
+  "/home/hero-001.webp",
+  "/home/hero-002.webp",
+  "/home/hero-003.webp",
+  "/home/hero-004.webp",
+  "/home/hero-005.webp",
 ];
 
 export const GENRE_CHOICES = [
