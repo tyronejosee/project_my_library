@@ -80,12 +80,12 @@ export default function Toolbar() {
           })}
         </NavbarMenu>
       </Navbar>
-      <div className="fixed top-6 z-50 w-full px-6 shadow-2xl md:hidden">
+      <div className="fixed top-4 z-50 w-full px-4 shadow-2xl md:hidden">
         <Suspense fallback={<div>Cargando...</div>}>
           <SearchBar />
         </Suspense>
       </div>
-      <div className="fixed top-0 z-20 bg-gradient-to-b from-black/100 to-black/0 h-20 w-full"></div>
+      <div className="fixed top-0 z-20 bg-gradient-to-b from-neutral-950/80 to-neutral-950/0 h-20 w-full"></div>
     </>
   );
 }

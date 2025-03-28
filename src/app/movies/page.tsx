@@ -21,10 +21,10 @@ export default async function MoviesPage() {
   // };
 
   return (
-    <section className="max-w-screen-2xl mx-auto text-center py-6 px-6">
+    <main className="max-w-screen-2xl mx-auto text-center py-6 px-6">
       <Heading title="Movies" />
       {/* <MediaToolbar /> */}
       <LoadMovies />
-    </section>
+    </main>
   );
 }

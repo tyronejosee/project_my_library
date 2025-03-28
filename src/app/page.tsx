@@ -1,33 +1,92 @@
-import { Dashboard } from "@/components/dashboard";
+import { ContentSection } from "@/components/home";
+import {
+  getActionMovies,
+  getAdventureMovies,
+  getAnimationMovies,
+  getComedyMovies,
+  getDramaMovies,
+  // getFantasyMovies,
+  getHorrorMovies,
+  getSuspenseMovies,
+} from "@/services/movieService";
+import { getAnimationSeries } from "@/services/serieService";
+import HeroSection from "@/components/home/HeroSection";
 
-import { Metadata } from "next";
+export default function Home() {
+  const numberOfItems = 28;
 
-export const metadata: Metadata = {
-  title: "Dashboard - Tyrone's Collection",
-  description:
-    "A place to store and organize a personal collection of movies and series. Keep track of favorites, discover new titles, and manage what you've watched.",
-  keywords: "collection, movies, series",
-  openGraph: {
-    title: "Tyrone's Collection",
-    description:
-      "A place to store and organize a personal collection of movies and series. Keep track of favorites, discover new titles, and manage what you've watched.",
-    url: "https://tyones-collection.vercel.app/",
-    images: [
-      {
-        url: "https://res.cloudinary.com/dwyvfa5dj/image/upload/v1727889010/Atlanta%20Ink%20API/atlanta-ink-seo.webp",
-        width: 1280,
-        height: 720,
-        alt: "Tyrone's Collection Seo",
-      },
-    ],
-    siteName: "Tyrone's Collection",
-  },
-};
+  // Movies
+  const actionMovies = getActionMovies(numberOfItems);
+  const adventureMovies = getAdventureMovies(numberOfItems);
+  const animationMovies = getAnimationMovies(numberOfItems);
+  const comedyMovies = getComedyMovies(numberOfItems);
+  const dramaMovies = getDramaMovies(numberOfItems);
+  // const fantasyMovies = getFantasyMovies(numberOfItems);
+  const horrorMovies = getHorrorMovies(numberOfItems);
+  const suspenseMovies = getSuspenseMovies(numberOfItems);
 
-export default function HomePage() {
+  // Series
+  const animationSeries = getAnimationSeries(numberOfItems);
+
   return (
-    <main className="max-w-screen-2xl mx-auto text-center py-6 px-6">
-      <Dashboard />
+    <main>
+      <HeroSection />
+
+      {/* Content Sections */}
+      <ContentSection
+        media={animationSeries}
+        title="Animación"
+        subtitle="Series"
+        pathname="series"
+      />
+      <ContentSection
+        media={actionMovies}
+        title="Acción"
+        subtitle="Películas"
+        pathname="movies"
+      />
+      <ContentSection
+        media={adventureMovies}
+        title="Aventura"
+        subtitle="Películas"
+        pathname="movies"
+      />
+      <ContentSection
+        media={animationMovies}
+        title="Animación"
+        subtitle="Películas"
+        pathname="movies"
+      />
+      <ContentSection
+        media={comedyMovies}
+        title="Comedia"
+        subtitle="Películas"
+        pathname="movies"
+      />
+      <ContentSection
+        media={dramaMovies}
+        title="Drama"
+        subtitle="Películas"
+        pathname="movies"
+      />
+      {/* <ContentSection
+        media={fantasyMovies}
+        title="Fantasía"
+        subtitle="Películas"
+        pathname="movies"
+      /> */}
+      <ContentSection
+        media={horrorMovies}
+        title="Terror"
+        subtitle="Películas"
+        pathname="movies"
+      />
+      <ContentSection
+        media={suspenseMovies}
+        title="Suspenso"
+        subtitle="Películas"
+        pathname="movies"
+      />
     </main>
   );
 }

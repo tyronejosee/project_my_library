@@ -14,7 +14,7 @@ const groupedChannels = ALL_TV_CHANNELS.reduce((acc, channel) => {
 
 export default function TVPage() {
   return (
-    <section className="max-w-screen-2xl mx-auto text-center py-6 px-6">
+    <main className="max-w-screen-2xl mx-auto text-center py-6 px-6">
       <Heading title="Televisión" />
       <Accordion defaultExpandedKeys={["Nacionales"]}>
         {Object.entries(groupedChannels).map(([category, channels]) => (
@@ -31,6 +31,6 @@ export default function TVPage() {
           </AccordionItem>
         ))}
       </Accordion>
-    </section>
+    </main>
   );
 }
