@@ -23,7 +23,7 @@ export default function MediaDetail({ media }: Props) {
   const imageWidth = media.type === "Movies" ? 165 : 182;
 
   return (
-    <section className="min-h-[calc(100vh-20vh)] flex justify-center items-center relative">
+    <main className="min-h-[calc(100vh-20vh)] flex items-center justify-center relative">
       <div
         className="fixed inset-0 bg-cover bg-center before:absolute before:inset-0 
         before:bg-black/90 before:backdrop-blur-2xl"
@@ -79,7 +79,7 @@ export default function MediaDetail({ media }: Props) {
           </div>
         </figure>
 
-        <article className="rounded-2xl p-4 text-center border border-neutral-800 bg-black space-y-4">
+        <article className="mt-auto rounded-2xl p-4 text-center border border-neutral-800 bg-black space-y-4">
           <h2 className="text-xl font-medium border-b border-neutral-800 pb-2">
             Información
           </h2>
@@ -115,6 +115,6 @@ export default function MediaDetail({ media }: Props) {
           </div>
         </article>
       </section>
-    </section>
+    </main>
   );
 }
