@@ -1,0 +1,116 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import { Button, Card, Image } from "@heroui/react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Media } from "@/interfaces";
+
+interface Props {
+  items: Media[];
+}
+
+export default function Carousel({ items }: Props) {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
+
+  const updateArrowVisibility = () => {
+    if (!carouselRef.current) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+    setShowLeftArrow(scrollLeft > 0);
+    setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
+  };
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (carousel) {
+      carousel.addEventListener("scroll", updateArrowVisibility);
+      updateArrowVisibility();
+
+      return () => {
+        carousel.removeEventListener("scroll", updateArrowVisibility);
+      };
+    }
+  }, []);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!carouselRef.current) return;
+
+    const { clientWidth } = carouselRef.current;
+    const scrollAmount =
+      direction === "left" ? -clientWidth / 2 : clientWidth / 2;
+
+    carouselRef.current.scrollBy({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <div className="relative group">
+      {showLeftArrow && (
+        <Button
+          isIconOnly
+          onPress={() => scroll("left")}
+          radius="lg"
+          className="absolute left-2 top-1/2 z-40 flex h-10 w-10 -translate-y-1/2 bg-none backdrop-blur-xl backdrop-saturate-150 bg-black/50 border border-neutral-700"
+          aria-label="Scroll left"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </Button>
+      )}
+
+      <div
+        ref={carouselRef}
+        className="flex gap-2 overflow-x-auto scrollbar-hide px-4"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        {items.map((item) => (
+          <div
+            key={item.slug}
+            className="group flex-none transition-transform duration-300"
+          >
+            <Link href={`/${item.type.toLowerCase()}/${item.slug}`} passHref>
+              <Card
+                isBlurred
+                radius="none"
+                className="active:bg-neutral-800 transition-colors duration-1000 !outline-none shadow-none rounded-2xl overflow-hidden"
+              >
+                <figure className="group relative border border-neutral-800 overflow-hidden rounded-2xl mx-auto">
+                  <Image
+                    src={item.image || "/placeholder.svg"}
+                    alt={item.folder_name}
+                    title={item.folder_name}
+                    height={256}
+                    width={165}
+                    loading="lazy"
+                    radius="none"
+                    className="z-0 transform transition-transform duration-300 group-hover:scale-105"
+                  />
+                </figure>
+                <div className="absolute z-10 inset-0 bg-gradient-to-t from-black w-full to-transparent opacity-0 transition-opacity hover:opacity-100">
+                  <div className="absolute bottom-0 px-4 py-4">
+                    <h3 className="text-md font-bold">{item.folder_name}</h3>
+                  </div>
+                </div>
+              </Card>
+            </Link>
+          </div>
+        ))}
+      </div>
+
+      {showRightArrow && (
+        <Button
+          isIconOnly
+          onPress={() => scroll("right")}
+          className="absolute right-2 top-1/2 z-40 flex h-10 w-10 -translate-y-1/2 bg-none backdrop-blur-xl backdrop-saturate-150 bg-black/50 border border-neutral-700"
+          aria-label="Scroll right"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </Button>
+      )}
+    </div>
+  );
+}
