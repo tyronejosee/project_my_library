@@ -3,15 +3,15 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@heroui/react";
-import { Home, Film, Tv, MonitorPlay, PieChart, Search } from "lucide-react";
+import { Home, Tv, Search, Server, TvMinimal } from "lucide-react";
 
 export const NAV_ITEMS_MOBILE = [
   { id: 1, href: "/", label: "Dashboard", icon: Home },
   { id: 2, href: "/search", label: "Search", icon: Search },
-  { id: 3, href: "/movies", label: "Películas", icon: Film },
-  { id: 4, href: "/series", label: "Series", icon: MonitorPlay },
+  { id: 3, href: "/movies", label: "Películas", icon: TvMinimal },
+  { id: 4, href: "/series", label: "Series", icon: TvMinimal },
   { id: 5, href: "/tv", label: "Televisión", icon: Tv },
-  { id: 6, href: "/dashboard", label: "Dashboard", icon: PieChart },
+  { id: 6, href: "/dashboard", label: "Dashboard", icon: Server },
 ];
 
 export default function TabToolbar() {

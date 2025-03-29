@@ -25,6 +25,7 @@ export default function MediaCard({ media }: Props) {
               {media.file_size}
             </span>
             <Image
+              isBlurred
               src={media.image}
               alt={media.folder_name}
               title={media.folder_name}

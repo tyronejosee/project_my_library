@@ -23,7 +23,7 @@ export default function MediaDetail({ media }: Props) {
   const imageWidth = media.type === "Movies" ? 165 : 182;
 
   return (
-    <main className="min-h-[calc(100vh-20vh)] flex items-center justify-center relative">
+    <main className="h-full flex items-center justify-center">
       <div
         className="fixed inset-0 bg-cover bg-center before:absolute before:inset-0 
         before:bg-black/90 before:backdrop-blur-2xl"
@@ -32,6 +32,7 @@ export default function MediaDetail({ media }: Props) {
       <section className="relative w-[100vw] sm:w-[70vw] lg:w-[40vw] xl:w-[30vw] p-4">
         <figure className="flex flex-col items-center gap-4 pb-4">
           <Image
+            isBlurred
             src={media.image}
             alt={media.folder_name}
             height={256}
