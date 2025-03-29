@@ -55,8 +55,8 @@ export default function Carousel({ items }: Props) {
           isIconOnly
           onPress={() => scroll("left")}
           radius="lg"
-          className="absolute left-2 top-1/2 z-40 flex h-10 w-10 -translate-y-1/2 bg-none backdrop-blur-xl backdrop-saturate-150 bg-black/50 border border-neutral-700"
           aria-label="Scroll left"
+          className="absolute left-2 top-1/2 z-40 flex h-10 w-10 -translate-y-1/2 bg-none backdrop-blur-xl backdrop-saturate-150 bg-black/50 border border-neutral-700"
         >
           <ChevronLeft className="h-6 w-6" />
         </Button>
@@ -104,9 +104,9 @@ export default function Carousel({ items }: Props) {
       {showRightArrow && (
         <Button
           isIconOnly
+          aria-label="Scroll right"
           onPress={() => scroll("right")}
           className="absolute right-2 top-1/2 z-40 flex h-10 w-10 -translate-y-1/2 bg-none backdrop-blur-xl backdrop-saturate-150 bg-black/50 border border-neutral-700"
-          aria-label="Scroll right"
         >
           <ChevronRight className="h-6 w-6" />
         </Button>

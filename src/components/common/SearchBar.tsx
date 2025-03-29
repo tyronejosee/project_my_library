@@ -91,6 +91,7 @@ export default function SearchBar() {
           ],
         }}
         placeholder="Buscar..."
+        aria-label="Search"
         radius="lg"
         startContent={
           <SearchIcon className="text-black/50 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />

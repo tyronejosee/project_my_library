@@ -74,6 +74,7 @@ export default function AnimatedContent({
   });
 
   return (
+    // @ts-expect-error - TypeScript does not correctly recognize the props of animated.div.
     <animated.div ref={ref} style={springProps}>
       {children}
     </animated.div>

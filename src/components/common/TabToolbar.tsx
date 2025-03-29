@@ -31,12 +31,12 @@ export default function TabToolbar() {
             className="flex flex-col justify-center items-center"
           >
             <Button
-              aria-label={item.label}
-              color="default"
-              variant="light"
               as={Link}
-              href={item.href}
               isIconOnly
+              variant="light"
+              color="default"
+              href={item.href}
+              aria-label={item.label}
               className={isActive ? "text-primary" : ""}
             >
               <Icon className="h-6 w-6" />

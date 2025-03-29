@@ -73,6 +73,7 @@ export default function BackToTop() {
         <Button
           size="sm"
           onPress={scrollToTop}
+          aria-label="Back to top"
           className="bg-none backdrop-blur-xl backdrop-saturate-150 bg-black/50 border border-neutral-700"
         >
           <ChevronUp />

@@ -74,13 +74,13 @@ export default function HeroSection() {
         {HERO_IMAGES.map((_, index) => (
           <button
             key={index}
+            aria-label={`Go to slide ${index + 1}`}
             onClick={() => setCurrentImageIndex(index)}
             className={`h-2 w-2 rounded-full transition-all duration-300 ${
               index === currentImageIndex
                 ? "bg-white w-6"
                 : "bg-white/50 hover:bg-white/80"
             }`}
-            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>

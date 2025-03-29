@@ -47,6 +47,7 @@ export default function MediaDetail({ media }: Props) {
             <Button
               color="primary"
               size="md"
+              aria-label="Play Trailer"
               className="font-medium text-neutral-950"
               startContent={<Play size={18} />}
               onPress={() =>
