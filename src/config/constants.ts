@@ -69,6 +69,14 @@ export const HERO_IMAGES = [
   "/home/hero-003.webp",
   "/home/hero-004.webp",
   "/home/hero-005.webp",
+  "/home/hero-006.webp",
+  "/home/hero-007.webp",
+  "/home/hero-008.webp",
+  "/home/hero-009.webp",
+  "/home/hero-010.webp",
+  "/home/hero-011.webp",
+  "/home/hero-012.webp",
+  "/home/hero-013.webp",
 ];
 
 export const GENRE_CHOICES = [

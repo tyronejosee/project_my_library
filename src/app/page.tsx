@@ -1,91 +1,42 @@
-import { ContentSection } from "@/components/home";
+import { HomeContainer } from "@/components/home";
 import {
-  getActionMovies,
-  getAdventureMovies,
-  getAnimationMovies,
-  getComedyMovies,
-  getDramaMovies,
-  // getFantasyMovies,
-  getHorrorMovies,
-  getSuspenseMovies,
-} from "@/services/movieService";
-import { getAnimationSeries } from "@/services/serieService";
-import HeroSection from "@/components/home/HeroSection";
+  getMoviesByGenre,
+  getRandomMedia,
+  getSeriesByGenre,
+} from "@/lib/utils";
 
 export default function Home() {
-  const numberOfItems = 28;
+  const numberItems = 28;
+
+  // Recommendation
+  const recommendation = getRandomMedia();
 
   // Movies
-  const actionMovies = getActionMovies(numberOfItems);
-  const adventureMovies = getAdventureMovies(numberOfItems);
-  const animationMovies = getAnimationMovies(numberOfItems);
-  const comedyMovies = getComedyMovies(numberOfItems);
-  const dramaMovies = getDramaMovies(numberOfItems);
-  // const fantasyMovies = getFantasyMovies(numberOfItems);
-  const horrorMovies = getHorrorMovies(numberOfItems);
-  const suspenseMovies = getSuspenseMovies(numberOfItems);
+  const actionMovies = getMoviesByGenre("Action", numberItems);
+  const adventureMovies = getMoviesByGenre("Adventure", numberItems);
+  const animationMovies = getMoviesByGenre("Animation", numberItems);
+  const comedyMovies = getMoviesByGenre("Comedy", numberItems);
+  const dramaMovies = getMoviesByGenre("Drama", numberItems);
+  // const fantasyMovies = getMoviesByGenre("Fantasy", numberItems);
+  const horrorMovies = getMoviesByGenre("Horror", numberItems);
+  const suspenseMovies = getMoviesByGenre("Suspense", numberItems);
 
   // Series
-  const animationSeries = getAnimationSeries(numberOfItems);
+  const animationSeries = getSeriesByGenre("Animation", numberItems);
 
   return (
     <main>
-      <HeroSection />
-
-      {/* Content Sections */}
-      <ContentSection
-        media={animationSeries}
-        title="Animación"
-        subtitle="Series"
-        pathname="series"
-      />
-      <ContentSection
-        media={actionMovies}
-        title="Acción"
-        subtitle="Películas"
-        pathname="movies"
-      />
-      <ContentSection
-        media={adventureMovies}
-        title="Aventura"
-        subtitle="Películas"
-        pathname="movies"
-      />
-      <ContentSection
-        media={animationMovies}
-        title="Animación"
-        subtitle="Películas"
-        pathname="movies"
-      />
-      <ContentSection
-        media={comedyMovies}
-        title="Comedia"
-        subtitle="Películas"
-        pathname="movies"
-      />
-      <ContentSection
-        media={dramaMovies}
-        title="Drama"
-        subtitle="Películas"
-        pathname="movies"
-      />
-      {/* <ContentSection
-        media={fantasyMovies}
-        title="Fantasía"
-        subtitle="Películas"
-        pathname="movies"
-      /> */}
-      <ContentSection
-        media={horrorMovies}
-        title="Terror"
-        subtitle="Películas"
-        pathname="movies"
-      />
-      <ContentSection
-        media={suspenseMovies}
-        title="Suspenso"
-        subtitle="Películas"
-        pathname="movies"
+      <HomeContainer
+        actionMovies={actionMovies}
+        adventureMovies={adventureMovies}
+        animationMovies={animationMovies}
+        comedyMovies={comedyMovies}
+        dramaMovies={dramaMovies}
+        // fantasyMovies={fantasyMovies}
+        horrorMovies={horrorMovies}
+        suspenseMovies={suspenseMovies}
+        animationSeries={animationSeries}
+        recommendation={recommendation}
       />
     </main>
   );
