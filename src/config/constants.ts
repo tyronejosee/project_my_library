@@ -62,9 +62,11 @@ export const ALL_SERIES = [...folderMainSeries, ...folderAnimesSeries];
 export const ALL_MEDIA = [...ALL_MOVIES, ...ALL_SERIES];
 
 export const NAV_ITEMS = [
-  { id: 1, href: "/movies", label: "Películas" },
-  { id: 2, href: "/series", label: "Series" },
-  { id: 3, href: "/tv", label: "TV" },
+  { key: "home", href: "/", label: "Inicio" },
+  { key: "movies", href: "/movies", label: "Películas" },
+  { key: "series", href: "/series", label: "Series" },
+  { key: "tv", href: "/tv", label: "TV" },
+  { key: "dashboard", href: "/dashboard", label: "Dashboard" },
 ];
 
 export const HERO_IMAGES = [

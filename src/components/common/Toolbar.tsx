@@ -5,16 +5,17 @@ import { usePathname } from "next/navigation";
 import {
   Navbar,
   NavbarBrand,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
   NavbarContent,
-  NavbarItem,
+  Dropdown,
+  DropdownTrigger,
+  DropdownItem,
+  DropdownMenu,
 } from "@heroui/react";
 import { SearchBar } from "@/components/common";
 import { Logo } from "@/components/icons";
 import { NAV_ITEMS } from "@/config/constants";
 import { Suspense } from "react";
+import { Button } from "@heroui/button";
 
 export default function Toolbar() {
   const pathname = usePathname();
@@ -40,45 +41,34 @@ export default function Toolbar() {
             <SearchBar />
           </Suspense>
         </NavbarContent>
-
         <NavbarContent justify="end" className="hidden sm:flex gap-4">
-          {NAV_ITEMS.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <NavbarItem key={item.id} className="font-medium">
-                <Link
-                  href={item.href}
-                  className={isActive ? "text-primary" : ""}
-                >
-                  {item.label}
-                </Link>
-              </NavbarItem>
-            );
-          })}
+          <Dropdown>
+            <DropdownTrigger>
+              <Button
+                color="primary"
+                className="text-medium text-neutral-950"
+                aria-label="Collection"
+              >
+                Collection
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Navigation menu">
+              {NAV_ITEMS.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <DropdownItem
+                    as={Link}
+                    key={item.key}
+                    href={item.href}
+                    className={isActive ? "text-primary" : ""}
+                  >
+                    {item.label}
+                  </DropdownItem>
+                );
+              })}
+            </DropdownMenu>
+          </Dropdown>
         </NavbarContent>
-
-        <NavbarContent className="sm:hidden" justify="end">
-          <NavbarMenuToggle />
-        </NavbarContent>
-
-        <NavbarMenu>
-          <Suspense fallback={<div>Cargando...</div>}>
-            <SearchBar />
-          </Suspense>
-          {NAV_ITEMS.map((item, index) => {
-            const isActive = pathname === item.href;
-            return (
-              <NavbarMenuItem key={`${item}-${index}`}>
-                <Link
-                  href={item.href}
-                  className={isActive ? "text-primary" : ""}
-                >
-                  {item.label}
-                </Link>
-              </NavbarMenuItem>
-            );
-          })}
-        </NavbarMenu>
       </Navbar>
       <div className="fixed top-4 z-50 w-full px-4 shadow-2xl md:hidden">
         <Suspense fallback={<div>Cargando...</div>}>
