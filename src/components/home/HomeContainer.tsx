@@ -1,114 +1,142 @@
 "use client";
 
-import {
-  ContentSection,
-  DailyRecommendationSection,
-  HeroSection,
-} from "@/components/home";
+import { ContentSection, DailyRecommendationSection } from "@/components/home";
 import { DefaultTransition } from "@/components/animated";
+import {
+  getMoviesByGenre,
+  getRandomMedia,
+  getSeriesByGenre,
+} from "@/lib/utils";
+import { useEffect, useState } from "react";
 import { Media } from "@/interfaces";
 
-interface Props {
-  actionMovies: Media[];
-  adventureMovies: Media[];
-  animationMovies: Media[];
-  comedyMovies: Media[];
-  dramaMovies: Media[];
-  //   fantasyMovies: Media[];
-  horrorMovies: Media[];
-  suspenseMovies: Media[];
-  animationSeries: Media[];
-  recommendation: Media;
-}
+export default function HomeContainer() {
+  const numberItems = 28;
+  const [recommendation, setRecommendation] = useState<Media | null>(null);
+  const [animationSeries, setAnimationSeries] = useState<Media[]>([]);
+  const [actionMovies, setActionMovies] = useState<Media[]>([]);
+  const [adventureMovies, setAdventureMovies] = useState<Media[]>([]);
+  const [animationMovies, setAnimationMovies] = useState<Media[]>([]);
+  const [comedyMovies, setComedyMovies] = useState<Media[]>([]);
+  const [dramaMovies, setDramaMovies] = useState<Media[]>([]);
+  // const [fantasyMovies, setFantasyMovies] = useState<Media[]>([]);
+  const [horrorMovies, setHorrorMovies] = useState<Media[]>([]);
+  const [suspenseMovies, setSuspenseMovies] = useState<Media[]>([]);
 
-export default function HomeContainer({
-  actionMovies,
-  adventureMovies,
-  animationMovies,
-  comedyMovies,
-  dramaMovies,
-  //   fantasyMovies,
-  horrorMovies,
-  suspenseMovies,
-  animationSeries,
-  recommendation,
-}: Props) {
+  useEffect(() => {
+    setRecommendation(getRandomMedia());
+    setAnimationSeries(getSeriesByGenre("Animation", numberItems));
+    setActionMovies(getMoviesByGenre("Action", numberItems));
+    setAdventureMovies(getMoviesByGenre("Adventure", numberItems));
+    setAnimationMovies(getMoviesByGenre("Animation", numberItems));
+    setComedyMovies(getMoviesByGenre("Comedy", numberItems));
+    setDramaMovies(getMoviesByGenre("Drama", numberItems));
+    // setFantasyMovies(getMoviesByGenre("Fantasy", numberItems));
+    setHorrorMovies(getMoviesByGenre("Horror", numberItems));
+    setSuspenseMovies(getMoviesByGenre("Suspense", numberItems));
+  }, []);
+
   return (
     <>
-      <HeroSection />
-      <DailyRecommendationSection media={recommendation} />
-      <DefaultTransition>
-        <ContentSection
-          media={animationSeries}
-          title="Animación"
-          subtitle="Series"
-          pathname="series"
+      {/* Recommendation */}
+      {recommendation && (
+        <DailyRecommendationSection
+          media={recommendation}
+          onRefresh={() => setRecommendation(getRandomMedia())}
         />
-      </DefaultTransition>
-      <DefaultTransition>
-        <ContentSection
-          media={actionMovies}
-          title="Acción"
-          subtitle="Películas"
-          pathname="movies"
-        />
-      </DefaultTransition>
-      <DefaultTransition>
-        <ContentSection
-          media={adventureMovies}
-          title="Aventura"
-          subtitle="Películas"
-          pathname="movies"
-        />
-      </DefaultTransition>
-      <DefaultTransition>
-        <ContentSection
-          media={animationMovies}
-          title="Animación"
-          subtitle="Películas"
-          pathname="movies"
-        />
-      </DefaultTransition>
-      <DefaultTransition>
-        <ContentSection
-          media={comedyMovies}
-          title="Comedia"
-          subtitle="Películas"
-          pathname="movies"
-        />
-      </DefaultTransition>
-      <DefaultTransition>
-        <ContentSection
-          media={dramaMovies}
-          title="Drama"
-          subtitle="Películas"
-          pathname="movies"
-        />
-      </DefaultTransition>
-      {/* <DefaultTransition>
-        <ContentSection
-          media={fantasyMovies}
-          title="Fantasía"
-          subtitle="Películas"
-          pathname="movies"
-        />
-      </DefaultTransition> */}
-      <DefaultTransition>
-        <ContentSection
-          media={horrorMovies}
-          title="Terror"
-          subtitle="Películas"
-          pathname="movies"
-        />
-      </DefaultTransition>
-      <DefaultTransition>
-        <ContentSection
-          media={suspenseMovies}
-          title="Suspenso"
-          subtitle="Películas"
-          pathname="movies"
-        />
-      </DefaultTransition>
+      )}
+      {/* Series */}
+      {animationSeries.length > 0 && (
+        <DefaultTransition>
+          <ContentSection
+            media={animationSeries}
+            title="Animación"
+            subtitle="Series"
+            pathname="series"
+          />
+        </DefaultTransition>
+      )}
+      {/* Movies */}
+      {actionMovies.length > 0 && (
+        <DefaultTransition>
+          <ContentSection
+            media={actionMovies}
+            title="Acción"
+            subtitle="Películas"
+            pathname="movies"
+          />
+        </DefaultTransition>
+      )}
+      {adventureMovies.length > 0 && (
+        <DefaultTransition>
+          <ContentSection
+            media={adventureMovies}
+            title="Aventura"
+            subtitle="Películas"
+            pathname="movies"
+          />
+        </DefaultTransition>
+      )}
+      {animationMovies.length > 0 && (
+        <DefaultTransition>
+          <ContentSection
+            media={animationMovies}
+            title="Animación"
+            subtitle="Películas"
+            pathname="movies"
+          />
+        </DefaultTransition>
+      )}
+      {comedyMovies.length > 0 && (
+        <DefaultTransition>
+          <ContentSection
+            media={comedyMovies}
+            title="Comedia"
+            subtitle="Películas"
+            pathname="movies"
+          />
+        </DefaultTransition>
+      )}
+      {dramaMovies.length > 0 && (
+        <DefaultTransition>
+          <ContentSection
+            media={dramaMovies}
+            title="Drama"
+            subtitle="Películas"
+            pathname="movies"
+          />
+        </DefaultTransition>
+      )}
+      {/* {fantasyMovies.length > 0 && (
+        <DefaultTransition>
+          <ContentSection
+            media={fantasyMovies}
+            title="Fantasía"
+            subtitle="Películas"
+            pathname="movies"
+          />
+        </DefaultTransition>
+      )} */}
+      {horrorMovies.length > 0 && (
+        <DefaultTransition>
+          <ContentSection
+            media={horrorMovies}
+            title="Terror"
+            subtitle="Películas"
+            pathname="movies"
+          />
+        </DefaultTransition>
+      )}
+      {suspenseMovies.length > 0 && (
+        <DefaultTransition>
+          <ContentSection
+            media={suspenseMovies}
+            title="Suspenso"
+            subtitle="Películas"
+            pathname="movies"
+          />
+        </DefaultTransition>
+      )}
     </>
   );
 }

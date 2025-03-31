@@ -67,38 +67,40 @@ export default function Carousel({ items }: Props) {
         className="flex gap-2 overflow-x-auto scrollbar-hide px-4"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {items.map((item) => (
-          <div
-            key={item.slug}
-            className="group flex-none transition-transform duration-300"
-          >
-            <Link href={`/${item.type.toLowerCase()}/${item.slug}`} passHref>
-              <Card
-                isBlurred
-                radius="none"
-                className="active:bg-neutral-800 transition-colors duration-1000 !outline-none shadow-none rounded-2xl overflow-hidden"
-              >
-                <figure className="group relative border border-neutral-800 overflow-hidden rounded-2xl mx-auto">
-                  <Image
-                    src={item.image || "/placeholder.svg"}
-                    alt={item.folder_name}
-                    title={item.folder_name}
-                    height={256}
-                    width={165}
-                    loading="lazy"
-                    radius="none"
-                    className="z-0 transform transition-transform duration-300 group-hover:scale-105"
-                  />
-                </figure>
-                <div className="absolute z-10 inset-0 bg-gradient-to-t from-black w-full to-transparent opacity-0 transition-opacity hover:opacity-100">
-                  <div className="absolute bottom-0 px-4 py-4">
-                    <h3 className="text-md font-bold">{item.folder_name}</h3>
+        {items.map((item) => {
+          const imageWidth = item.type === "Movies" ? 165 : 182;
+          return (
+            <div
+              key={item.slug}
+              className="group flex-none transition-transform duration-300"
+            >
+              <Link href={`/${item.type.toLowerCase()}/${item.slug}`} passHref>
+                <Card
+                  isBlurred
+                  radius="none"
+                  className="active:bg-neutral-800 transition-colors duration-1000 !outline-none shadow-none"
+                >
+                  <figure className="relative border border-neutral-800 rounded-2xl overflow-hidden mx-auto">
+                    <Image
+                      src={item.image || "/placeholder.svg"}
+                      alt={item.folder_name}
+                      title={item.folder_name}
+                      height={256}
+                      width={imageWidth}
+                      loading="lazy"
+                      radius="none"
+                    />
+                  </figure>
+                  <div className="absolute z-10 inset-0 bg-gradient-to-t from-black w-full to-transparent opacity-0 transition-opacity hover:opacity-100">
+                    <div className="absolute bottom-0 px-4 py-4">
+                      <h3 className="text-md font-bold">{item.folder_name}</h3>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            </Link>
-          </div>
-        ))}
+                </Card>
+              </Link>
+            </div>
+          );
+        })}
       </div>
 
       {showRightArrow && (

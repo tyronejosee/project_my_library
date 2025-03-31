@@ -11,7 +11,7 @@ export default function DefaultTransition({ children }: Props) {
       direction="vertical"
       reverse={false}
       config={{ tension: 100, friction: 20 }}
-      initialOpacity={1.0}
+      initialOpacity={0}
       animateOpacity
       scale={1.0}
       threshold={0.1}

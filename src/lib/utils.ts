@@ -17,17 +17,13 @@ export const shuffleArray = <T>(array: T[]): T[] => {
 };
 
 export const searchMedia = (query: string) => {
-  if (!query) return shuffleArray(ALL_MEDIA).slice(0, 16);
-
   const lowerQuery = query.toLowerCase();
 
   return ALL_MEDIA.filter((item) => {
     return (
       (item.folder_name &&
         item.folder_name.toLowerCase().includes(lowerQuery)) ||
-      (item.file_name && item.file_name.toLowerCase().includes(lowerQuery)) ||
-      (item.genre && item.genre.toLowerCase().includes(lowerQuery)) ||
-      (item.location && item.location.toLowerCase().includes(lowerQuery))
+      (item.file_name && item.file_name.toLowerCase().includes(lowerQuery))
     );
   });
 };
