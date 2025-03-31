@@ -5,3 +5,4 @@ export { default as MediaDetail } from "./MediaDetail";
 export { default as MediaList } from "./MediaList";
 export { default as MediaToolbar } from "./MediaToolbar";
 export { default as TVCard } from "./TVCard";
+export { default as TVContainer } from "./TVContainer";

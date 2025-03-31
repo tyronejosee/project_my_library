@@ -1,10 +1,25 @@
 import { Metadata } from "next";
 import { Dashboard } from "@/components/dashboard";
+import { PROJECT_NAME, SITE_URL } from "@/config/constants";
 
 export const metadata: Metadata = {
-  title: "Dashboard - Tyrone's Collection",
-  description:
-    "A place to store and organize a personal collection of movies and series. Keep track of favorites, discover new titles, and manage what you've watched.",
+  title: `Dashboard - ${PROJECT_NAME}`,
+  description: `Página de Dashboard - ${PROJECT_NAME}.`,
+  metadataBase: SITE_URL,
+  keywords: ["dashboard", "collection"],
+  robots: "index, follow",
+  openGraph: {
+    title: `Dashboard - ${PROJECT_NAME}`,
+    description: `Página de Dashboard - ${PROJECT_NAME}.`,
+    url: "/dashboard",
+    siteName: PROJECT_NAME,
+    type: "website",
+  },
+  twitter: {
+    title: `Dashboard - ${PROJECT_NAME}`,
+    card: "summary_large_image",
+    description: `Página de Dashboard - ${PROJECT_NAME}.`,
+  },
 };
 
 export default function DashboardPage() {

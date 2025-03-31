@@ -1,5 +1,6 @@
 import { Heading } from "@/components/common";
 import { MediaList } from "@/components/media";
+import { PROJECT_NAME } from "@/config/constants";
 import { searchMedia } from "@/lib/utils";
 
 interface Props {
@@ -13,7 +14,7 @@ export async function generateMetadata({ searchParams }: Props) {
   return {
     title: `${
       query ? `Resultados para "${query}"` : "Explorar"
-    } - Tyrone's Collection`,
+    } - ${PROJECT_NAME}`,
   };
 }
 

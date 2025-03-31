@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { MediaDetail } from "@/components/media";
-import { ALL_MOVIES } from "@/config/constants";
+import { ALL_MOVIES, PROJECT_NAME, SITE_URL } from "@/config/constants";
 import { Media } from "@/interfaces";
 
 interface Props {
@@ -14,22 +14,41 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!movie) {
     return {
       title: "Película no encontrada",
+      description:
+        "La película que buscas no fue encontrada en nuestro catálogo.",
+      robots: "noindex, nofollow",
     };
   }
 
+  const pageUrl = new URL(`/movies/${slug}`, SITE_URL).toString();
+
   return {
     title: movie.folder_name,
-    metadataBase: new URL(
-      process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3000"
-    ),
+    description: `${movie.file_name} - ${movie.genre} - ${movie.type}`,
+    metadataBase: SITE_URL,
+    keywords: [
+      `"${movie.file_name}", "${movie.folder_name}", "${movie.genre}", "${movie.type}"`,
+    ],
+    authors: [{ name: PROJECT_NAME, url: SITE_URL.toString() }],
+    creator: PROJECT_NAME,
+    publisher: PROJECT_NAME,
+    robots: "index, follow",
     openGraph: {
       title: movie.folder_name,
+      description: `${movie.file_name} - ${movie.genre} - ${movie.type}`,
+      url: pageUrl,
+      siteName: PROJECT_NAME,
       images: movie.image ? [movie.image] : [],
+      type: "video.movie",
     },
     twitter: {
-      card: "summary_large_image",
       title: movie.folder_name,
+      description: `${movie.file_name} - ${movie.genre} - ${movie.type}`,
+      card: "summary_large_image",
       images: movie.image ? [movie.image] : [],
+    },
+    formatDetection: {
+      telephone: false,
     },
   };
 }

@@ -26,6 +26,10 @@ import channels from "../data/tv/channels.json";
 
 export const PROJECT_NAME = "Tyrone's Collection";
 
+export const SITE_URL = new URL(
+  process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3000"
+);
+
 export const COMPANY_DESCRIPTION = `
 lorem ipsum
 `;
