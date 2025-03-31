@@ -1,15 +1,20 @@
 "use client";
 
-import { useCallback, useEffect } from "react";
+import { use, useCallback, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Spinner } from "@/components/common";
 import { MediaList } from "@/components/media";
 import { useMoviesStore } from "@/store/moviesStore";
-import { ALL_MOVIES } from "@/config/constants";
 import { delay } from "@/lib/utils";
+import { Media } from "@/interfaces";
 
-export default function LoadMovies() {
-  const { movies, setMovies, page, setPage } = useMoviesStore();
+interface Props {
+  data: Media[];
+  isGenre?: boolean;
+}
+
+export default function LoadMovies({ data, isGenre }: Props) {
+  const { movies, setMovies, page, setPage, resetMovies } = useMoviesStore();
 
   const itemsPerPage = 28;
   const { ref, inView } = useInView();
@@ -17,13 +22,19 @@ export default function LoadMovies() {
   const loadMoreMovies = useCallback(async () => {
     await delay(300);
     const startIndex = (page - 1) * itemsPerPage;
-    const nextMovies = ALL_MOVIES.slice(startIndex, startIndex + itemsPerPage);
+    const nextMovies = data.slice(startIndex, startIndex + itemsPerPage);
 
     if (nextMovies.length > 0) {
       setMovies([...movies, ...nextMovies]);
       setPage(page + 1);
     }
-  }, [page, movies, setMovies, setPage]);
+  }, [data, page, movies, setMovies, setPage]);
+
+  useEffect(() => {
+    if (isGenre) {
+      resetMovies();
+    }
+  }, [isGenre, resetMovies]);
 
   useEffect(() => {
     if (inView) {

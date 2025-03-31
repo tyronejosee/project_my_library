@@ -8,6 +8,7 @@ interface Props {
   title: string;
   pathname: string;
   subtitle: string;
+  genre: string;
 }
 
 export default function ContentSection({
@@ -15,6 +16,7 @@ export default function ContentSection({
   title,
   subtitle,
   pathname,
+  genre,
 }: Props) {
   return (
     <section className="max-w-screen-2xl mx-auto py-6">
@@ -26,7 +28,7 @@ export default function ContentSection({
           <span className="text-primary">{subtitle}</span>
         </div>
         <Link
-          href={`/${pathname}`}
+          href={`/${pathname}/genres/${genre}`}
           className="flex items-center text-sm font-medium text-primary hover:underline"
         >
           Ver todo <ChevronRight className="ml-1 h-4 w-4" />

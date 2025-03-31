@@ -51,12 +51,27 @@ export const getRandomMedia = () => {
   return ALL_MEDIA[randomIndex];
 };
 
-export const getMoviesByGenre = (genre: string, count: number) => {
-  const movies = ALL_MOVIES.filter((movie) => movie.genre === genre);
-  return shuffleArray(movies).slice(0, count);
+export const getMoviesByGenre = (genre: string, count?: number) => {
+  if (!genre || typeof genre !== "string") {
+    throw new Error("Invalid genre parameter");
+  }
+
+  const movies = ALL_MOVIES.filter(
+    (movie) => movie.genre.toLowerCase() === genre.toLowerCase()
+  );
+
+  if (movies.length === 0) {
+    return [];
+  }
+
+  if (count) {
+    return shuffleArray(movies).slice(0, count);
+  } else {
+    return movies;
+  }
 };
 
-export const getSeriesByGenre = (genre: string, count: number) => {
+export const getSeriesByGenre = (genre: string, count?: number) => {
   const series = ALL_SERIES.filter((serie) => serie.genre === genre);
   return shuffleArray(series).slice(0, count);
 };

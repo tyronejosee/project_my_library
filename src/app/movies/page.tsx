@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { Heading } from "@/components/common";
 import { LoadMovies } from "@/components/media";
-import { PROJECT_NAME, SITE_URL } from "@/config/constants";
+import { ALL_MOVIES, PROJECT_NAME, SITE_URL } from "@/config/constants";
 
 export const metadata: Metadata = {
   title: `Películas - ${PROJECT_NAME}`,
@@ -33,10 +33,12 @@ export const metadata: Metadata = {
 };
 
 export default async function MoviesPage() {
+  const data = ALL_MOVIES;
+
   return (
     <main className="max-w-screen-2xl mx-auto text-center py-6 px-6">
-      <Heading title="Movies" />
-      <LoadMovies />
+      <Heading title="Películas" />
+      <LoadMovies data={data} />
     </main>
   );
 }

@@ -53,6 +53,7 @@ export default function HomeContainer() {
             title="Animación"
             subtitle="Series"
             pathname="series"
+            genre="animation"
           />
         </DefaultTransition>
       )}
@@ -64,6 +65,7 @@ export default function HomeContainer() {
             title="Acción"
             subtitle="Películas"
             pathname="movies"
+            genre="action"
           />
         </DefaultTransition>
       )}
@@ -74,6 +76,7 @@ export default function HomeContainer() {
             title="Aventura"
             subtitle="Películas"
             pathname="movies"
+            genre="adventure"
           />
         </DefaultTransition>
       )}
@@ -84,6 +87,7 @@ export default function HomeContainer() {
             title="Animación"
             subtitle="Películas"
             pathname="movies"
+            genre="animation"
           />
         </DefaultTransition>
       )}
@@ -94,6 +98,7 @@ export default function HomeContainer() {
             title="Comedia"
             subtitle="Películas"
             pathname="movies"
+            genre="comedy"
           />
         </DefaultTransition>
       )}
@@ -104,6 +109,7 @@ export default function HomeContainer() {
             title="Drama"
             subtitle="Películas"
             pathname="movies"
+            genre="drama"
           />
         </DefaultTransition>
       )}
@@ -114,6 +120,7 @@ export default function HomeContainer() {
             title="Fantasía"
             subtitle="Películas"
             pathname="movies"
+            genre="fantasy"
           />
         </DefaultTransition>
       )} */}
@@ -124,6 +131,7 @@ export default function HomeContainer() {
             title="Terror"
             subtitle="Películas"
             pathname="movies"
+            genre="horror"
           />
         </DefaultTransition>
       )}
@@ -134,6 +142,7 @@ export default function HomeContainer() {
             title="Suspenso"
             subtitle="Películas"
             pathname="movies"
+            genre="suspense"
           />
         </DefaultTransition>
       )}
