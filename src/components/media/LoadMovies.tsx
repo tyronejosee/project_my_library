@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useCallback, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Spinner } from "@/components/common";
 import { MediaList } from "@/components/media";
