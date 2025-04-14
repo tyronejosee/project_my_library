@@ -26,11 +26,11 @@ export const metadata: Metadata = {
   title: "Tyrone's Collection",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+type Props = {
   children: React.ReactNode;
-}>) {
+};
+
+export default function RootLayout({ children }: Props) {
   return (
     <html
       lang="en"

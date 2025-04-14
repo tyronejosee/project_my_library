@@ -1,21 +1,22 @@
 "use client";
 
+import { Suspense } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
+  Button,
   Dropdown,
   DropdownTrigger,
   DropdownItem,
   DropdownMenu,
+  Skeleton,
 } from "@heroui/react";
 import { SearchBar } from "@/components/common";
 import { Logo } from "@/components/icons";
 import { NAV_ITEMS } from "@/config/constants";
-import { Suspense } from "react";
-import { Button } from "@heroui/button";
 
 export default function Toolbar() {
   const pathname = usePathname();
@@ -37,7 +38,9 @@ export default function Toolbar() {
         </NavbarContent>
 
         <NavbarContent justify="center">
-          <Suspense fallback={<div>Cargando...</div>}>
+          <Suspense
+            fallback={<Skeleton className="h-10 w-[720px] rounded-xl" />}
+          >
             <SearchBar />
           </Suspense>
         </NavbarContent>
@@ -71,7 +74,7 @@ export default function Toolbar() {
         </NavbarContent>
       </Navbar>
       <div className="fixed top-4 z-50 w-full px-4 shadow-2xl md:hidden">
-        <Suspense fallback={<div>Cargando...</div>}>
+        <Suspense fallback={<Skeleton className="h-10 w-full rounded-xl" />}>
           <SearchBar />
         </Suspense>
       </div>

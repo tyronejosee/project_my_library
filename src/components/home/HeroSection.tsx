@@ -18,7 +18,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="h-[calc(100vh-65px)] w-full">
+    <section className="bg-primary h-[calc(100vh-65px)] w-full">
       <figure className="absolute inset-0 top-0">
         <Noise
           patternSize={250}

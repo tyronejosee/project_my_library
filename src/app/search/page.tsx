@@ -18,6 +18,16 @@ export async function generateMetadata({ searchParams }: Props) {
   };
 }
 
+function SearchResults({ query }: { query: string }) {
+  const results = searchMedia(query);
+
+  if (results.length === 0) {
+    return <p className="text-gray-500">No se encontraron resultados.</p>;
+  }
+
+  return <MediaList results={results} />;
+}
+
 export default async function SearchPage({ searchParams }: Props) {
   const resolvedSearchParams = await searchParams;
   const query = resolvedSearchParams?.query ?? "";
@@ -28,14 +38,4 @@ export default async function SearchPage({ searchParams }: Props) {
       <SearchResults query={query} />
     </section>
   );
-}
-
-function SearchResults({ query }: { query: string }) {
-  const results = searchMedia(query);
-
-  if (results.length === 0) {
-    return <p className="text-gray-500">No se encontraron resultados.</p>;
-  }
-
-  return <MediaList results={results} />;
 }
