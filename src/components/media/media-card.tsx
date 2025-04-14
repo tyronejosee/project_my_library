@@ -1,13 +1,13 @@
 "use client";
 
-import React from "react";
+import type { Media } from "@/types";
+
 import Link from "next/link";
 import { Card, CardFooter, Image } from "@heroui/react";
-import { Media } from "@/interfaces";
 
-interface Props {
+type Props = {
   media: Media;
-}
+};
 
 export default function MediaCard({ media }: Props) {
   const imageWidth = media.type === "Movies" ? 165 : 182;

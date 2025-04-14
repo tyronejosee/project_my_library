@@ -1,15 +1,16 @@
 "use client";
 
+import type { Media } from "@/types";
+
 import Link from "next/link";
 import { Button, Chip, Image } from "@heroui/react";
 import { RefreshCw, Star } from "lucide-react";
 import { DefaultTransition } from "@/components/animated";
-import { Media } from "@/interfaces";
 
-interface Props {
+type Props = {
   media: Media;
   onRefresh: () => void;
-}
+};
 
 export default function DailyRecommendationSection({
   media,

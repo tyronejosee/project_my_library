@@ -1,11 +1,12 @@
-import { Metadata } from "next";
-import { MediaDetail } from "@/components/media";
-import { ALL_MOVIES, PROJECT_NAME, SITE_URL } from "@/config/constants";
-import { Media } from "@/interfaces";
+import type { Metadata } from "next";
+import type { Media } from "@/types";
 
-interface Props {
+import { MediaDetail } from "@/components/media";
+import { ALL_MOVIES, PROJECT_NAME, PROJECT_DOMAIN } from "@/config/constants";
+
+type Props = {
   params: Promise<{ slug: string }>;
-}
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -20,16 +21,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const pageUrl = new URL(`/movies/${slug}`, SITE_URL).toString();
+  const pageUrl = new URL(`/movies/${slug}`, PROJECT_DOMAIN).toString();
 
   return {
     title: movie.folder_name,
     description: `${movie.file_name} - ${movie.genre} - ${movie.type}`,
-    metadataBase: SITE_URL,
+    metadataBase: PROJECT_DOMAIN,
     keywords: [
       `"${movie.file_name}", "${movie.folder_name}", "${movie.genre}", "${movie.type}"`,
     ],
-    authors: [{ name: PROJECT_NAME, url: SITE_URL.toString() }],
+    authors: [{ name: PROJECT_NAME, url: PROJECT_DOMAIN.toString() }],
     creator: PROJECT_NAME,
     publisher: PROJECT_NAME,
     robots: "index, follow",

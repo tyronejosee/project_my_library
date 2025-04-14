@@ -1,4 +1,4 @@
-export { default as AnimatedContent } from "./AnimatedContent";
-export { default as DefaultTransition } from "./DefaultTransition";
-export { default as Noise } from "./Noise";
-export { default as RotatingText } from "./RotatingText";
+export { default as AnimatedContent } from "./animated-content";
+export { default as DefaultTransition } from "./default-transition";
+export { default as Noise } from "./noise";
+export { default as RotatingText } from "./rotating-text";

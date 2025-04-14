@@ -1,5 +1,7 @@
 "use client";
 
+import type { Media } from "@/types";
+
 import { Button, Chip, Image } from "@heroui/react";
 import {
   Box,
@@ -12,12 +14,11 @@ import {
   FolderClock,
   Clapperboard,
 } from "lucide-react";
-import { Media } from "@/interfaces";
 import { normalizeString } from "@/lib/utils";
 
-interface Props {
+type Props = {
   media: Media;
-}
+};
 
 export default function MediaDetail({ media }: Props) {
   const imageWidth = media.type === "Movies" ? 165 : 182;

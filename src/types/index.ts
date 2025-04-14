@@ -1,4 +1,4 @@
-export interface Media {
+export type Media = {
   folder_name: string;
   file_name: string;
   file_size: string;
@@ -10,29 +10,29 @@ export interface Media {
   location: string;
   created_at: string;
   updated_at: string;
-}
+};
 
-export interface Channel {
+export type Channel = {
   name: string;
   number: number | number[];
   category: string;
   image?: string;
-}
+};
 
-export interface Disk {
+export type Disk = {
   drive_name: string;
   volume_label: string;
   total: number;
   used: number;
   free: number;
   percent_used: number;
-}
+};
 
 export type MinimalDisk = Omit<
   Disk,
   "drive_name" | "volume_label" | "percent_used"
 >;
 
-export interface MediaQueryParams {
+export type MediaQueryParams = {
   genre?: string;
-}
+};

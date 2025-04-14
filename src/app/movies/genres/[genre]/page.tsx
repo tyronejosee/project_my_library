@@ -2,9 +2,9 @@ import { Heading } from "@/components/common";
 import { LoadMovies } from "@/components/media";
 import { getMoviesByGenre } from "@/lib/utils";
 
-interface Props {
+type Props = {
   params: Promise<{ genre: string }>;
-}
+};
 
 export default async function GenrePage({ params }: Props) {
   const { genre } = await params;

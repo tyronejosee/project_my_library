@@ -1,6 +1,6 @@
-interface Props {
+type Props = {
   title: string;
-}
+};
 
 export default function Heading({ title }: Props) {
   return (

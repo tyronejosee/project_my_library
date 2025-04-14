@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState, ReactNode } from "react";
 import { useSpring, animated, SpringConfig } from "@react-spring/web";
 
-interface Props {
+type Props = {
   children: ReactNode;
   distance?: number;
   direction?: "vertical" | "horizontal";
@@ -14,7 +14,7 @@ interface Props {
   scale?: number;
   threshold?: number;
   delay?: number;
-}
+};
 
 export default function AnimatedContent({
   children,

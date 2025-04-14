@@ -1,13 +1,13 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState, useEffect } from "react";
 
-interface Props {
+type Props = {
   className?: string;
   text?: string;
-}
+};
 
 export default function ScrollIndicator({
   className,

@@ -1,15 +1,16 @@
+import type { Media } from "@/types";
+
 import Link from "next/link";
-import { Media } from "@/interfaces";
 import { ChevronRight } from "lucide-react";
 import { Carousel } from "@/components/home";
 
-interface Props {
+type Props = {
   media: Media[];
   title: string;
   pathname: string;
   subtitle: string;
   genre: string;
-}
+};
 
 export default function ContentSection({
   media,

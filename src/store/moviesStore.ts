@@ -1,4 +1,4 @@
-import { Media } from "@/interfaces";
+import { Media } from "@/types";
 import { create } from "zustand";
 
 interface MoviesState {

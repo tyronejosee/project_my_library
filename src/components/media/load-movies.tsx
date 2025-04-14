@@ -1,17 +1,18 @@
 "use client";
 
+import type { Media } from "@/types";
+
 import { useCallback, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Spinner } from "@/components/common";
 import { MediaList } from "@/components/media";
 import { useMoviesStore } from "@/store/moviesStore";
 import { delay } from "@/lib/utils";
-import { Media } from "@/interfaces";
 
-interface Props {
+type Props = {
   data: Media[];
   isGenre?: boolean;
-}
+};
 
 export default function LoadMovies({ data, isGenre }: Props) {
   const { movies, setMovies, page, setPage, resetMovies } = useMoviesStore();

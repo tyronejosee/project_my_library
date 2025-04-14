@@ -2,13 +2,13 @@
 
 import { useRef, useEffect } from "react";
 
-interface Props {
+type Props = {
   patternSize?: number;
   patternScaleX?: number;
   patternScaleY?: number;
   patternRefreshInterval?: number;
   patternAlpha?: number;
-}
+};
 
 export default function Noise({
   patternSize = 250,

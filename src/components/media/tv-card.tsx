@@ -1,11 +1,12 @@
 "use client";
 
-import { Card, CardFooter, Image } from "@heroui/react";
-import { Channel } from "@/interfaces";
+import type { Channel } from "@/types";
 
-interface Props {
+import { Card, CardFooter, Image } from "@heroui/react";
+
+type Props = {
   channel: Channel;
-}
+};
 
 export default function TVCard({ channel }: Props) {
   return (

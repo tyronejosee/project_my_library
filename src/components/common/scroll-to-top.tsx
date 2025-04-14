@@ -3,9 +3,9 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-interface Props {
+type Props = {
   children: React.ReactNode;
-}
+};
 
 export default function ScrollToTop({ children }: Props) {
   const pathname = usePathname();

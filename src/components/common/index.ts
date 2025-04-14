@@ -1,8 +1,8 @@
-export { default as BackToTop } from "./BackToTop";
-export { default as Heading } from "./Heading";
-export { default as ScrollIndicator } from "./ScrollIndicator";
-export { default as ScrollToTop } from "./ScrollToTop";
-export { default as SearchBar } from "./SearchBar";
-export { default as Spinner } from "./Spinner";
-export { default as TabToolbar } from "./TabToolbar";
-export { default as Toolbar } from "./Toolbar";
+export { default as BackToTop } from "./back-to-top";
+export { default as Heading } from "./heading";
+export { default as ScrollIndicator } from "./scroll-indicator";
+export { default as ScrollToTop } from "./scroll-to-top";
+export { default as SearchBar } from "./search-bar";
+export { default as Spinner } from "./spinner";
+export { default as TabToolbar } from "./tab-toolbar";
+export { default as Toolbar } from "./toolbar";

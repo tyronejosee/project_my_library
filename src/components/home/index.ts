@@ -1,5 +1,5 @@
-export { default as Carousel } from "./Carousel";
-export { default as ContentSection } from "./ContentSection";
-export { default as DailyRecommendationSection } from "./DailyRecommendationSection";
-export { default as HeroSection } from "./HeroSection";
-export { default as HomeContainer } from "./HomeContainer";
+export { default as Carousel } from "./carousel";
+export { default as ContentSection } from "./content-section";
+export { default as DailyRecommendationSection } from "./daily-recommendation-section";
+export { default as HeroSection } from "./hero-section";
+export { default as HomeContainer } from "./home-container";

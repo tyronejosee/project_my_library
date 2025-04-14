@@ -11,14 +11,6 @@ export default function MediaToolbar() {
     router.push(`/movies?genre=${value}`);
   };
 
-  // const handleYearChange = (value: string) => {
-  //   router.push(`/movies?year=${value}`);
-  // };
-
-  // const handleSortChange = (value: string) => {
-  //   router.push(`/movies?sort_by=${value}`);
-  // };
-
   return (
     <aside className="pb-8">
       <nav className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">

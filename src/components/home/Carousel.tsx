@@ -4,11 +4,11 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { Button, Card, Image } from "@heroui/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Media } from "@/interfaces";
+import { Media } from "@/types";
 
-interface Props {
+type Props = {
   items: Media[];
-}
+};
 
 export default function Carousel({ items }: Props) {
   const carouselRef = useRef<HTMLDivElement>(null);

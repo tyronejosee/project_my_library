@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Media } from "@/interfaces";
+import { Media } from "@/types";
 
 interface SeriesState {
   series: Media[];

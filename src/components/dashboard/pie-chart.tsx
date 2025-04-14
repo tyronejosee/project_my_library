@@ -1,8 +1,8 @@
 import { CircularProgress } from "@heroui/progress";
 
-interface Props {
+type Props = {
   percent: number;
-}
+};
 
 export default function PieChart({ percent }: Props) {
   const strokeColor = percent > 90 ? "stroke-red-600" : "stroke-primary";

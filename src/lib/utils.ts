@@ -1,7 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { ALL_MEDIA, ALL_MOVIES, ALL_SERIES } from "@/config/constants";
-import { MinimalDisk } from "@/interfaces";
+import { MinimalDisk } from "@/types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

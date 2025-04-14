@@ -1,11 +1,12 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+
 import { HomeContainer, HeroSection } from "@/components/home";
-import { PROJECT_NAME, SITE_URL } from "@/config/constants";
+import { PROJECT_NAME, PROJECT_DOMAIN } from "@/config/constants";
 
 export const metadata: Metadata = {
   title: `Inicio - ${PROJECT_NAME}`,
   description: `Página de Inicio - ${PROJECT_NAME}.`,
-  metadataBase: SITE_URL,
+  metadataBase: PROJECT_DOMAIN,
   keywords: ["home", "collection"],
   robots: "index, follow",
   openGraph: {

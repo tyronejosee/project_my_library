@@ -1,12 +1,13 @@
 "use client";
 
-import { MediaCard } from "@/components/media";
-import { Media } from "@/interfaces";
-import { DefaultTransition } from "../animated";
+import type { Media } from "@/types";
 
-interface Props {
+import { MediaCard } from "@/components/media";
+import { DefaultTransition } from "@/components/animated";
+
+type Props = {
   results: Media[];
-}
+};
 
 export default function MediaList({ results }: Props) {
   return (

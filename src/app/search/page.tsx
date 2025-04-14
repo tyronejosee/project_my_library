@@ -1,11 +1,11 @@
 import { Heading } from "@/components/common";
 import { MediaList } from "@/components/media";
-import { PROJECT_NAME } from "@/config/constants";
 import { searchMedia } from "@/lib/utils";
+import { PROJECT_NAME } from "@/config/constants";
 
-interface Props {
+type Props = {
   searchParams: Promise<{ query?: string }>;
-}
+};
 
 export async function generateMetadata({ searchParams }: Props) {
   const resolvedSearchParams = await searchParams;

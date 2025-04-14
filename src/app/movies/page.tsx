@@ -1,12 +1,13 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+
 import { Heading } from "@/components/common";
 import { LoadMovies } from "@/components/media";
-import { ALL_MOVIES, PROJECT_NAME, SITE_URL } from "@/config/constants";
+import { ALL_MOVIES, PROJECT_NAME, PROJECT_DOMAIN } from "@/config/constants";
 
 export const metadata: Metadata = {
   title: `Películas - ${PROJECT_NAME}`,
   description: `Página de Películas - ${PROJECT_NAME}.`,
-  metadataBase: SITE_URL,
+  metadataBase: PROJECT_DOMAIN,
   keywords: ["movies", "collection"],
   robots: "index, follow",
   openGraph: {

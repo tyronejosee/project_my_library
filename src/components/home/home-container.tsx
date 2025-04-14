@@ -1,5 +1,8 @@
 "use client";
 
+import type { Media } from "@/types";
+
+import { useEffect, useState } from "react";
 import { ContentSection, DailyRecommendationSection } from "@/components/home";
 import { DefaultTransition } from "@/components/animated";
 import {
@@ -7,8 +10,6 @@ import {
   getRandomMedia,
   getSeriesByGenre,
 } from "@/lib/utils";
-import { useEffect, useState } from "react";
-import { Media } from "@/interfaces";
 
 export default function HomeContainer() {
   const numberItems = 28;

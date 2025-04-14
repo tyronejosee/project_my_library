@@ -5,8 +5,8 @@ import { useInView } from "react-intersection-observer";
 import { Spinner } from "@/components/common";
 import { MediaList } from "@/components/media";
 import { useSeriesStore } from "@/store/seriesStore";
-import { ALL_SERIES } from "@/config/constants";
 import { delay } from "@/lib/utils";
+import { ALL_SERIES } from "@/config/constants";
 
 export default function LoadSeries() {
   const { series, setSeries, page, setPage } = useSeriesStore();

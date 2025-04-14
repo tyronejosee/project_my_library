@@ -1,11 +1,12 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+
 import { Dashboard } from "@/components/dashboard";
-import { PROJECT_NAME, SITE_URL } from "@/config/constants";
+import { PROJECT_NAME, PROJECT_DOMAIN } from "@/config/constants";
 
 export const metadata: Metadata = {
   title: `Dashboard - ${PROJECT_NAME}`,
   description: `Página de Dashboard - ${PROJECT_NAME}.`,
-  metadataBase: SITE_URL,
+  metadataBase: PROJECT_DOMAIN,
   keywords: ["dashboard", "collection"],
   robots: "index, follow",
   openGraph: {

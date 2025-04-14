@@ -1,10 +1,11 @@
 "use client";
 
+import type { Channel } from "@/types";
+
 import { Accordion, AccordionItem } from "@heroui/react";
 import { TVCard } from "@/components/media";
 import { AnimatedContent } from "@/components/animated";
 import { ALL_TV_CHANNELS } from "@/config/constants";
-import { Channel } from "@/interfaces";
 
 export default function TVContainer() {
   const groupedChannels = ALL_TV_CHANNELS.reduce((acc, channel) => {
@@ -14,10 +15,7 @@ export default function TVContainer() {
   }, {} as Record<string, Channel[]>);
 
   return (
-    <Accordion
-      selectionMode="multiple"
-      // defaultExpandedKeys={["Nacionales"]}
-    >
+    <Accordion selectionMode="multiple">
       {Object.entries(groupedChannels).map(([category, channels]) => (
         <AccordionItem
           key={category}
