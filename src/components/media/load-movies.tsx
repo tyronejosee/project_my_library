@@ -6,7 +6,7 @@ import { useCallback, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Spinner } from "@/components/common";
 import { MediaList } from "@/components/media";
-import { useMoviesStore } from "@/store/moviesStore";
+import { useMoviesStore } from "@/store/movies-store";
 import { delay } from "@/lib/utils";
 
 type Props = {

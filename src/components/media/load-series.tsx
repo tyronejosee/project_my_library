@@ -4,7 +4,7 @@ import { useCallback, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Spinner } from "@/components/common";
 import { MediaList } from "@/components/media";
-import { useSeriesStore } from "@/store/seriesStore";
+import { useSeriesStore } from "@/store/series-store";
 import { delay } from "@/lib/utils";
 import { ALL_SERIES } from "@/config/constants";
 
