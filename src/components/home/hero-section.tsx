@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Image } from "@heroui/react";
-import { ScrollIndicator } from "@/components/common";
-import { Noise, RotatingText } from "@/components/animated";
+import { Noise, RotatingText, TextShimmerWave } from "@/components/animated";
 import { HERO_IMAGES } from "@/config/constants";
 
 export default function HeroSection() {
@@ -18,7 +17,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="bg-primary h-[calc(100vh-65px)] w-full">
+    <section className="h-[calc(100vh-65px)] w-full">
       <figure className="absolute inset-0 top-0">
         <Noise
           patternSize={250}
@@ -84,7 +83,19 @@ export default function HeroSection() {
           />
         ))}
       </div>
-      <ScrollIndicator text="Scroll down" />
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-40 left-0 right-0 z-30 flex justify-center gap-2">
+        <TextShimmerWave
+          duration={1}
+          spread={1}
+          zDistance={1}
+          scaleDistance={1.1}
+          rotateYDistance={20}
+        >
+          Scroll down...
+        </TextShimmerWave>
+      </div>
     </section>
   );
 }

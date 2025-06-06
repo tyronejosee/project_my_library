@@ -33,6 +33,6 @@
     "statusBarItem.prominentHoverBackground": "#DAFF01",
     "statusBarItem.remoteBackground": "#DAFF01",
     "extensionButton.prominentBackground": "#DAFF01",
-    "debugConsoleInputIcon.foreground": "#DAFF01",
+    "debugConsoleInputIcon.foreground": "#DAFF01"
   }
 }
