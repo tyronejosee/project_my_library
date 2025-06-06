@@ -1,7 +1,5 @@
 "use client";
 
-import type { Media } from "@/types";
-
 import { useEffect, useState } from "react";
 import { ContentSection, DailyRecommendationSection } from "@/components/home";
 import { DefaultTransition } from "@/components/animated";
@@ -10,143 +8,124 @@ import {
   getRandomMedia,
   getSeriesByGenre,
 } from "@/lib/utils";
+import type { Media } from "@/types";
+
+const numberItems = 28;
+
+const genreSections = [
+  {
+    key: "animationSeries",
+    title: "Animación",
+    subtitle: "Series",
+    pathname: "series",
+    genre: "Animation",
+    type: "series",
+  },
+  {
+    key: "actionMovies",
+    title: "Acción",
+    subtitle: "Películas",
+    pathname: "movies",
+    genre: "Action",
+    type: "movies",
+  },
+  {
+    key: "adventureMovies",
+    title: "Aventura",
+    subtitle: "Películas",
+    pathname: "movies",
+    genre: "Adventure",
+    type: "movies",
+  },
+  {
+    key: "animationMovies",
+    title: "Animación",
+    subtitle: "Películas",
+    pathname: "movies",
+    genre: "Animation",
+    type: "movies",
+  },
+  {
+    key: "comedyMovies",
+    title: "Comedia",
+    subtitle: "Películas",
+    pathname: "movies",
+    genre: "Comedy",
+    type: "movies",
+  },
+  {
+    key: "dramaMovies",
+    title: "Drama",
+    subtitle: "Películas",
+    pathname: "movies",
+    genre: "Drama",
+    type: "movies",
+  },
+  {
+    key: "horrorMovies",
+    title: "Terror",
+    subtitle: "Películas",
+    pathname: "movies",
+    genre: "Horror",
+    type: "movies",
+  },
+  {
+    key: "suspenseMovies",
+    title: "Suspenso",
+    subtitle: "Películas",
+    pathname: "movies",
+    genre: "Suspense",
+    type: "movies",
+  },
+];
 
 export default function HomeContainer() {
-  const numberItems = 28;
   const [recommendation, setRecommendation] = useState<Media | null>(null);
-  const [animationSeries, setAnimationSeries] = useState<Media[]>([]);
-  const [actionMovies, setActionMovies] = useState<Media[]>([]);
-  const [adventureMovies, setAdventureMovies] = useState<Media[]>([]);
-  const [animationMovies, setAnimationMovies] = useState<Media[]>([]);
-  const [comedyMovies, setComedyMovies] = useState<Media[]>([]);
-  const [dramaMovies, setDramaMovies] = useState<Media[]>([]);
-  // const [fantasyMovies, setFantasyMovies] = useState<Media[]>([]);
-  const [horrorMovies, setHorrorMovies] = useState<Media[]>([]);
-  const [suspenseMovies, setSuspenseMovies] = useState<Media[]>([]);
+  const [sectionsData, setSectionsData] = useState<Record<string, Media[]>>({});
 
   useEffect(() => {
     setRecommendation(getRandomMedia());
-    setAnimationSeries(getSeriesByGenre("Animation", numberItems));
-    setActionMovies(getMoviesByGenre("Action", numberItems));
-    setAdventureMovies(getMoviesByGenre("Adventure", numberItems));
-    setAnimationMovies(getMoviesByGenre("Animation", numberItems));
-    setComedyMovies(getMoviesByGenre("Comedy", numberItems));
-    setDramaMovies(getMoviesByGenre("Drama", numberItems));
-    // setFantasyMovies(getMoviesByGenre("Fantasy", numberItems));
-    setHorrorMovies(getMoviesByGenre("Horror", numberItems));
-    setSuspenseMovies(getMoviesByGenre("Suspense", numberItems));
+
+    const newData: Record<string, Media[]> = {};
+
+    for (const section of genreSections) {
+      const media =
+        section.type === "series"
+          ? getSeriesByGenre(section.genre, numberItems)
+          : getMoviesByGenre(section.genre, numberItems);
+      newData[section.key] = media;
+    }
+
+    setSectionsData(newData);
   }, []);
 
   return (
     <>
-      {/* Recommendation */}
+      {/* Recommendation section */}
       {recommendation && (
         <DailyRecommendationSection
           media={recommendation}
           onRefresh={() => setRecommendation(getRandomMedia())}
         />
       )}
-      {/* Series */}
-      {animationSeries.length > 0 && (
-        <DefaultTransition>
-          <ContentSection
-            media={animationSeries}
-            title="Animación"
-            subtitle="Series"
-            pathname="series"
-            genre="animation"
-          />
-        </DefaultTransition>
-      )}
-      {/* Movies */}
-      {actionMovies.length > 0 && (
-        <DefaultTransition>
-          <ContentSection
-            media={actionMovies}
-            title="Acción"
-            subtitle="Películas"
-            pathname="movies"
-            genre="action"
-          />
-        </DefaultTransition>
-      )}
-      {adventureMovies.length > 0 && (
-        <DefaultTransition>
-          <ContentSection
-            media={adventureMovies}
-            title="Aventura"
-            subtitle="Películas"
-            pathname="movies"
-            genre="adventure"
-          />
-        </DefaultTransition>
-      )}
-      {animationMovies.length > 0 && (
-        <DefaultTransition>
-          <ContentSection
-            media={animationMovies}
-            title="Animación"
-            subtitle="Películas"
-            pathname="movies"
-            genre="animation"
-          />
-        </DefaultTransition>
-      )}
-      {comedyMovies.length > 0 && (
-        <DefaultTransition>
-          <ContentSection
-            media={comedyMovies}
-            title="Comedia"
-            subtitle="Películas"
-            pathname="movies"
-            genre="comedy"
-          />
-        </DefaultTransition>
-      )}
-      {dramaMovies.length > 0 && (
-        <DefaultTransition>
-          <ContentSection
-            media={dramaMovies}
-            title="Drama"
-            subtitle="Películas"
-            pathname="movies"
-            genre="drama"
-          />
-        </DefaultTransition>
-      )}
-      {/* {fantasyMovies.length > 0 && (
-        <DefaultTransition>
-          <ContentSection
-            media={fantasyMovies}
-            title="Fantasía"
-            subtitle="Películas"
-            pathname="movies"
-            genre="fantasy"
-          />
-        </DefaultTransition>
-      )} */}
-      {horrorMovies.length > 0 && (
-        <DefaultTransition>
-          <ContentSection
-            media={horrorMovies}
-            title="Terror"
-            subtitle="Películas"
-            pathname="movies"
-            genre="horror"
-          />
-        </DefaultTransition>
-      )}
-      {suspenseMovies.length > 0 && (
-        <DefaultTransition>
-          <ContentSection
-            media={suspenseMovies}
-            title="Suspenso"
-            subtitle="Películas"
-            pathname="movies"
-            genre="suspense"
-          />
-        </DefaultTransition>
-      )}
+
+      {/* Genre sections */}
+      {genreSections.map(({ key, title, subtitle, pathname, genre }) => {
+        const media = sectionsData[key];
+        if (!media || media.length === 0) return null;
+
+        return (
+          <DefaultTransition key={key}>
+            <ContentSection
+              media={media}
+              title={title}
+              subtitle={subtitle}
+              pathname={pathname}
+              genre={genre.toLowerCase()}
+            />
+          </DefaultTransition>
+        );
+      })}
     </>
   );
 }
