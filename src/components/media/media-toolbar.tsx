@@ -1,7 +1,8 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { Select, SelectItem } from "@heroui/react";
+import { useRouter } from "next/navigation";
+
 import { GENRE_CHOICES } from "@/config/constants";
 
 export default function MediaToolbar() {
@@ -22,7 +23,7 @@ export default function MediaToolbar() {
           onChange={(e) => handleGenreChange(e.target.value)}
         >
           {GENRE_CHOICES.map((genre) => (
-            <SelectItem key={genre.key} value={genre.name}>
+            <SelectItem key={genre.key}>
               {genre.name}
             </SelectItem>
           ))}

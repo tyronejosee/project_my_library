@@ -17,7 +17,8 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="h-[calc(100vh-65px)] w-full">
+    <section className="h-screen w-full"
+    >
       <figure className="absolute inset-0 top-0">
         <Noise
           patternSize={250}
@@ -51,10 +52,10 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black z-10 opacity-25"></div>
       </figure>
       <div className="absolute top-0 z-30 flex h-full w-full items-center justify-center px-4 text-center">
-        <h1 className="flex flex-col md:flex-row items-center gap-4 text-6xl font-bold tracking-tight text-white mb-4">
+        <h1 className="flex flex-col md:flex-row items-center gap-4 text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-4">
           <span>Collection</span>
           <RotatingText
-            texts={["Películas", "Series", "Televisión", "Discos"]}
+            texts={["Películas", "Series", "Televisión"]}
             mainClassName="px-2 sm:px-2 md:px-3 text-neutral-950 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-xl bg-primary"
             staggerFrom={"last"}
             initial={{ y: "100%" }}
@@ -75,11 +76,10 @@ export default function HeroSection() {
             key={index}
             aria-label={`Go to slide ${index + 1}`}
             onClick={() => setCurrentImageIndex(index)}
-            className={`h-2 w-2 rounded-full transition-all duration-300 ${
-              index === currentImageIndex
-                ? "bg-white w-6"
-                : "bg-white/50 hover:bg-white/80"
-            }`}
+            className={`h-4 w-4 rounded-full transition-all duration-300 ${index === currentImageIndex
+              ? "bg-primary w-8"
+              : "bg-white/50 hover:bg-white/80"
+              }`}
           />
         ))}
       </div>

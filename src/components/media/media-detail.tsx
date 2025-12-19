@@ -24,7 +24,7 @@ export default function MediaDetail({ media }: Props) {
   const imageWidth = media.type === "Movies" ? 165 : 182;
 
   return (
-    <main className="h-full flex items-center justify-center">
+    <main className="h-full flex items-center justify-center mt-18">
       <div
         className="fixed inset-0 bg-cover bg-center before:absolute before:inset-0 
         before:bg-black/90 before:backdrop-blur-2xl"

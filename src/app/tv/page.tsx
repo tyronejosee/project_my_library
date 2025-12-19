@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function TVPage() {
   return (
-    <main className="max-w-screen-2xl mx-auto text-center py-6 px-6">
+    <main className="max-w-screen-2xl mx-auto text-center py-6 px-6 mt-12">
       <Heading title="Televisión" />
       <TVContainer />
     </main>
