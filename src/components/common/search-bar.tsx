@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 import { Input } from "@heroui/react";
 import { Search } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-export default function SearchBar() {
+function SearchBar() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(searchParams.get("query") || "");
@@ -66,9 +66,11 @@ export default function SearchBar() {
         aria-label="Search"
         radius="lg"
         startContent={
-          <Search className="text-black/50 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
+          <Search className="dark:text-white/90 text-slate-400 pointer-events-none shrink-0" />
         }
       />
     </form>
   );
 }
+
+export { SearchBar };

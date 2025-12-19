@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
-import { Heading } from "@/components/common";
-import { TVContainer } from "@/components/media";
-import { PROJECT_NAME, PROJECT_DOMAIN } from "@/config/constants";
+import { Heading } from "@/components/common/heading";
+import { TVContainer } from "@/components/media/tv-container";
+import { PROJECT_DOMAIN, PROJECT_NAME } from "@/config/constants";
 
 export const metadata: Metadata = {
   title: `Televisión - ${PROJECT_NAME}`,

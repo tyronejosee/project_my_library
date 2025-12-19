@@ -1,14 +1,15 @@
 "use client";
 
 import { useCallback, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import { Spinner } from "@/components/common";
-import { MediaList } from "@/components/media";
-import { useSeriesStore } from "@/store/series-store";
-import { delay } from "@/lib/utils";
-import { ALL_SERIES } from "@/config/constants";
 
-export default function LoadSeries() {
+import { Spinner } from "@/components/common/spinner";
+import { MediaList } from "@/components/media/media-list";
+import { ALL_SERIES } from "@/config/constants";
+import { delay } from "@/lib/utils";
+import { useSeriesStore } from "@/store/series-store";
+import { useInView } from "react-intersection-observer";
+
+function LoadSeries() {
   const { series, setSeries, page, setPage } = useSeriesStore();
 
   const itemsPerPage = 28;
@@ -43,3 +44,5 @@ export default function LoadSeries() {
     </>
   );
 }
+
+export { LoadSeries };

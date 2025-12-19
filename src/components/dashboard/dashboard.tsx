@@ -1,12 +1,14 @@
 "use client";
 
 import { Chip } from "@heroui/react";
-import { Heading } from "@/components/common";
-import { DiskSummary, PieChart } from "@/components/dashboard";
-import { DefaultTransition } from "@/components/animated";
+
+import { DefaultTransition } from "@/components/animated/default-transition";
+import { Heading } from "@/components/common/heading";
+import { DiskSummary } from "@/components/dashboard/disk-summary";
+import { PieChart } from "@/components/dashboard/pie-chart";
 import { ALL_DISKS } from "@/config/constants";
 
-export default function Dashboard() {
+function Dashboard() {
   return (
     <div className="space-y-6">
       <Heading title="Dashboard" />
@@ -20,9 +22,7 @@ export default function Dashboard() {
               <article className="bg-neutral-950 rounded-2xl border border-neutral-800 p-4 group">
                 <div className="flex justify-between">
                   <div className="flex flex-col">
-                    <h2 className="text-left text-xl font-medium">
-                      {disk.volume_label}
-                    </h2>
+                    <h2 className="text-left text-xl font-medium">{disk.volume_label}</h2>
                     <ul className="text-left mt-4">
                       <li>Total: {disk.total}</li>
                       <li>Libre: {disk.free}</li>
@@ -42,3 +42,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
+export { Dashboard };

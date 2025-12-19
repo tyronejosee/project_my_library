@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from "react";
 
-type Props = {
+type NoiseProps = {
   patternSize?: number;
   patternScaleX?: number;
   patternScaleY?: number;
@@ -10,13 +10,13 @@ type Props = {
   patternAlpha?: number;
 };
 
-export default function Noise({
+function Noise({
   patternSize = 250,
   patternScaleX = 1,
   patternScaleY = 1,
   patternRefreshInterval = 2,
   patternAlpha = 15,
-}: Props) {
+}: NoiseProps) {
   const grainRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -81,18 +81,9 @@ export default function Noise({
     return () => {
       window.removeEventListener("resize", resize);
     };
-  }, [
-    patternSize,
-    patternScaleX,
-    patternScaleY,
-    patternRefreshInterval,
-    patternAlpha,
-  ]);
+  }, [patternSize, patternScaleX, patternScaleY, patternRefreshInterval, patternAlpha]);
 
-  return (
-    <canvas
-      className="absolute left-0 top-0 w-screen h-screen z-20"
-      ref={grainRef}
-    />
-  );
+  return <canvas className="absolute left-0 top-0 w-screen h-screen z-20" ref={grainRef} />;
 }
+
+export { Noise };

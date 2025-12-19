@@ -1,26 +1,26 @@
 "use client";
 
-import type { Media } from "@/types";
-
 import { Button, Chip, Image } from "@heroui/react";
 import {
-  Box,
-  Play,
-  Folder,
-  Calendar,
-  FolderPlus,
   BadgeAlert,
   BadgeCheck,
-  FolderClock,
+  Box,
+  Calendar,
   Clapperboard,
+  Folder,
+  FolderClock,
+  FolderPlus,
+  Play,
 } from "lucide-react";
-import { normalizeString } from "@/lib/utils";
 
-type Props = {
+import { normalizeString } from "@/lib/utils";
+import type { Media } from "@/types";
+
+type MediaDetailProps = {
   media: Media;
 };
 
-export default function MediaDetail({ media }: Props) {
+function MediaDetail({ media }: MediaDetailProps) {
   const imageWidth = media.type === "Movies" ? 165 : 182;
 
   return (
@@ -30,7 +30,7 @@ export default function MediaDetail({ media }: Props) {
         before:bg-black/90 before:backdrop-blur-2xl"
         style={{ backgroundImage: `url(${media.image})` }}
       ></div>
-      <section className="relative w-[100vw] sm:w-[70vw] lg:w-[40vw] xl:w-[30vw] p-4">
+      <section className="relative w-screen sm:w-[70vw] lg:w-[40vw] xl:w-[30vw] p-4">
         <figure className="flex flex-col items-center gap-4 pb-4">
           <Image
             isBlurred
@@ -63,19 +63,11 @@ export default function MediaDetail({ media }: Props) {
               Trailer
             </Button>
             {media.has_file ? (
-              <Chip
-                color="success"
-                startContent={<BadgeCheck size={18} />}
-                variant="solid"
-              >
+              <Chip color="success" startContent={<BadgeCheck size={18} />} variant="solid">
                 Disponible
               </Chip>
             ) : (
-              <Chip
-                color="danger"
-                startContent={<BadgeAlert size={18} />}
-                variant="solid"
-              >
+              <Chip color="danger" startContent={<BadgeAlert size={18} />} variant="solid">
                 No Disponible
               </Chip>
             )}
@@ -83,9 +75,7 @@ export default function MediaDetail({ media }: Props) {
         </figure>
 
         <article className="mt-auto rounded-2xl p-4 text-center border border-neutral-800 bg-black space-y-4">
-          <h2 className="text-xl font-medium border-b border-neutral-800 pb-2">
-            Información
-          </h2>
+          <h2 className="text-xl font-medium border-b border-neutral-800 pb-2">Información</h2>
           <div className="flex justify-center gap-4">
             <ul>
               <li className="flex gap-2">
@@ -121,3 +111,5 @@ export default function MediaDetail({ media }: Props) {
     </main>
   );
 }
+
+export { MediaDetail };

@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ContentSection, DailyRecommendationSection } from "@/components/home";
-import { DefaultTransition } from "@/components/animated";
-import {
-  getMoviesByGenre,
-  getRandomMedia,
-  getSeriesByGenre,
-} from "@/lib/utils";
+
+import { DefaultTransition } from "@/components/animated/default-transition";
+import { ContentSection } from "@/components/home/content-section";
+import { DailyRecommendationSection } from "@/components/home/daily-recommendation-section";
+import { getMoviesByGenre, getRandomMedia, getSeriesByGenre } from "@/lib/utils";
 import type { Media } from "@/types";
 
 const numberItems = 28;
@@ -79,7 +77,7 @@ const genreSections = [
   },
 ];
 
-export default function HomeContainer() {
+function HomeContainer() {
   const [recommendation, setRecommendation] = useState<Media | null>(null);
   const [sectionsData, setSectionsData] = useState<Record<string, Media[]>>({});
 
@@ -129,3 +127,5 @@ export default function HomeContainer() {
     </>
   );
 }
+
+export { HomeContainer };

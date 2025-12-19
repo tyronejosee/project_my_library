@@ -1,8 +1,8 @@
-import { PieChart } from "@/components/dashboard";
-import { getDiskSummary } from "@/lib/utils";
+import { PieChart } from "@/components/dashboard/pie-chart";
 import { ALL_DISKS } from "@/config/constants";
+import { getDiskSummary } from "@/lib/utils";
 
-export default function DiskSummary() {
+function DiskSummary() {
   const { total, used, free, percentUsed } = getDiskSummary(ALL_DISKS);
 
   return (
@@ -28,3 +28,5 @@ export default function DiskSummary() {
     </section>
   );
 }
+
+export { DiskSummary };

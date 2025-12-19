@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, Transition } from "motion/react";
-import { cn } from "@/lib/utils";
 import type { JSX } from "react";
+import { motion, Transition } from "motion/react";
+
+import { cn } from "@/lib/utils";
 
 type TextShimmerWaveProps = {
   children: string;
@@ -18,7 +19,7 @@ type TextShimmerWaveProps = {
   transition?: Transition;
 };
 
-export default function TextShimmerWave({
+function TextShimmerWave({
   children,
   as: Component = "p",
   className,
@@ -31,16 +32,14 @@ export default function TextShimmerWave({
   rotateYDistance = 10,
   transition,
 }: TextShimmerWaveProps) {
-  const MotionComponent = motion.create(
-    Component as keyof JSX.IntrinsicElements
-  );
+  const MotionComponent = motion.create(Component as keyof JSX.IntrinsicElements);
 
   return (
     <MotionComponent
       className={cn(
-        "relative inline-block [perspective:500px]",
-        "[--base-color:theme(colors.primary)] [--base-gradient-color:#fff]",
-        "dark:[--base-color:theme(colors.primary)] dark:[--base-gradient-color:#fff]",
+        "relative inline-block perspective-normal",
+        "[--base-color:var(--color-primary)] [--base-gradient-color:#fff]",
+        "dark:[--base-color:var(--color-primary)] dark:[--base-gradient-color:#fff]",
         className
       )}
     >
@@ -50,9 +49,7 @@ export default function TextShimmerWave({
         return (
           <motion.span
             key={i}
-            className={cn(
-              "inline-block whitespace-pre [transform-style:preserve-3d]"
-            )}
+            className={cn("inline-block whitespace-pre transform-3d")}
             initial={{
               translateZ: 0,
               scale: 1,
@@ -65,11 +62,7 @@ export default function TextShimmerWave({
               translateY: [0, yDistance, 0],
               scale: [1, scaleDistance, 1],
               rotateY: [0, rotateYDistance, 0],
-              color: [
-                "var(--base-color)",
-                "var(--base-gradient-color)",
-                "var(--base-color)",
-              ],
+              color: ["var(--base-color)", "var(--base-gradient-color)", "var(--base-color)"],
             }}
             transition={{
               duration: duration,
@@ -87,3 +80,5 @@ export default function TextShimmerWave({
     </MotionComponent>
   );
 }
+
+export { TextShimmerWave };

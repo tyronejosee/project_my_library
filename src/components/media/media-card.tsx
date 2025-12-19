@@ -1,15 +1,15 @@
 "use client";
 
+import { Card, CardFooter, Image } from "@heroui/react";
+import Link from "next/link";
+
 import type { Media } from "@/types";
 
-import Link from "next/link";
-import { Card, CardFooter, Image } from "@heroui/react";
-
-type Props = {
+type MediaCardProps = {
   media: Media;
 };
 
-export default function MediaCard({ media }: Props) {
+function MediaCard({ media }: MediaCardProps) {
   const imageWidth = media.type === "Movies" ? 165 : 182;
 
   return (
@@ -18,7 +18,7 @@ export default function MediaCard({ media }: Props) {
         <Card
           isBlurred
           radius="none"
-          className="active:bg-neutral-800 transition-colors duration-1000 !outline-none shadow-none rounded-2xl"
+          className="active:bg-neutral-800 transition-colors duration-1000 outline-none! shadow-none rounded-2xl"
         >
           <div className="relative border border-neutral-800 overflow-hidden rounded-2xl mx-auto">
             <span className="hidden group-hover:block absolute top-2 right-2 bg-primary text-neutral-950 px-2 py-1 rounded-lg text-xs z-50">
@@ -37,12 +37,12 @@ export default function MediaCard({ media }: Props) {
             />
           </div>
           <CardFooter className="flex flex-col text-md h-16">
-            <h2 className="text-sm font-medium line-clamp-2">
-              {media.folder_name}
-            </h2>
+            <h2 className="text-sm font-medium line-clamp-2">{media.folder_name}</h2>
           </CardFooter>
         </Card>
       </Link>
     </article>
   );
 }
+
+export { MediaCard };

@@ -15,11 +15,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
 
-import { SearchBar } from "@/components/common";
-import { Logo } from "@/components/icons";
+import { SearchBar } from "@/components/common/search-bar";
+import { Logo } from "@/components/icons/logo";
 import { NAV_ITEMS } from "@/config/constants";
 
-export default function Toolbar() {
+function Toolbar() {
   // Hooks
   const pathname = usePathname();
 
@@ -50,8 +50,9 @@ export default function Toolbar() {
       isMenuOpen={isMenuOpen}
       isBordered={isHomePage ? shouldBlur : true}
       isBlurred={shouldBlur}
-      className={`fixed z-50 transition-colors duration-300 border-none ${shouldBlur ? "" : "bg-transparent blur-0"
-        }`}
+      className={`fixed z-50 transition-colors duration-300 border-none ${
+        shouldBlur ? "" : "bg-transparent blur-0"
+      }`}
     >
       <NavbarContent justify="start">
         <Link color="foreground" href="/">
@@ -62,9 +63,7 @@ export default function Toolbar() {
       </NavbarContent>
 
       <NavbarContent justify="center">
-        <Suspense
-          fallback={<Skeleton className="h-10 w-[720px] rounded-xl" />}
-        >
+        <Suspense fallback={<Skeleton className="h-10 w-180 rounded-xl" />}>
           <SearchBar />
         </Suspense>
       </NavbarContent>
@@ -99,3 +98,5 @@ export default function Toolbar() {
     </Navbar>
   );
 }
+
+export { Toolbar };

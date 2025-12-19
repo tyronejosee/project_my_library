@@ -1,26 +1,23 @@
 "use client";
 
-import type { Media } from "@/types";
-
-import Link from "next/link";
 import { Button, Chip, Image } from "@heroui/react";
 import { RefreshCw, Star } from "lucide-react";
-import { DefaultTransition } from "@/components/animated";
+import Link from "next/link";
 
-type Props = {
+import { DefaultTransition } from "@/components/animated/default-transition";
+import type { Media } from "@/types";
+
+type DailyRecommendationSectionProps = {
   media: Media;
   onRefresh: () => void;
 };
 
-export default function DailyRecommendationSection({
-  media,
-  onRefresh,
-}: Props) {
+function DailyRecommendationSection({ media, onRefresh }: DailyRecommendationSectionProps) {
   const imageWidth = media.type === "Movies" ? 165 : 182;
   return (
     <div className="bg-primary text-neutral-950 overflow-hidden">
       <DefaultTransition>
-        <div className="max-w-screen-md mx-auto flex flex-col md:flex-row py-10">
+        <div className="max-w-3xl mx-auto flex flex-col md:flex-row py-10">
           <div className="relative flex justify-center items-center shrink-0 pt-4 md:pt-0 group">
             <Image
               isBlurred
@@ -34,13 +31,10 @@ export default function DailyRecommendationSection({
               className="object-cover w-full h-full border border-neutral-800"
             />
           </div>
-          <div className="flex flex-col p-4 md:p-6 flex-grow">
+          <div className="flex flex-col p-4 md:p-6 grow">
             <div className="flex justify-between items-start mb-3">
               <div>
-                <Link
-                  href={`/${media.type.toLowerCase()}/${media.slug}`}
-                  passHref
-                >
+                <Link href={`/${media.type.toLowerCase()}/${media.slug}`} passHref>
                   <h3 className="font-bold leading-tight tracking-tighter text-4xl lg:leading-[1.1] hover:underline">
                     {media.folder_name}
                   </h3>
@@ -67,11 +61,7 @@ export default function DailyRecommendationSection({
             </div>
 
             <div className="flex mb-3">
-              <Chip
-                size="sm"
-                variant="solid"
-                className="font-medium bg-neutral-950"
-              >
+              <Chip size="sm" variant="solid" className="font-medium bg-neutral-950">
                 {media.genre}
               </Chip>
             </div>
@@ -85,10 +75,9 @@ export default function DailyRecommendationSection({
             </div>
 
             <p className="text-sm overflow-y-auto h-10">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam
-              fugit repellat laboriosam sint corporis quidem neque nobis unde,
-              fuga non mollitia nulla labore veritatis sequi cumque!
-              Necessitatibus laudantium atque esse.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam fugit repellat
+              laboriosam sint corporis quidem neque nobis unde, fuga non mollitia nulla labore
+              veritatis sequi cumque! Necessitatibus laudantium atque esse.
             </p>
           </div>
         </div>
@@ -96,3 +85,5 @@ export default function DailyRecommendationSection({
     </div>
   );
 }
+
+export { DailyRecommendationSection };

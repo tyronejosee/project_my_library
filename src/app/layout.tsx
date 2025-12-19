@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 import "@/app/global.css";
-import {
-  BackToTop,
-  TabToolbar,
-  Toolbar
-} from "@/components/common";
+import { BackToTop } from "@/components/common/back-to-top";
+import { TabToolbar } from "@/components/common/tab-toolbar";
+import { Toolbar } from "@/components/common/toolbar";
 
 const bricolageGrotesque = localFont({
   src: [
@@ -32,10 +30,7 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html
-      lang="en"
-      className={`${bricolageGrotesque.variable} dark`}
-    >
+    <html lang="en" className={`${bricolageGrotesque.variable} dark`}>
       <body className="antialiased mb-14">
         <Toolbar />
         {children}

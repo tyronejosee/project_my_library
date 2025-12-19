@@ -1,12 +1,12 @@
-import { Heading } from "@/components/common";
-import { LoadMovies } from "@/components/media";
+import { Heading } from "@/components/common/heading";
+import { LoadMovies } from "@/components/media/load-movies";
 import { getMoviesByGenre } from "@/lib/utils";
 
-type Props = {
+type GenrePageProps = {
   params: Promise<{ genre: string }>;
 };
 
-export default async function GenrePage({ params }: Props) {
+export default async function GenrePage({ params }: GenrePageProps) {
   const { genre } = await params;
   const data = await getMoviesByGenre(genre);
 

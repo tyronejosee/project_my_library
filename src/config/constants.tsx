@@ -100,6 +100,4 @@ export const HERO_IMAGES = [
   "/home/hero-009.webp",
   "/home/hero-010.webp",
   "/home/hero-011.webp",
-  "/home/hero-012.webp",
-  "/home/hero-013.webp",
 ];

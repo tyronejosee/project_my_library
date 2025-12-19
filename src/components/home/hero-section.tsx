@@ -1,11 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Image } from "@heroui/react";
-import { Noise, RotatingText, TextShimmerWave } from "@/components/animated";
+import { useEffect, useState } from "react";
+
+import { Noise } from "@/components/animated/noise";
+import { RotatingText } from "@/components/animated/rotating-text";
+import { TextShimmerWave } from "@/components/animated/text-shimmer-wave";
 import { HERO_IMAGES } from "@/config/constants";
 
-export default function HeroSection() {
+function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -17,8 +20,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="h-screen w-full"
-    >
+    <section className="h-screen w-full">
       <figure className="absolute inset-0 top-0">
         <Noise
           patternSize={250}
@@ -76,10 +78,9 @@ export default function HeroSection() {
             key={index}
             aria-label={`Go to slide ${index + 1}`}
             onClick={() => setCurrentImageIndex(index)}
-            className={`h-4 w-4 rounded-full transition-all duration-300 ${index === currentImageIndex
-              ? "bg-primary w-8"
-              : "bg-white/50 hover:bg-white/80"
-              }`}
+            className={`h-4 w-4 rounded-full transition-all duration-300 ${
+              index === currentImageIndex ? "bg-primary w-8" : "bg-white/50 hover:bg-white/80"
+            }`}
           />
         ))}
       </div>
@@ -99,3 +100,5 @@ export default function HeroSection() {
     </section>
   );
 }
+
+export { HeroSection };

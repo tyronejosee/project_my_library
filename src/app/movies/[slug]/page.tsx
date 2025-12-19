@@ -1,22 +1,21 @@
-import type { Metadata } from "next";
 import type { Media } from "@/types";
+import type { Metadata } from "next";
 
-import { MediaDetail } from "@/components/media";
-import { ALL_MOVIES, PROJECT_NAME, PROJECT_DOMAIN } from "@/config/constants";
+import { MediaDetail } from "@/components/media/media-detail";
+import { ALL_MOVIES, PROJECT_DOMAIN, PROJECT_NAME } from "@/config/constants";
 
-type Props = {
+type MoviesDetailProps = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: MoviesDetailProps): Promise<Metadata> {
   const { slug } = await params;
   const movie = ALL_MOVIES.find((movie) => movie.slug === slug);
 
   if (!movie) {
     return {
       title: "Película no encontrada",
-      description:
-        "La película que buscas no fue encontrada en nuestro catálogo.",
+      description: "La película que buscas no fue encontrada en nuestro catálogo.",
       robots: "noindex, nofollow",
     };
   }
@@ -27,9 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: movie.folder_name,
     description: `${movie.file_name} - ${movie.genre} - ${movie.type}`,
     metadataBase: PROJECT_DOMAIN,
-    keywords: [
-      `"${movie.file_name}", "${movie.folder_name}", "${movie.genre}", "${movie.type}"`,
-    ],
+    keywords: [`"${movie.file_name}", "${movie.folder_name}", "${movie.genre}", "${movie.type}"`],
     authors: [{ name: PROJECT_NAME, url: PROJECT_DOMAIN.toString() }],
     creator: PROJECT_NAME,
     publisher: PROJECT_NAME,
@@ -54,11 +51,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function MoviesDetail({ params }: Props) {
+export default async function MoviesDetail({ params }: MoviesDetailProps) {
   const { slug } = await params;
-  const movie: Media | undefined = ALL_MOVIES.find(
-    (movie) => movie.slug === slug
-  );
+  const movie: Media | undefined = ALL_MOVIES.find((movie) => movie.slug === slug);
 
   if (!movie) {
     return <p className="text-gray-500">Película no encontrada.</p>;

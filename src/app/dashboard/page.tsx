@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import { Dashboard } from "@/components/dashboard";
-import { PROJECT_NAME, PROJECT_DOMAIN } from "@/config/constants";
+import { Dashboard } from "@/components/dashboard/dashboard";
+import { PROJECT_DOMAIN, PROJECT_NAME } from "@/config/constants";
 
 export const metadata: Metadata = {
   title: `Dashboard - ${PROJECT_NAME}`,

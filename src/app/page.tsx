@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
-import { HomeContainer, HeroSection } from "@/components/home";
-import { PROJECT_NAME, PROJECT_DOMAIN } from "@/config/constants";
+import { HeroSection } from "@/components/home/hero-section";
+import { HomeContainer } from "@/components/home/home-container";
+import { PROJECT_DOMAIN, PROJECT_NAME } from "@/config/constants";
 
 export const metadata: Metadata = {
   title: `Inicio - ${PROJECT_NAME}`,

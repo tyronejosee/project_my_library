@@ -1,10 +1,10 @@
-import { AnimatedContent } from "@/components/animated";
+import { AnimatedContent } from "@/components/animated/animated-content";
 
-type Props = {
+type DefaultTransitionProps = {
   children: React.ReactNode;
 };
 
-export default function DefaultTransition({ children }: Props) {
+function DefaultTransition({ children }: DefaultTransitionProps) {
   return (
     <AnimatedContent
       distance={120}
@@ -20,3 +20,5 @@ export default function DefaultTransition({ children }: Props) {
     </AnimatedContent>
   );
 }
+
+export { DefaultTransition };

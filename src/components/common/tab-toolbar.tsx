@@ -1,26 +1,22 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 import { Button } from "@heroui/react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { NAV_ITEMS_MOBILE } from "@/config/constants";
 
-export default function TabToolbar() {
+function TabToolbar() {
   const pathname = usePathname();
 
   return (
     <nav className="flex justify-between items-center z-50 fixed bottom-0 w-full rounded-t-full border-t border-t-neutral-700 py-2 backdrop-blur-xl backdrop-saturate-150 bg-black/50 md:hidden px-16">
       {NAV_ITEMS_MOBILE.map((item) => {
         const isActive =
-          item.href === "/"
-            ? pathname === item.href
-            : pathname.startsWith(item.href);
+          item.href === "/" ? pathname === item.href : pathname.startsWith(item.href);
         const Icon = item.icon;
         return (
-          <div
-            key={item.id}
-            className="flex flex-col justify-center items-center"
-          >
+          <div key={item.id} className="flex flex-col justify-center items-center">
             <Button
               as={Link}
               isIconOnly
@@ -41,3 +37,5 @@ export default function TabToolbar() {
     </nav>
   );
 }
+
+export { TabToolbar };

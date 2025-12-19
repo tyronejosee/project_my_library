@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
-type Props = {
+type ScrollToTopProps = {
   children: React.ReactNode;
 };
 
-export default function ScrollToTop({ children }: Props) {
+function ScrollToTop({ children }: ScrollToTopProps) {
   const pathname = usePathname();
 
   useEffect(() => {
@@ -16,3 +16,5 @@ export default function ScrollToTop({ children }: Props) {
 
   return children;
 }
+
+export { ScrollToTop };

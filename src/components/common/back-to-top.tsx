@@ -1,17 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
 import { Button } from "@heroui/button";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { ChevronUp } from "lucide-react";
+import { useEffect, useState } from "react";
+
 import { cn } from "@/lib/utils";
 
-export default function BackToTop() {
+function BackToTop() {
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState<boolean>(false);
   const [showing, setShowing] = useState<boolean>(false);
@@ -66,9 +62,7 @@ export default function BackToTop() {
         transition={{
           duration: 0.2,
         }}
-        className={cn(
-          "flex max-w-fit z-30 fixed bottom-16 md:bottom-4 inset-x-0 mx-auto"
-        )}
+        className={cn("flex max-w-fit z-30 fixed bottom-16 md:bottom-4 inset-x-0 mx-auto")}
       >
         <Button
           size="sm"
@@ -82,3 +76,5 @@ export default function BackToTop() {
     </AnimatePresence>
   );
 }
+
+export { BackToTop };

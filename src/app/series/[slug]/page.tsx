@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
+
+import { MediaDetail } from "@/components/media/media-detail";
+import { ALL_SERIES, PROJECT_DOMAIN, PROJECT_NAME } from "@/config/constants";
 import type { Media } from "@/types";
 
-import { MediaDetail } from "@/components/media";
-import { ALL_SERIES, PROJECT_NAME, PROJECT_DOMAIN } from "@/config/constants";
-
-type Props = {
+type SeriesDetailProps = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: SeriesDetailProps): Promise<Metadata> {
   const { slug } = await params;
   const serie = ALL_SERIES.find((serie) => serie.slug === slug);
 
@@ -26,9 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: serie.folder_name,
     description: `${serie.file_name} - ${serie.genre} - ${serie.type}`,
     metadataBase: PROJECT_DOMAIN,
-    keywords: [
-      `"${serie.file_name}", "${serie.folder_name}", "${serie.genre}", "${serie.type}"`,
-    ],
+    keywords: [`"${serie.file_name}", "${serie.folder_name}", "${serie.genre}", "${serie.type}"`],
     authors: [{ name: PROJECT_NAME, url: PROJECT_DOMAIN.toString() }],
     creator: PROJECT_NAME,
     publisher: PROJECT_NAME,
@@ -53,11 +51,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function SeriesDetail({ params }: Props) {
+export default async function SeriesDetail({ params }: SeriesDetailProps) {
   const { slug } = await params;
-  const serie: Media | undefined = ALL_SERIES.find(
-    (serie) => serie.slug === slug
-  );
+  const serie: Media | undefined = ALL_SERIES.find((serie) => serie.slug === slug);
 
   if (!serie) {
     return <p className="text-gray-500">Serie no encontrada.</p>;

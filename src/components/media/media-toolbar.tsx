@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { GENRE_CHOICES } from "@/config/constants";
 
-export default function MediaToolbar() {
+function MediaToolbar() {
   const router = useRouter();
 
   const handleGenreChange = (value: string) => {
@@ -23,9 +23,7 @@ export default function MediaToolbar() {
           onChange={(e) => handleGenreChange(e.target.value)}
         >
           {GENRE_CHOICES.map((genre) => (
-            <SelectItem key={genre.key}>
-              {genre.name}
-            </SelectItem>
+            <SelectItem key={genre.key}>{genre.name}</SelectItem>
           ))}
         </Select>
 
@@ -60,3 +58,5 @@ export default function MediaToolbar() {
     </aside>
   );
 }
+
+export { MediaToolbar };

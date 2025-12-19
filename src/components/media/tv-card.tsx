@@ -1,20 +1,20 @@
 "use client";
 
-import type { Channel } from "@/types";
-
 import { Card, CardFooter, Image } from "@heroui/react";
 
-type Props = {
+import type { Channel } from "@/types";
+
+type TVCardProps = {
   channel: Channel;
 };
 
-export default function TVCard({ channel }: Props) {
+function TVCard({ channel }: TVCardProps) {
   return (
     <Card
       isBlurred
       isPressable
       radius="none"
-      className="w-full active:bg-neutral-800 transition-colors duration-1000 !outline-none shadow-none rounded-2xl"
+      className="w-full active:bg-neutral-800 transition-colors duration-1000 outline-none! shadow-none rounded-2xl"
       onPress={() =>
         window.open(
           `https://www.directv.cl/guia/ChannelDetail.aspx?id=${
@@ -26,7 +26,7 @@ export default function TVCard({ channel }: Props) {
         )
       }
     >
-      <div className="relative overflow-hidden border border-neutral-800 rounded-2xl h-[140px] sm:h-[168px] flex justify-center items-center">
+      <div className="relative overflow-hidden border border-neutral-800 rounded-2xl h-35 sm:h-42 flex justify-center items-center">
         <div className="absolute inset-0 w-full h-full overflow-hidden flex justify-center items-center">
           <Image
             src={channel.image || "/tv/tvn.webp"}
@@ -69,3 +69,5 @@ export default function TVCard({ channel }: Props) {
     </Card>
   );
 }
+
+export { TVCard };

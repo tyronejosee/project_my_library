@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
-import { Heading } from "@/components/common";
-import { LoadMovies } from "@/components/media";
-import { ALL_MOVIES, PROJECT_NAME, PROJECT_DOMAIN } from "@/config/constants";
+import { Heading } from "@/components/common/heading";
+import { LoadMovies } from "@/components/media/load-movies";
+import { ALL_MOVIES, PROJECT_DOMAIN, PROJECT_NAME } from "@/config/constants";
 
 export const metadata: Metadata = {
   title: `Películas - ${PROJECT_NAME}`,

@@ -1,20 +1,18 @@
-import { Heading } from "@/components/common";
-import { MediaList } from "@/components/media";
-import { searchMedia } from "@/lib/utils";
+import { Heading } from "@/components/common/heading";
+import { MediaList } from "@/components/media/media-list";
 import { PROJECT_NAME } from "@/config/constants";
+import { searchMedia } from "@/lib/utils";
 
-type Props = {
+type SearchPageProps = {
   searchParams: Promise<{ query?: string }>;
 };
 
-export async function generateMetadata({ searchParams }: Props) {
+export async function generateMetadata({ searchParams }: SearchPageProps) {
   const resolvedSearchParams = await searchParams;
   const query = resolvedSearchParams?.query ?? "";
 
   return {
-    title: `${
-      query ? `Resultados para "${query}"` : "Explorar"
-    } - ${PROJECT_NAME}`,
+    title: `${query ? `Resultados para "${query}"` : "Explorar"} - ${PROJECT_NAME}`,
   };
 }
 
@@ -28,7 +26,7 @@ function SearchResults({ query }: { query: string }) {
   return <MediaList results={results} />;
 }
 
-export default async function SearchPage({ searchParams }: Props) {
+export default async function SearchPage({ searchParams }: SearchPageProps) {
   const resolvedSearchParams = await searchParams;
   const query = resolvedSearchParams?.query ?? "";
 

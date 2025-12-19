@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState, ReactNode } from "react";
 import { useSpring, animated, SpringConfig } from "@react-spring/web";
 
-type Props = {
+type AnimatedContentProps = {
   children: ReactNode;
   distance?: number;
   direction?: "vertical" | "horizontal";
@@ -16,7 +16,7 @@ type Props = {
   delay?: number;
 };
 
-export default function AnimatedContent({
+function AnimatedContent({
   children,
   distance = 100,
   direction = "vertical",
@@ -27,7 +27,7 @@ export default function AnimatedContent({
   scale = 1,
   threshold = 0.1,
   delay = 0,
-}: Props) {
+}: AnimatedContentProps) {
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
@@ -59,15 +59,16 @@ export default function AnimatedContent({
 
   const springProps = useSpring({
     from: {
-      transform: `translate${directions[direction]}(${reverse ? `-${distance}px` : `${distance}px`
-        }) scale(${scale})`,
+      transform: `translate${directions[direction]}(${
+        reverse ? `-${distance}px` : `${distance}px`
+      }) scale(${scale})`,
       opacity: animateOpacity ? initialOpacity : 1,
     },
     to: inView
       ? {
-        transform: `translate${directions[direction]}(0px) scale(1)`,
-        opacity: 1,
-      }
+          transform: `translate${directions[direction]}(0px) scale(1)`,
+          opacity: 1,
+        }
       : undefined,
     config,
   });
@@ -78,3 +79,5 @@ export default function AnimatedContent({
     </animated.div>
   );
 }
+
+export { AnimatedContent };

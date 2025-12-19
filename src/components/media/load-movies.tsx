@@ -1,20 +1,20 @@
 "use client";
 
-import type { Media } from "@/types";
-
 import { useCallback, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { Spinner } from "@/components/common";
-import { MediaList } from "@/components/media";
-import { useMoviesStore } from "@/store/movies-store";
-import { delay } from "@/lib/utils";
 
-type Props = {
+import { Spinner } from "@/components/common/spinner";
+import { MediaList } from "@/components/media/media-list";
+import { delay } from "@/lib/utils";
+import { useMoviesStore } from "@/store/movies-store";
+import type { Media } from "@/types";
+
+type LoadMoviesProps = {
   data: Media[];
   isGenre?: boolean;
 };
 
-export default function LoadMovies({ data, isGenre }: Props) {
+function LoadMovies({ data, isGenre }: LoadMoviesProps) {
   const { movies, setMovies, page, setPage, resetMovies } = useMoviesStore();
 
   const itemsPerPage = 28;
@@ -55,3 +55,5 @@ export default function LoadMovies({ data, isGenre }: Props) {
     </>
   );
 }
+
+export { LoadMovies };

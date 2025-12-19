@@ -1,10 +1,10 @@
+import { ChevronRight } from "lucide-react";
+import Link from "next/link";
+
+import { Carousel } from "@/components/home/carousel";
 import type { Media } from "@/types";
 
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
-import { Carousel } from "@/components/home";
-
-type Props = {
+type ContentSectionProps = {
   media: Media[];
   title: string;
   pathname: string;
@@ -12,13 +12,7 @@ type Props = {
   genre: string;
 };
 
-export default function ContentSection({
-  media,
-  title,
-  subtitle,
-  pathname,
-  genre,
-}: Props) {
+function ContentSection({ media, title, subtitle, pathname, genre }: ContentSectionProps) {
   return (
     <section className="max-w-screen-2xl mx-auto py-6">
       <header className="mb-6 flex items-center justify-between px-4">
@@ -39,3 +33,5 @@ export default function ContentSection({
     </section>
   );
 }
+
+export { ContentSection };
