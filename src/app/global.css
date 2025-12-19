@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@plugin "./hero.ts";
+
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-bricolage-grotesque: var(--font-bricolage-grotesque);
+}
+
+html {
+  @apply bg-background text-foreground selection:bg-primary selection:text-foreground;
+}
+
+body {
+  font-family: var(--font-bricolage-grotesque);
+}
+
+.code {
+  font-family: var(--font-bricolage-grotesque);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+strong {
+  @apply font-bold text-primary;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
