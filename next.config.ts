@@ -1,9 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  images: {
-    domains: ["imgsrv.crunchyroll.com"],
-  },
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;
