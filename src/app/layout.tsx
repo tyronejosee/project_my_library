@@ -16,8 +16,6 @@ const bricolageGrotesque = localFont({
     { path: "../../public/fonts/bricolage-grotesque-bold.woff2", weight: "700" },
     { path: "../../public/fonts/bricolage-grotesque-extrabold.woff2", weight: "800" },
   ],
-  variable: "--font-bricolage-grotesque",
-  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +28,7 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={`${bricolageGrotesque.variable} dark`}>
+    <html lang="en" className={`${bricolageGrotesque.className} dark`}>
       <body className="antialiased mb-14">
         <Toolbar />
         {children}

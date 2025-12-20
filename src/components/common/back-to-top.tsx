@@ -68,7 +68,7 @@ function BackToTop() {
           size="sm"
           onPress={scrollToTop}
           aria-label="Back to top"
-          className="bg-none backdrop-blur-xl backdrop-saturate-150 bg-black/50 border border-neutral-700"
+          className="bg-none backdrop-blur-3xl backdrop-saturate-150 bg-black/50 border-2 border-content2"
         >
           <ChevronUp />
         </Button>

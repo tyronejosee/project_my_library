@@ -21,8 +21,7 @@ export const searchMedia = (query: string) => {
 
   return ALL_MEDIA.filter((item) => {
     return (
-      (item.folder_name &&
-        item.folder_name.toLowerCase().includes(lowerQuery)) ||
+      (item.folder_name && item.folder_name.toLowerCase().includes(lowerQuery)) ||
       (item.file_name && item.file_name.toLowerCase().includes(lowerQuery))
     );
   });
@@ -43,8 +42,14 @@ export const normalizeString = (input: string) => {
     .replace(/[-]/g, "+");
 };
 
-export const delay = (ms: number) =>
-  new Promise((resolve) => setTimeout(resolve, ms));
+export const normalizeStringImdb = (input: string) => {
+  return input
+    .replace(/-\d{4,}/g, "")
+    .toLowerCase()
+    .replace(/[-]/g, "%20");
+};
+
+export const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const getRandomMedia = () => {
   const randomIndex = Math.floor(Math.random() * ALL_MEDIA.length);
@@ -56,9 +61,7 @@ export const getMoviesByGenre = (genre: string, count?: number) => {
     throw new Error("Invalid genre parameter");
   }
 
-  const movies = ALL_MOVIES.filter(
-    (movie) => movie.genre.toLowerCase() === genre.toLowerCase()
-  );
+  const movies = ALL_MOVIES.filter((movie) => movie.genre.toLowerCase() === genre.toLowerCase());
 
   if (movies.length === 0) {
     return [];

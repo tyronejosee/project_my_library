@@ -4,20 +4,8 @@
 @source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 @custom-variant dark (&:is(.dark *));
 
-:root {
-  --font-bricolage-grotesque: var(--font-bricolage-grotesque);
-}
-
 html {
-  @apply bg-background text-foreground selection:bg-primary selection:text-foreground;
-}
-
-body {
-  font-family: var(--font-bricolage-grotesque);
-}
-
-.code {
-  font-family: var(--font-bricolage-grotesque);
+  @apply bg-background text-foreground selection:bg-primary-900 selection:text-foreground;
 }
 
 @keyframes fadeIn {

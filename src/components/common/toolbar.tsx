@@ -61,7 +61,6 @@ function Toolbar() {
           </NavbarBrand>
         </Link>
       </NavbarContent>
-
       <NavbarContent justify="center">
         <Suspense fallback={<Skeleton className="h-10 w-180 rounded-xl" />}>
           <SearchBar />
