@@ -16,15 +16,23 @@ export const shuffleArray = <T>(array: T[]): T[] => {
   return shuffledArray;
 };
 
-export const searchMedia = (query: string) => {
+export const searchMedia = (query: string, limit?: number) => {
+  if (!query.trim()) return [];
   const lowerQuery = query.toLowerCase();
+  const results = [];
 
-  return ALL_MEDIA.filter((item) => {
-    return (
+  for (const item of ALL_MEDIA) {
+    const isMatch =
       (item.folder_name && item.folder_name.toLowerCase().includes(lowerQuery)) ||
-      (item.file_name && item.file_name.toLowerCase().includes(lowerQuery))
-    );
-  });
+      (item.file_name && item.file_name.toLowerCase().includes(lowerQuery));
+
+    if (isMatch) {
+      results.push(item);
+      if (limit && results.length >= limit) break;
+    }
+  }
+
+  return results;
 };
 
 export const getDiskSummary = (disks: MinimalDisk[]) => {
