@@ -18,6 +18,7 @@
     "@heroui/tabs": "^2.2.25",
     "@heroui/theme": "^2.4.24",
     "@heroui/user": "^2.2.23",
+    "@radix-ui/react-scroll-area": "1.2.10",
     "@react-spring/web": "^10.0.3",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.26",
