@@ -11,7 +11,7 @@ export default async function GenrePage({ params }: GenrePageProps) {
   const data = await getMoviesByGenre(genre);
 
   return (
-    <main className="max-w-screen-2xl mx-auto text-center py-6 px-6 mt-12">
+    <main className="max-w-screen-2xl mx-auto text-center py-6 px-6">
       <Heading title="Películas" />
       <LoadMovies data={data} isGenre />
     </main>

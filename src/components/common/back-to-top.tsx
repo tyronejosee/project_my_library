@@ -62,13 +62,14 @@ function BackToTop() {
         transition={{
           duration: 0.2,
         }}
-        className={cn("flex max-w-fit z-30 fixed bottom-16 md:bottom-4 inset-x-0 mx-auto")}
+        className={cn("flex max-w-fit z-30 fixed bottom-16 md:bottom-4 right-16 md:right-4")}
       >
         <Button
           size="sm"
+          color="primary"
           onPress={scrollToTop}
           aria-label="Back to top"
-          className="bg-none backdrop-blur-3xl backdrop-saturate-150 bg-black/50 border-2 border-content2"
+          className="shadow-2xl"
         >
           <ChevronUp />
         </Button>

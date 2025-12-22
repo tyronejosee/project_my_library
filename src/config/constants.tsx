@@ -29,9 +29,7 @@ import foldersAnimesInfo from "../data/disks/folders-animes-info.json";
 // Project
 export const PROJECT_NAME = "Tyrone's Collection";
 export const PROJECT_DESCRIPTION = "Pending description";
-export const PROJECT_DOMAIN = new URL(
-  process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3000"
-);
+export const PROJECT_DOMAIN = new URL(process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3000");
 
 // Media
 export const ALL_MOVIES = [
@@ -60,7 +58,6 @@ export const ALL_MEDIA = [...ALL_MOVIES, ...ALL_SERIES];
 
 // UI Items
 export const NAV_ITEMS = [
-  { key: "home", href: "/", label: "Inicio" },
   { key: "movies", href: "/movies", label: "Películas" },
   { key: "series", href: "/series", label: "Series" },
   { key: "tv", href: "/tv", label: "TV" },

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function SeriesPage() {
   return (
-    <main className="max-w-screen-2xl mx-auto text-center py-6 px-6 md:mt-12">
+    <main className="max-w-screen-2xl mx-auto text-center py-6 px-6">
       <Heading title="Series" />
       <LoadSeries />
     </main>

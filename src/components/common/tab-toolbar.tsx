@@ -10,7 +10,7 @@ function TabToolbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex justify-between items-center z-50 fixed bottom-0 w-full rounded-t-full border-t-2 border-t-content2 py-2 backdrop-blur-3xl backdrop-saturate-150 bg-black/50 md:hidden px-16">
+    <nav className="flex justify-between items-center z-50 fixed bottom-0 w-full rounded-t-full border-t border-t-content2 py-2 backdrop-blur-3xl backdrop-saturate-150 bg-black/50 md:hidden px-16">
       {NAV_ITEMS_MOBILE.map((item) => {
         const isActive =
           item.href === "/" ? pathname === item.href : pathname.startsWith(item.href);

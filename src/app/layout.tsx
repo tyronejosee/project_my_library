@@ -28,7 +28,7 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={`${bricolageGrotesque.className} dark`}>
+    <html lang="en" className={`${bricolageGrotesque.className} dark`} suppressHydrationWarning>
       <body className="antialiased mb-14">
         <Toolbar />
         {children}
