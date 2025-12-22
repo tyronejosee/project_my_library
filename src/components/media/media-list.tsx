@@ -13,7 +13,7 @@ function MediaList({ results }: MediaListProps) {
     <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-4">
       {results.map((result, index) => (
         <DefaultTransition key={index}>
-          <MediaMorphingDialog media={result} />
+          <MediaMorphingDialog media={result} dialogType="card" />
         </DefaultTransition>
       ))}
     </section>
