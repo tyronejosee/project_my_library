@@ -25,12 +25,31 @@
     "lucide": "^0.562.0",
     "lucide-react": "^0.562.0",
     "motion": "^12.23.26",
-    "next": "^16.1.0",
+    "next": "^16.4.6",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-intersection-observer": "^10.0.0",
     "tailwind-merge": "^3.4.0",
     "zustand": "^5.0.9"
+  },
+  "pnpm": {
+    "overrides": {
+      "@babel/core": "7.29.13",
+      "@humanfs/node": "0.16.8",
+      "ajv": "6.15.0",
+      "baseline-browser-mapping": "2.11.37",
+      "brace-expansion@1": "1.1.22",
+      "browserslist": "4.29.5",
+      "deepmerge": "file:vendor/deepmerge",
+      "flatted": "3.4.4",
+      "js-yaml": "4.3.2",
+      "minimatch@3": "3.1.4",
+      "minimatch@>=7": "11.0.8",
+      "picomatch@2": "2.3.2",
+      "picomatch@4": "4.0.7",
+      "source-map-js": "1.2.2",
+      "zod": "4.6.7"
+    }
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
@@ -39,8 +58,8 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.2",
-    "eslint-config-next": "16.1.0",
-    "postcss": "^8.5.6",
+    "eslint-config-next": "16.4.6",
+    "postcss": "^8.5.33",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
   }

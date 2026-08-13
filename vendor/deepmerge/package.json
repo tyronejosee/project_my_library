@@ -1,0 +1,24 @@
+{
+  "name": "deepmerge",
+  "version": "4.3.2",
+  "description": "A library for deep (recursive) merging of Javascript objects",
+  "keywords": [
+    "merge",
+    "deep",
+    "extend",
+    "copy",
+    "clone",
+    "recursive"
+  ],
+  "homepage": "https://github.com/TehShrike/deepmerge",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TehShrike/deepmerge.git"
+  },
+  "main": "dist/cjs.js",
+  "types": "index.d.ts",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT"
+}
